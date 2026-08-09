@@ -1,0 +1,18 @@
+# Netlify deploy config for this TanStack Start / nitro app.
+#
+# This project defaults to building for Cloudflare (see vite.config.ts).
+# NITRO_PRESET=netlify below switches nitro's output to a Netlify Functions
+# shape instead — that's what makes server-side rendering (loaders, the
+# /leaderboard live-data pages, etc.) work on Netlify rather than only
+# static pages. See DEPLOY_NETLIFY.md for the full walkthrough.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NITRO_PRESET = "netlify"
+
+# nitro's netlify preset emits the SSR server as a Netlify Function under
+# .netlify/functions-internal — this tells Netlify where to find it.
+[functions]
+  directory = ".netlify/functions-internal"

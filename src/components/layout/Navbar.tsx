@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ChevronDown, ExternalLink, Menu, MessagesSquare, Waves } from "lucide-react";
+import { ChevronDown, ExternalLink, Menu, MessagesSquare } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -61,8 +61,8 @@ export function Navbar() {
         className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6"
       >
         <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold">
-          <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-lagoon to-primary text-primary-foreground">
-            <Waves className="size-5" aria-hidden />
+          <span className="flex size-9 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-lagoon to-primary">
+            <img src="/bubble.png" alt="" className="size-7 object-contain" />
           </span>
           <span className="text-gradient-ocean">Bubble</span>
         </Link>

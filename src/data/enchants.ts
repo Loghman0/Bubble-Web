@@ -33,11 +33,17 @@ export const enchants: Enchant[] = Object.values(ENCHANT_DATA).map((e: any) => (
   description: e.description,
   appliesTo: e.appliesTo,
   valuePerLevel: e.valuePerLevel as [number, number, number],
+  // Every level (I/II/III) of an enchant shares one piece of art — there's
+  // no separate "level 2 icon", the book just glows brighter in-game. Both
+  // `image` and all three `levelImages` intentionally point at the SAME
+  // file (public/assets/enchantments/<id>.png). Do not reintroduce
+  // per-level filenames like `<id>_1.png` — those were never real assets
+  // and silently fell back to the emoji glyph in GameAsset's onError handler.
   image: `/assets/enchantments/${e.id}.png`,
   levelImages: [
-    `/assets/enchantments/${e.id}_1.png`,
-    `/assets/enchantments/${e.id}_2.png`,
-    `/assets/enchantments/${e.id}_3.png`,
+    `/assets/enchantments/${e.id}.png`,
+    `/assets/enchantments/${e.id}.png`,
+    `/assets/enchantments/${e.id}.png`,
   ] as [string, string, string],
 }));
 

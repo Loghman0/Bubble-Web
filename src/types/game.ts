@@ -150,9 +150,9 @@ export interface Enchant {
   appliesTo: string;
   /** Bonus value at level I, II and III respectively. */
   valuePerLevel: [number, number, number];
-  /** Base book artwork: /assets/enchantments/<key>.png */
+  /** Book artwork shared by all 3 levels: /assets/enchantments/<key>.png */
   image: string;
-  /** Per-level book artwork: /assets/enchantments/<key>_1.png … _3.png */
+  /** Same artwork repeated 3x (I/II/III share one asset, no separate per-level art). */
   levelImages: [string, string, string];
 }
 

@@ -87,11 +87,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:site_name", content: "Bubble" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/bubble.png" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "/bubble.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "apple-touch-icon", href: "/bubble.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -156,4 +159,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-

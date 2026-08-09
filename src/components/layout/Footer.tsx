@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { Waves } from "lucide-react";
 
 import { DISCORD_URL, INVITE_URL } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
@@ -40,8 +39,8 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
           <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold">
-            <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-lagoon to-primary text-primary-foreground">
-              <Waves className="size-5" aria-hidden />
+            <span className="flex size-9 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-lagoon to-primary">
+              <img src="/bubble.png" alt="" className="size-7 object-contain" />
             </span>
             <span className="text-gradient-ocean">Bubble</span>
           </Link>
