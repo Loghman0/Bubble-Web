@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as EnchantsRouteImport } from './routes/enchants'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
@@ -34,11 +33,6 @@ import { Route as WikiSlugRouteImport } from './routes/wiki.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EnchantsRoute = EnchantsRouteImport.update({
-  id: '/enchants',
-  path: '/enchants',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -87,14 +81,14 @@ const EggsSlugRoute = EggsSlugRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const EnchantsIndexRoute = EnchantsIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => EnchantsRoute,
+  id: '/enchants/',
+  path: '/enchants/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const EnchantsSlugRoute = EnchantsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => EnchantsRoute,
+  id: '/enchants/$slug',
+  path: '/enchants/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const FishIndexRoute = FishIndexRouteImport.update({
   id: '/fish/',
@@ -139,7 +133,6 @@ const WikiSlugRoute = WikiSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/enchants': typeof EnchantsRouteWithChildren
   '/faq': typeof FaqRoute
   '/features': typeof FeaturesRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -185,7 +178,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/enchants': typeof EnchantsRouteWithChildren
   '/faq': typeof FaqRoute
   '/features': typeof FeaturesRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -210,7 +202,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/enchants'
     | '/faq'
     | '/features'
     | '/leaderboard'
@@ -255,7 +246,6 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/enchants'
     | '/faq'
     | '/features'
     | '/leaderboard'
@@ -279,7 +269,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  EnchantsRoute: typeof EnchantsRouteWithChildren
   FaqRoute: typeof FaqRoute
   FeaturesRoute: typeof FeaturesRoute
   LeaderboardRoute: typeof LeaderboardRoute
@@ -287,12 +276,14 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   BaitsSlugRoute: typeof BaitsSlugRoute
   EggsSlugRoute: typeof EggsSlugRoute
+  EnchantsSlugRoute: typeof EnchantsSlugRoute
   FishSlugRoute: typeof FishSlugRoute
   PetsSlugRoute: typeof PetsSlugRoute
   RodsSlugRoute: typeof RodsSlugRoute
   WikiSlugRoute: typeof WikiSlugRoute
   BaitsIndexRoute: typeof BaitsIndexRoute
   EggsIndexRoute: typeof EggsIndexRoute
+  EnchantsIndexRoute: typeof EnchantsIndexRoute
   FishIndexRoute: typeof FishIndexRoute
   PetsIndexRoute: typeof PetsIndexRoute
   RodsIndexRoute: typeof RodsIndexRoute
@@ -306,13 +297,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/enchants': {
-      id: '/enchants'
-      path: '/enchants'
-      fullPath: '/enchants'
-      preLoaderRoute: typeof EnchantsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -380,17 +364,17 @@ declare module '@tanstack/react-router' {
     }
     '/enchants/': {
       id: '/enchants/'
-      path: '/'
+      path: '/enchants'
       fullPath: '/enchants/'
       preLoaderRoute: typeof EnchantsIndexRouteImport
-      parentRoute: typeof EnchantsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/enchants/$slug': {
       id: '/enchants/$slug'
-      path: '/$slug'
+      path: '/enchants/$slug'
       fullPath: '/enchants/$slug'
       preLoaderRoute: typeof EnchantsSlugRouteImport
-      parentRoute: typeof EnchantsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/fish/': {
       id: '/fish/'
@@ -451,23 +435,8 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface EnchantsRouteChildren {
-  EnchantsSlugRoute: typeof EnchantsSlugRoute
-  EnchantsIndexRoute: typeof EnchantsIndexRoute
-}
-
-const EnchantsRouteChildren: EnchantsRouteChildren = {
-  EnchantsSlugRoute: EnchantsSlugRoute,
-  EnchantsIndexRoute: EnchantsIndexRoute,
-}
-
-const EnchantsRouteWithChildren = EnchantsRoute._addFileChildren(
-  EnchantsRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  EnchantsRoute: EnchantsRouteWithChildren,
   FaqRoute: FaqRoute,
   FeaturesRoute: FeaturesRoute,
   LeaderboardRoute: LeaderboardRoute,
@@ -475,12 +444,14 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   BaitsSlugRoute: BaitsSlugRoute,
   EggsSlugRoute: EggsSlugRoute,
+  EnchantsSlugRoute: EnchantsSlugRoute,
   FishSlugRoute: FishSlugRoute,
   PetsSlugRoute: PetsSlugRoute,
   RodsSlugRoute: RodsSlugRoute,
   WikiSlugRoute: WikiSlugRoute,
   BaitsIndexRoute: BaitsIndexRoute,
   EggsIndexRoute: EggsIndexRoute,
+  EnchantsIndexRoute: EnchantsIndexRoute,
   FishIndexRoute: FishIndexRoute,
   PetsIndexRoute: PetsIndexRoute,
   RodsIndexRoute: RodsIndexRoute,
