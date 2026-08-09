@@ -76,12 +76,12 @@ function PetDetail() {
 
       <div className="mt-8 grid gap-8 md:grid-cols-[300px_1fr]">
         <Reveal>
-          <GameAsset src={p.image} alt={p.name} fallback={p.emoji || "🐾"} />
+          <GameAsset src={p.image} alt={p.name} />
         </Reveal>
         <Reveal delay={0.08}>
           <div className="flex flex-wrap items-center gap-3">
             <h1 className="font-display text-3xl font-bold sm:text-4xl">
-              {p.emoji} {p.name}
+              {p.name}
             </h1>
           </div>
 

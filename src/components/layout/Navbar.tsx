@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
-export const DISCORD_URL = "https://discord.gg/F6wCs93hhb";
+export const DISCORD_URL = "https://discord.gg/PGbQFCFTC2";
 
 export const INVITE_URL =
   "https://discord.com/oauth2/authorize?client_id=1314851118840414300&permissions=4504288969967680&integration_type=0&scope=bot";
@@ -20,7 +20,6 @@ type NavLink = { label: string; to: string };
 
 const primary: NavLink[] = [
   { label: "Home", to: "/" },
-  { label: "Leaderboard", to: "/leaderboard" },
   { label: "Features", to: "/features" },
   { label: "Wiki", to: "/wiki" },
 ];

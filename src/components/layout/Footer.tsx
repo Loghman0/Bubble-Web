@@ -8,7 +8,6 @@ const columns: { title: string; links: { label: string; to: string }[] }[] = [
     title: "Game",
     links: [
       { label: "Features", to: "/features" },
-      { label: "Leaderboard", to: "/leaderboard" },
       { label: "Fish Encyclopedia", to: "/fish" },
       { label: "Pets", to: "/pets" },
       { label: "Eggs", to: "/eggs" },

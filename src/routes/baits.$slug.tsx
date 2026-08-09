@@ -58,7 +58,7 @@ function BaitDetail() {
 
             <div className="mt-8 grid gap-8 md:grid-cols-[300px_1fr]">
                 <Reveal>
-                    <GameAsset src={b.image} alt={b.name} fallback="🪱" />
+                    <GameAsset src={b.image} alt={b.name} />
                 </Reveal>
                 <Reveal delay={0.08}>
                     <h1 className="font-display text-3xl font-bold sm:text-4xl">{b.name}</h1>

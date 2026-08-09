@@ -5,7 +5,7 @@ import { Anchor, ArrowRight, BookOpen, Egg as EggIcon, Fish, PawPrint, Ship, Spa
 import { OceanBackdrop } from "@/components/effects/OceanBackdrop";
 import { RarityBadge, Reveal, StatCard } from "@/components/game/primitives";
 import { DISCORD_URL, INVITE_URL } from "@/components/layout/Navbar";
-import { LiveStatsStrip } from "@/components/live/stats-strip";
+
 import { Button } from "@/components/ui/button";
 import { fishCountByRarity, rosterCounts } from "@/lib/api";
 import { pageMeta } from "@/lib/seo";
@@ -118,20 +118,14 @@ function Home() {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link to="/leaderboard">
-                <Sparkles className="size-4" aria-hidden /> Live Leaderboard
+              <Link to="/wiki">
+                <BookOpen className="size-4" aria-hidden /> Wiki
               </Link>
             </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* Live stats */}
-      <section className="mx-auto max-w-7xl px-4 pb-4 sm:px-6" aria-labelledby="live-stats">
-        <Reveal>
-          <LiveStatsStrip />
-        </Reveal>
-      </section>
 
       {/* Pillars */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6" aria-labelledby="systems">

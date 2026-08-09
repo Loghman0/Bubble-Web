@@ -52,7 +52,7 @@ function EnchantDetail() {
       <Reveal>
         <div className="mt-6 grid gap-8 sm:grid-cols-[160px_1fr] sm:items-start">
           <div className="mx-auto w-40 sm:mx-0">
-            <GameAsset src={e.image} alt={`${e.name} enchantment book`} fallback={e.emoji} />
+            <GameAsset src={e.image} alt={`${e.name} enchantment book`} />
           </div>
           <div>
             <h1 className="font-display text-3xl font-bold sm:text-4xl">{e.name}</h1>
@@ -86,7 +86,6 @@ function EnchantDetail() {
                 <GameAsset
                   src={img}
                   alt={`${e.name} level ${LEVEL_LABELS[li]} book`}
-                  fallback={e.emoji}
                 />
               </div>
               <p className="mt-3 text-xs font-semibold tracking-widest text-muted-foreground uppercase">

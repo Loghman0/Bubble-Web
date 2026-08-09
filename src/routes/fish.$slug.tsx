@@ -78,7 +78,7 @@ function FishDetail() {
 
       <div className="mt-8 grid gap-8 md:grid-cols-[300px_1fr]">
         <Reveal>
-          <GameAsset src={f.image} alt={f.name} rarity={f.rarity} fallback="🐠" />
+          <GameAsset src={f.image} alt={f.name} rarity={f.rarity} />
         </Reveal>
         <Reveal delay={0.08}>
           <div className="flex flex-wrap items-center gap-3">

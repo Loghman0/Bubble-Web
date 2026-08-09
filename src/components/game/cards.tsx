@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { GameAsset } from "@/components/game/asset";
 import { RarityBadge } from "@/components/game/primitives";
 import { cn } from "@/lib/utils";
-import type { Bait, Egg, Fish, Pet, Rod } from "@/types/game";
+import type { Bait, Egg, Enchant, Fish, Pet, Rod } from "@/types/game";
 
 function TiltCard({
   children,
@@ -40,7 +40,7 @@ export function FishCard({ fish }: { fish: Fish }) {
   return (
     <Link to="/fish/$slug" params={{ slug: fish.slug }} className="block h-full rounded-2xl">
       <TiltCard>
-        <GameAsset src={fish.image} alt={fish.name} rarity={fish.rarity} fallback="🐠" />
+        <GameAsset src={fish.image} alt={fish.name} rarity={fish.rarity} />
         <div className="mt-3 flex items-start justify-between gap-2">
           <h3 className="font-display text-sm font-bold sm:text-base">{fish.name}</h3>
           <RarityBadge rarity={fish.rarity} />
@@ -54,7 +54,7 @@ export function PetCard({ pet }: { pet: Pet }) {
   return (
     <Link to="/pets/$slug" params={{ slug: pet.slug }} className="block h-full rounded-2xl">
       <TiltCard>
-        <GameAsset src={pet.image} alt={pet.name} fallback="🐾" />
+        <GameAsset src={pet.image} alt={pet.name} />
         <h3 className="mt-3 font-display text-sm font-bold sm:text-base">{pet.name}</h3>
       </TiltCard>
     </Link>
@@ -65,7 +65,7 @@ export function EggCard({ egg }: { egg: Egg }) {
   return (
     <Link to="/eggs/$slug" params={{ slug: egg.slug }} className="block h-full rounded-2xl">
       <TiltCard>
-        <GameAsset src={egg.image} alt={egg.name} fallback="🥚" className="from-treasure/20" />
+        <GameAsset src={egg.image} alt={egg.name} className="from-treasure/20" />
         <h3 className="mt-3 font-display text-base font-bold">{egg.name}</h3>
       </TiltCard>
     </Link>
@@ -76,7 +76,7 @@ export function RodCard({ rod }: { rod: Rod }) {
   return (
     <Link to="/rods/$slug" params={{ slug: rod.slug }} className="block h-full rounded-2xl">
       <TiltCard>
-        <GameAsset src={rod.image} alt={rod.name} fallback="🎣" />
+        <GameAsset src={rod.image} alt={rod.name} />
         <div className="mt-3 flex items-start justify-between gap-2">
           <h3 className="font-display text-sm font-bold sm:text-base">{rod.name}</h3>
           <TierPill tier={rod.tier} />
@@ -90,10 +90,28 @@ export function BaitCard({ bait }: { bait: Bait }) {
   return (
     <Link to="/baits/$slug" params={{ slug: bait.slug }} className="block h-full rounded-2xl">
       <TiltCard>
-        <GameAsset src={bait.image} alt={bait.name} fallback="🪱" />
+        <GameAsset src={bait.image} alt={bait.name} />
         <div className="mt-3 flex items-start justify-between gap-2">
           <h3 className="font-display text-sm font-bold sm:text-base">{bait.name}</h3>
           <TierPill tier={bait.tier} />
+        </div>
+      </TiltCard>
+    </Link>
+  );
+}
+
+export function EnchantCard({ enchant }: { enchant: Enchant }) {
+  return (
+    <Link
+      to="/enchants/$slug"
+      params={{ slug: enchant.slug }}
+      className="block h-full rounded-2xl"
+    >
+      <TiltCard>
+        <GameAsset src={enchant.image} alt={`${enchant.name} enchantment book`} />
+        <div className="mt-3 flex items-start justify-between gap-2">
+          <h3 className="font-display text-sm font-bold sm:text-base">{enchant.name}</h3>
+          <TierPill tier={`max ${Math.round(enchant.valuePerLevel[2] * 100)}%`} />
         </div>
       </TiltCard>
     </Link>

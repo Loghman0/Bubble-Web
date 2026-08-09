@@ -45,7 +45,7 @@ function RodDetail() {
 
       <div className="mt-8 grid gap-8 md:grid-cols-[300px_1fr]">
         <Reveal>
-          <GameAsset src={r.image} alt={r.name} fallback="🎣" />
+          <GameAsset src={r.image} alt={r.name} />
         </Reveal>
         <Reveal delay={0.08}>
           <h1 className="font-display text-3xl font-bold sm:text-4xl">{r.name}</h1>

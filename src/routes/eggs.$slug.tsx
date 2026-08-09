@@ -53,7 +53,7 @@ function EggDetail() {
 
       <div className="mt-8 grid gap-8 md:grid-cols-[300px_1fr]">
         <Reveal>
-          <GameAsset src={e.image} alt={e.name} fallback={e.emoji || "🥚"} className="from-treasure/20" />
+          <GameAsset src={e.image} alt={e.name} className="from-treasure/20" />
         </Reveal>
         <Reveal delay={0.08}>
           <h1 className="font-display text-3xl font-bold sm:text-4xl">{e.name}</h1>
@@ -103,7 +103,6 @@ function EggDetail() {
                   params={{ slug: p.slug }}
                   className="glass inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm hover:text-primary"
                 >
-                  <span>{p.emoji}</span>
                   {p.name}
                   <RarityBadge rarity={p.rarity} className="ml-1" />
                 </Link>

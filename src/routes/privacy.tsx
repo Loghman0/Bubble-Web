@@ -28,20 +28,16 @@ const sections: [string, string][] = [
     "Game state must persist between commands. Data is never sold, rented, or shared with advertisers.",
   ],
   [
-    "Public leaderboard & catch feed",
-    "This website shows a live leaderboard and a feed of notable (Rare-or-better) catches, plus a directory of servers running Bubble. These only ever show your Discord username and the name of the server a catch happened in — never your Discord user ID, and never anything from outside the game. Run `.privacy hide` in Discord at any time to remove yourself from these public pages; this doesn't affect your progress or anything else about your account. Server owners can similarly ask to have their server left off the server directory.",
-  ],
-  [
     "Retention",
-    "Progress is kept while your account is active. Accounts inactive for 24 months are purged automatically. Entries in the public catch feed age out automatically after 30 days regardless of account status.",
+    "Progress is kept while your account is active. Accounts inactive for 24 months are purged automatically.",
   ],
   [
     "Deletion requests",
-    "Ask in the support server or email hello@bubble.gg from an address you can verify. Deletion is permanent and removes all progress, including any entries tied to you on the public leaderboard and catch feed.",
+    "Ask in the support server or email hello@bubble.gg from an address you can verify. Deletion is permanent and removes all progress.",
   ],
   [
     "Third parties",
-    "Bubble runs on standard cloud hosting and communicates only with Discord's API. No analytics vendors receive your game data. The public leaderboard and catch feed are read-only and served from bubble.gg only.",
+    "Bubble runs on standard cloud hosting and communicates only with Discord's API. No analytics vendors receive your game data.",
   ],
   [
     "Children",

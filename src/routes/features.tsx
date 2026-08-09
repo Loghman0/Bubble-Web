@@ -119,7 +119,7 @@ function FeaturesPage() {
               <Reveal delay={i * 0.05}>
                 <div className="glass flex items-center gap-4 rounded-2xl p-5">
                   <div className="w-16 shrink-0">
-                    <GameAsset src={c.image} alt={c.name} fallback="🪙" />
+                    <GameAsset src={c.image} alt={c.name} />
                   </div>
                   <span className="font-display font-bold">{c.name}</span>
                 </div>
