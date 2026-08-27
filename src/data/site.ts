@@ -3,6 +3,7 @@ import { enchants } from "@/data/enchants";
 import { fish } from "@/data/fish";
 import { eggs, pets } from "@/data/pets";
 import { rods } from "@/data/rods";
+import { WORLDS } from "@/data/worlds";
 import { RARITIES, type Rarity } from "@/types/game";
 
 /**
@@ -17,9 +18,19 @@ export const rosterCounts = {
   eggs: eggs.length,
   enchants: enchants.length,
   rarities: RARITIES.length,
+  worlds: WORLDS.length,
 };
 
 export const fishCountByRarity: { rarity: Rarity; count: number }[] = RARITIES.map((rarity) => ({
   rarity,
   count: fish.filter((f) => f.rarity === rarity).length,
 }));
+
+/** Per-world roster counts, for the world selector and per-world page headers. */
+export const rosterCountsByWorld = (worldId: number) => ({
+  fish: fish.filter((f) => (f.worldId ?? 0) === worldId).length,
+  rods: rods.filter((r) => (r.worldId ?? 0) === worldId).length,
+  baits: baits.filter((b) => (b.worldId ?? 0) === worldId).length,
+  pets: pets.filter((p) => (p.worldId ?? 0) === worldId).length,
+  eggs: eggs.filter((e) => (e.worldId ?? 0) === worldId).length,
+});

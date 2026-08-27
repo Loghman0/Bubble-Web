@@ -5,16 +5,25 @@
  * local roster data synchronously wrapped in promises; swapping a body for
  * `fetch(...)` against a live Bubble API requires no UI changes.
  */
-import { baitBySlug, baits } from "@/data/baits";
+import { baitBySlug, baits, baitsByWorld } from "@/data/baits";
 import { enchantBySlug, enchants } from "@/data/enchants";
-import { fish, fishByRarity, fishBySlug } from "@/data/fish";
-import { eggBySlug, eggs, petBySlug, pets, petsForEgg } from "@/data/pets";
-import { rodBySlug, rods, rodTiers } from "@/data/rods";
+import { fish, fishByRarity, fishBySlug, fishByWorld } from "@/data/fish";
+import {
+  eggBySlug,
+  eggs,
+  eggsByWorld,
+  petBySlug,
+  pets,
+  petsByWorld,
+  petsForEgg,
+} from "@/data/pets";
+import { rodBySlug, rods, rodsByWorld, rodTiers } from "@/data/rods";
 import { currencies } from "@/data/currencies";
 import { faq, wikiArticles, wikiBySlug, wikiCategories } from "@/data/content";
-import { fishCountByRarity, rosterCounts } from "@/data/site";
+import { fishCountByRarity, rosterCounts, rosterCountsByWorld } from "@/data/site";
+import { WORLDS, worldById } from "@/data/worlds";
 
-const ok = <T,>(value: T): Promise<T> => Promise.resolve(value);
+const ok = <T>(value: T): Promise<T> => Promise.resolve(value);
 
 export const api = {
   fish: {
@@ -49,6 +58,7 @@ export const api = {
   },
   faq: { list: () => ok(faq) },
   roster: { counts: () => ok(rosterCounts) },
+  worlds: { list: () => ok(WORLDS) },
 };
 
 // Synchronous accessors for render paths that do not need async loading.
@@ -56,16 +66,21 @@ export {
   fish,
   fishBySlug,
   fishByRarity,
+  fishByWorld,
   pets,
   petBySlug,
+  petsByWorld,
   eggs,
   eggBySlug,
+  eggsByWorld,
   petsForEgg,
   rods,
   rodBySlug,
   rodTiers,
+  rodsByWorld,
   baits,
   baitBySlug,
+  baitsByWorld,
   enchants,
   enchantBySlug,
   currencies,
@@ -74,5 +89,8 @@ export {
   wikiCategories,
   faq,
   rosterCounts,
+  rosterCountsByWorld,
   fishCountByRarity,
+  WORLDS,
+  worldById,
 };

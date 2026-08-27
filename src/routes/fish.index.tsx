@@ -3,7 +3,8 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 
 import { FishCard } from "@/components/game/cards";
-import { EmptyState, PageHeader, Reveal } from "@/components/game/primitives";
+import { EmptyState, PageHeader, Reveal, WorldTransition } from "@/components/game/primitives";
+import { WorldSelect } from "@/components/game/world-select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -21,7 +22,7 @@ export const Route = createFileRoute("/fish/")({
   head: () => ({
     meta: pageMeta(
       "Fish Encyclopedia — Bubble",
-      "Browse every species in Bubble: 107 fish across nine rarity tiers, from Common to Divine.",
+      "Browse every species in Bubble across every prestige World, from The Shallows to The Neon Tide — over a hundred fish per world across nine rarity tiers, from Common to Divine.",
     ),
     links: [{ rel: "canonical", href: "/fish" }],
   }),
@@ -35,20 +36,31 @@ function FishIndex() {
   const [rarity, setRarity] = useState("all");
   const [sort, setSort] = useState("rarity");
   const [page, setPage] = useState(1);
+  const [worldId, setWorldId] = useState(0);
 
   const filtered = useMemo(() => {
     const list = allFish.filter(
       (f) =>
+        (f.worldId ?? 0) === worldId &&
         f.name.toLowerCase().includes(query.toLowerCase()) &&
         (rarity === "all" || f.rarity === rarity),
     );
     return [...list].sort((a, b) => {
       if (sort === "name") return a.name.localeCompare(b.name);
       if (sort === "rarity-desc")
-        return RARITIES.indexOf(b.rarity) - RARITIES.indexOf(a.rarity) || a.name.localeCompare(b.name);
-      return RARITIES.indexOf(a.rarity) - RARITIES.indexOf(b.rarity) || a.name.localeCompare(b.name);
+        return (
+          RARITIES.indexOf(b.rarity) - RARITIES.indexOf(a.rarity) || a.name.localeCompare(b.name)
+        );
+      return (
+        RARITIES.indexOf(a.rarity) - RARITIES.indexOf(b.rarity) || a.name.localeCompare(b.name)
+      );
     });
-  }, [query, rarity, sort]);
+  }, [query, rarity, sort, worldId]);
+
+  const worldFishCount = useMemo(
+    () => allFish.filter((f) => (f.worldId ?? 0) === worldId).length,
+    [worldId],
+  );
 
   const pages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const current = Math.min(page, pages);
@@ -60,10 +72,20 @@ function FishIndex() {
       <PageHeader
         eyebrow="Encyclopedia"
         title="Fish Encyclopedia"
-        description={`${allFish.length} species catalogued across nine rarity tiers. Every entry has its own page.`}
+        description={`${worldFishCount} species catalogued in this World across nine rarity tiers. Every entry has its own page.`}
       />
 
-      <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 flex justify-center">
+        <WorldSelect
+          value={worldId}
+          onChange={(id) => {
+            setWorldId(id);
+            reset();
+          }}
+        />
+      </div>
+
+      <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <div className="relative">
           <Search
             className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground"
@@ -115,24 +137,26 @@ function FishIndex() {
         {filtered.length} species
       </p>
 
-      {visible.length === 0 ? (
-        <div className="mt-8">
-          <EmptyState
-            title="Nothing in the net"
-            description="No species match those filters. Try another rarity or search term."
-          />
-        </div>
-      ) : (
-        <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-          {visible.map((f, i) => (
-            <li key={f.slug}>
-              <Reveal delay={i * 0.015}>
-                <FishCard fish={f} />
-              </Reveal>
-            </li>
-          ))}
-        </ul>
-      )}
+      <WorldTransition worldKey={worldId}>
+        {visible.length === 0 ? (
+          <div className="mt-8">
+            <EmptyState
+              title="Nothing in the net"
+              description="No species match those filters. Try another rarity, world, or search term."
+            />
+          </div>
+        ) : (
+          <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+            {visible.map((f, i) => (
+              <li key={f.slug}>
+                <Reveal delay={i * 0.015}>
+                  <FishCard fish={f} />
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        )}
+      </WorldTransition>
 
       {pages > 1 ? (
         <nav className="mt-10 flex items-center justify-center gap-2" aria-label="Pagination">

@@ -2,17 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 
 import { GameAsset } from "@/components/game/asset";
-import { RarityBadge } from "@/components/game/primitives";
+import { RarityBadge, WorldBadge } from "@/components/game/primitives";
 import { cn } from "@/lib/utils";
 import type { Bait, Egg, Enchant, Fish, Pet, Rod } from "@/types/game";
 
-function TiltCard({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
+function TiltCard({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
     <motion.div
       whileHover={{ y: -6, rotateX: 2, rotateY: -2 }}
@@ -45,6 +39,11 @@ export function FishCard({ fish }: { fish: Fish }) {
           <h3 className="font-display text-sm font-bold sm:text-base">{fish.name}</h3>
           <RarityBadge rarity={fish.rarity} />
         </div>
+        {fish.worldId ? (
+          <div className="mt-2">
+            <WorldBadge worldId={fish.worldId} />
+          </div>
+        ) : null}
       </TiltCard>
     </Link>
   );
@@ -55,7 +54,16 @@ export function PetCard({ pet }: { pet: Pet }) {
     <Link to="/pets/$slug" params={{ slug: pet.slug }} className="block h-full rounded-2xl">
       <TiltCard>
         <GameAsset src={pet.image} alt={pet.name} />
-        <h3 className="mt-3 font-display text-sm font-bold sm:text-base">{pet.name}</h3>
+        <div className="mt-3 flex items-start justify-between gap-2">
+          <h3 className="font-display text-sm font-bold sm:text-base">{pet.name}</h3>
+          <RarityBadge rarity={pet.rarity} />
+        </div>
+        <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{pet.skill}</p>
+        {pet.worldId ? (
+          <div className="mt-2">
+            <WorldBadge worldId={pet.worldId} />
+          </div>
+        ) : null}
       </TiltCard>
     </Link>
   );
@@ -67,6 +75,11 @@ export function EggCard({ egg }: { egg: Egg }) {
       <TiltCard>
         <GameAsset src={egg.image} alt={egg.name} className="from-treasure/20" />
         <h3 className="mt-3 font-display text-base font-bold">{egg.name}</h3>
+        {egg.worldId ? (
+          <div className="mt-2">
+            <WorldBadge worldId={egg.worldId} />
+          </div>
+        ) : null}
       </TiltCard>
     </Link>
   );
@@ -80,6 +93,10 @@ export function RodCard({ rod }: { rod: Rod }) {
         <div className="mt-3 flex items-start justify-between gap-2">
           <h3 className="font-display text-sm font-bold sm:text-base">{rod.name}</h3>
           <TierPill tier={rod.tier} />
+        </div>
+        <div className="mt-2 flex items-center justify-between gap-2">
+          <span className="text-xs text-muted-foreground">Req. Lv {rod.requiredLevel}</span>
+          {rod.worldId ? <WorldBadge worldId={rod.worldId} /> : null}
         </div>
       </TiltCard>
     </Link>
@@ -95,6 +112,10 @@ export function BaitCard({ bait }: { bait: Bait }) {
           <h3 className="font-display text-sm font-bold sm:text-base">{bait.name}</h3>
           <TierPill tier={bait.tier} />
         </div>
+        <div className="mt-2 flex items-center justify-between gap-2">
+          <span className="text-xs text-muted-foreground">Req. Lv {bait.requiredLevel}</span>
+          {bait.worldId ? <WorldBadge worldId={bait.worldId} /> : null}
+        </div>
       </TiltCard>
     </Link>
   );
@@ -102,11 +123,7 @@ export function BaitCard({ bait }: { bait: Bait }) {
 
 export function EnchantCard({ enchant }: { enchant: Enchant }) {
   return (
-    <Link
-      to="/enchants/$slug"
-      params={{ slug: enchant.slug }}
-      className="block h-full rounded-2xl"
-    >
+    <Link to="/enchants/$slug" params={{ slug: enchant.slug }} className="block h-full rounded-2xl">
       <TiltCard>
         <GameAsset src={enchant.image} alt={`${enchant.name} enchantment book`} />
         <div className="mt-3 flex items-start justify-between gap-2">

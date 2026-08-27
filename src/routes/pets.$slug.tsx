@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 
 import { GameAsset } from "@/components/game/asset";
-import { RarityBadge, Reveal } from "@/components/game/primitives";
+import { RarityBadge, Reveal, WorldBadge } from "@/components/game/primitives";
 import { Button } from "@/components/ui/button";
 import { eggs, petBySlug, pets } from "@/lib/api";
 import { formatFlat, formatPercent, titleCase } from "@/lib/game-format";
@@ -52,7 +52,12 @@ function PetDetail() {
       sourceEggs.length ? (
         <span className="flex flex-wrap justify-end gap-2">
           {sourceEggs.map((e) => (
-            <Link key={e.key} to="/eggs/$slug" params={{ slug: e.slug }} className="text-primary hover:underline">
+            <Link
+              key={e.key}
+              to="/eggs/$slug"
+              params={{ slug: e.slug }}
+              className="text-primary hover:underline"
+            >
               {e.name}
             </Link>
           ))}
@@ -80,14 +85,16 @@ function PetDetail() {
         </Reveal>
         <Reveal delay={0.08}>
           <div className="flex flex-wrap items-center gap-3">
-            <h1 className="font-display text-3xl font-bold sm:text-4xl">
-              {p.name}
-            </h1>
+            <h1 className="font-display text-3xl font-bold sm:text-4xl">{p.name}</h1>
+            <WorldBadge worldId={p.worldId} />
           </div>
 
           <dl className="mt-6 grid gap-2 sm:grid-cols-2">
             {rows.map(([k, v]) => (
-              <div key={k} className="glass flex justify-between gap-4 rounded-xl px-4 py-3 text-sm">
+              <div
+                key={k}
+                className="glass flex justify-between gap-4 rounded-xl px-4 py-3 text-sm"
+              >
                 <dt className="text-muted-foreground">{k}</dt>
                 <dd className="font-semibold">{v}</dd>
               </div>

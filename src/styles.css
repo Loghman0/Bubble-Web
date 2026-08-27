@@ -122,6 +122,12 @@
   --gradient-treasure: linear-gradient(135deg, var(--treasure) 0%, var(--coral) 100%);
   --shadow-glass: 0 24px 60px -24px oklch(0.1 0.06 250 / 80%);
   --shadow-glow: 0 0 48px -8px oklch(0.74 0.14 197 / 45%);
+
+  /* World 1 — The Neon Tide accent, used by the prestige/world selector and W1 theming */
+  --neon: oklch(0.78 0.24 330);
+  --neon-secondary: oklch(0.75 0.22 195);
+  --gradient-neon: linear-gradient(135deg, var(--neon) 0%, var(--neon-secondary) 100%);
+  --shadow-glow-neon: 0 0 48px -8px oklch(0.78 0.24 330 / 55%);
 }
 
 .dark {
@@ -144,6 +150,8 @@
   --color-rarity-ancient: var(--rarity-ancient);
   --color-rarity-celestial: var(--rarity-celestial);
   --color-rarity-divine: var(--rarity-divine);
+  --color-neon: var(--neon);
+  --color-neon-secondary: var(--neon-secondary);
   --font-display: "Baloo 2", ui-rounded, system-ui, sans-serif;
   --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
 }

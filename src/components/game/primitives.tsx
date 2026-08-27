@@ -1,7 +1,8 @@
-import { motion, useInView, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
+import { worldById } from "@/data/worlds";
 import type { Rarity } from "@/types/game";
 
 /* -------------------------------------------------- reveal on scroll */
@@ -143,6 +144,78 @@ export function ArtPlaceholder({
         Art placeholder
       </span>
     </div>
+  );
+}
+
+/* -------------------------------------------------- world / prestige */
+
+export function WorldBadge({
+  worldId,
+  className,
+}: {
+  worldId?: number | undefined;
+  className?: string;
+}) {
+  const world = worldById(worldId);
+  if (world.id === 0) return null;
+  return (
+    <span
+      className={cn(
+        "inline-flex items-center gap-1 rounded-full border border-neon/30 bg-neon/10 px-2.5 py-0.5 text-xs font-semibold tracking-wide text-neon uppercase",
+        className,
+      )}
+    >
+      <WorldBadgeGlyph world={world} size={14} />
+      {world.name}
+    </span>
+  );
+}
+
+function WorldBadgeGlyph({ world, size }: { world: ReturnType<typeof worldById>; size: number }) {
+  const src = world.badgeIcon ?? world.worldIcon;
+  const [failed, setFailed] = useState(false);
+  useEffect(() => setFailed(false), [src]);
+  if (failed) return <span aria-hidden>{world.badge}</span>;
+  return (
+    <img
+      src={src}
+      alt=""
+      aria-hidden
+      width={size}
+      height={size}
+      loading="lazy"
+      onError={() => setFailed(true)}
+      style={{ width: size, height: size }}
+      className="object-contain"
+    />
+  );
+}
+
+/**
+ * Wraps catalog grids so switching worlds gets a smooth cross-fade + slide
+ * instead of an instant swap. Pass a `worldKey` (usually the selected
+ * worldId) so React remounts the animation on every world change.
+ */
+export function WorldTransition({
+  worldKey,
+  children,
+}: {
+  worldKey: string | number;
+  children: ReactNode;
+}) {
+  const reduced = useReducedMotion();
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={worldKey}
+        initial={reduced ? false : { opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={reduced ? {} : { opacity: 0, y: -8 }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {children}
+      </motion.div>
+    </AnimatePresence>
   );
 }
 

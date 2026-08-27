@@ -1,10 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 
 import { GameAsset } from "@/components/game/asset";
-import { RarityBadge, Reveal } from "@/components/game/primitives";
+import { RarityBadge, Reveal, WorldBadge } from "@/components/game/primitives";
 import { Button } from "@/components/ui/button";
 import { baitBySlug, fishBySlug } from "@/lib/api";
-import { formatCondition, formatRange, titleCase } from "@/lib/game-format";
+import { formatCondition, formatRange } from "@/lib/game-format";
 import { pageMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/fish/$slug")({
@@ -38,7 +38,6 @@ function FishDetail() {
 
   const rows: [string, React.ReactNode][] = [
     ["Rarity", f.rarity],
-    ["Habitat", titleCase(f.habitat)],
     ["Selling Price", f.price ? `${f.price.toLocaleString()} coins` : "—"],
     ["Weight", formatRange(f.weight, "kg")],
     ["Length", formatRange(f.length, "cm")],
@@ -50,7 +49,11 @@ function FishDetail() {
     [
       "Required Bait",
       bait ? (
-        <Link to="/baits/$slug" params={{ slug: bait.slug }} className="text-primary hover:underline">
+        <Link
+          to="/baits/$slug"
+          params={{ slug: bait.slug }}
+          className="text-primary hover:underline"
+        >
           {bait.name}
         </Link>
       ) : (
@@ -59,7 +62,9 @@ function FishDetail() {
     ],
     ["Fishing XP", f.xp.toLocaleString()],
     ["Museum Value", f.museumValue.toLocaleString()],
-    ...(typeof f.minLuck === "number" ? ([["Minimum Luck", f.minLuck]] as [string, React.ReactNode][]) : []),
+    ...(typeof f.minLuck === "number"
+      ? ([["Minimum Luck", f.minLuck]] as [string, React.ReactNode][])
+      : []),
     ...(typeof f.minCombo === "number"
       ? ([["Minimum Combo Streak", `${f.minCombo}x`]] as [string, React.ReactNode][])
       : []),
@@ -84,6 +89,7 @@ function FishDetail() {
           <div className="flex flex-wrap items-center gap-3">
             <h1 className="font-display text-3xl font-bold sm:text-4xl">{f.name}</h1>
             <RarityBadge rarity={f.rarity} />
+            <WorldBadge worldId={f.worldId} />
           </div>
 
           {f.hidden && f.discoveryCondition ? (
@@ -98,7 +104,10 @@ function FishDetail() {
           <h2 className="mt-8 font-display text-lg font-bold">Details</h2>
           <dl className="mt-3 grid gap-2 sm:grid-cols-2">
             {rows.map(([k, v]) => (
-              <div key={k} className="glass flex justify-between gap-4 rounded-xl px-4 py-3 text-sm">
+              <div
+                key={k}
+                className="glass flex justify-between gap-4 rounded-xl px-4 py-3 text-sm"
+              >
                 <dt className="text-muted-foreground">{k}</dt>
                 <dd className="font-semibold">{v}</dd>
               </div>

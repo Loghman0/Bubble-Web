@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 
 import { GameAsset } from "@/components/game/asset";
-import { Reveal } from "@/components/game/primitives";
+import { Reveal, WorldBadge } from "@/components/game/primitives";
 import { Button } from "@/components/ui/button";
 import { rodBySlug } from "@/lib/api";
 import { pageMeta } from "@/lib/seo";
@@ -48,7 +48,10 @@ function RodDetail() {
           <GameAsset src={r.image} alt={r.name} />
         </Reveal>
         <Reveal delay={0.08}>
-          <h1 className="font-display text-3xl font-bold sm:text-4xl">{r.name}</h1>
+          <div className="flex flex-wrap items-center gap-3">
+            <h1 className="font-display text-3xl font-bold sm:text-4xl">{r.name}</h1>
+            <WorldBadge worldId={r.worldId} />
+          </div>
 
           <dl className="mt-6 grid gap-2 sm:grid-cols-2">
             <div className="glass flex justify-between gap-4 rounded-xl px-4 py-3 text-sm">
@@ -56,12 +59,18 @@ function RodDetail() {
               <dd className="font-semibold">{r.tier}</dd>
             </div>
             <div className="glass flex justify-between gap-4 rounded-xl px-4 py-3 text-sm">
+              <dt className="text-muted-foreground">Required Level</dt>
+              <dd className="font-semibold">{r.requiredLevel}</dd>
+            </div>
+            <div className="glass flex justify-between gap-4 rounded-xl px-4 py-3 text-sm">
               <dt className="text-muted-foreground">In-game id</dt>
               <dd className="font-semibold">{r.key}</dd>
             </div>
             <div className="glass flex justify-between gap-4 rounded-xl px-4 py-3 text-sm">
               <dt className="text-muted-foreground">Price</dt>
-              <dd className="font-semibold">{r.price > 0 ? `${r.price.toLocaleString()} ${r.currency}` : "Free"}</dd>
+              <dd className="font-semibold">
+                {r.price > 0 ? `${r.price.toLocaleString()} ${r.currency}` : "Free"}
+              </dd>
             </div>
             <div className="glass flex justify-between gap-4 rounded-xl px-4 py-3 text-sm">
               <dt className="text-muted-foreground">Luck</dt>
