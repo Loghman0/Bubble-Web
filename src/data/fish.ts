@@ -8,8 +8,8 @@ import type { Fish, Rarity } from "@/types/game";
  * place the 128x128 image at `public/assets/fish/<key>.png`.
  *
  * Post-Phase-6 (Prestige System): every row carries a `worldId`. World 0 is
- * the base game (107 species); World 1 ("The Neon Tide") is the first
- * prestige tier's roster (143 species), unlocked by prestiging out of
+ * the base game (150 species); World 1 ("The Neon Tide") is the first
+ * prestige tier's roster (100 species), unlocked by prestiging out of
  * World 0. Filter any consumer of `fish` by `worldId` to scope it to a
  * single world — see `data/worlds.ts`.
  */
@@ -743,7 +743,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 240,
         museumValue: 520,
         description: "Its skin is as hard and black as volcanic glass.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "phoenix_koi",
@@ -761,7 +761,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 680,
         museumValue: 1450,
         description: "Said to be reborn from its own ashes every hundred years.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "molten_core_serpent",
@@ -781,7 +781,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         hidden: true,
         discoveryCondition: "Caught during an Ancient Eclipse world event, in the Volcano.",
         description: "A living fault line. Water boils a hundred meters around it.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "clownfish",
@@ -799,7 +799,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 14,
         museumValue: 18,
         description: "Fiercely territorial for something so small.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "parrotfish",
@@ -817,7 +817,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 44,
         museumValue: 70,
         description: "Grinds coral into the sand you're standing on.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "reef_shark_pup",
@@ -835,7 +835,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 105,
         museumValue: 235,
         description: "Curious, fast, and not yet afraid of anything.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "coral_guardian",
@@ -853,7 +853,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 270,
         museumValue: 580,
         description: "Believed to be older than the reef it protects.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "rainbow_reef_dragon",
@@ -871,7 +871,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 750,
         museumValue: 1600,
         description: "Every scale is a different color. No two sightings match.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "ghost_shrimp",
@@ -889,7 +889,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 48,
         museumValue: 75,
         description: "Nearly transparent. You mostly feel it on the line.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "cursed_mackerel",
@@ -907,7 +907,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 118,
         museumValue: 260,
         description: "Sailors used to throw these back before they even landed.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "shipwreck_kraken_spawn",
@@ -925,7 +925,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 310,
         museumValue: 660,
         description: "If this is a hatchling, best not to think about the parent.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "davy_jones_locket_fish",
@@ -943,7 +943,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 820,
         museumValue: 1750,
         description: "Its belly, when opened, always holds a single old coin.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "phantom_captains_eel",
@@ -964,7 +964,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         discoveryCondition: "Caught at night with Luck above 250 in the Sunken Ship.",
         minLuck: 250,
         description: "Answers only to whoever last commanded this wreck.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "crystal_tetra",
@@ -982,7 +982,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 135,
         museumValue: 290,
         description: "Its scales refract cave light into tiny rainbows.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "geode_turtle",
@@ -1000,7 +1000,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 350,
         museumValue: 740,
         description: "Crack its shell (please don't) and you'd find raw crystal.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "prism_serpent",
@@ -1018,7 +1018,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 920,
         museumValue: 1950,
         description: 'Bends light around itself. Half the "sightings" are guesses.',
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "diamond_scaled_wyrm",
@@ -1036,7 +1036,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 1950,
         museumValue: 4100,
         description: "Worth more melted down than caught, but nobody's tried twice.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "cloudfin_ray",
@@ -1054,7 +1054,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 420,
         museumValue: 880,
         description: "Glides more than it swims. Occasionally forgets gravity.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "stormcaller_eel",
@@ -1072,7 +1072,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 1080,
         museumValue: 2300,
         description: "A hooked strike from this one arrives with actual thunder.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "thunderbird_koi",
@@ -1090,7 +1090,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 2200,
         museumValue: 4600,
         description: "Static crackles off its fins between strikes.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "rainbow_sky_serpent",
@@ -1110,7 +1110,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         hidden: true,
         discoveryCondition: "Caught while the Aurora world weather is active over the Sky Lake.",
         description: "Every color of the aurora runs down its back at once.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "guardian_sphinx_fish",
@@ -1128,7 +1128,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 1350,
         museumValue: 2900,
         description: "Guards a treasure it seemingly forgot it was guarding.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "pharaohs_golden_carp",
@@ -1146,7 +1146,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 2700,
         museumValue: 5700,
         description: "Its scales are, unnervingly, actual gold leaf.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "sunstone_leviathan",
@@ -1164,7 +1164,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5500,
         museumValue: 11500,
         description: "Warm to the touch, even underwater, even in winter.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "voidscale_ripper",
@@ -1182,7 +1182,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 3100,
         museumValue: 6500,
         description: "It doesn't so much bite as unmake what it touches.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "null_current_wyrm",
@@ -1200,7 +1200,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 6100,
         museumValue: 12800,
         description: "Currents around it flow backward. Nobody knows why.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "silent_deep_horror",
@@ -1221,7 +1221,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         discoveryCondition: "Caught mid-combo streak of 15+ in the Dark Abyss.",
         minCombo: 15,
         description: "You never hear it approach. You only feel the line go still.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "reverie_koi",
@@ -1239,7 +1239,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 7200,
         museumValue: 15000,
         description: "Swims in slow loops that don't quite obey the water.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "lucid_dream_serpent",
@@ -1257,7 +1257,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 16500,
         museumValue: 34000,
         description: "You're fairly sure you've caught this one before, in a dream.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "astral_leviathan",
@@ -1275,7 +1275,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 60000,
         museumValue: 125000,
         description: "Older than the dream it swims in.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "celestial_leviathan",
@@ -1298,7 +1298,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         minLuck: 250,
         description:
           "The first player to catch this triggers a server-wide world announcement and permanently adds it to the encyclopedia.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "sunfish_fry",
@@ -1658,7 +1658,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 210,
         museumValue: 480,
         description: "Splits sunlight into a full spectrum along every scale.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "magma_angler",
@@ -1676,7 +1676,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 260,
         museumValue: 560,
         description: "Its lure glows like a coal. The rest of it stays hidden in the dark.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "bioluminescent_jelly",
@@ -1712,7 +1712,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 330,
         museumValue: 700,
         description: "Flat, patient, and speckled with what looks like actual stars.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "emerald_arowana",
@@ -1730,7 +1730,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 395,
         museumValue: 820,
         description: "Old money in fish form. Collectors have fought over less.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "kraken_tentacle_fish",
@@ -1784,7 +1784,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 830,
         museumValue: 1750,
         description: "Too young to be this dangerous. Still is.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "necro_lamprey",
@@ -1802,7 +1802,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 960,
         museumValue: 2000,
         description: "Circles wrecks that sank long before anyone alive was born.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "solar_sailfish",
@@ -1820,7 +1820,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 1150,
         museumValue: 2450,
         description: "Its dorsal fin catches the sun like a sail catches wind.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "abyssal_maw",
@@ -1856,7 +1856,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 2300,
         museumValue: 5100,
         description: "Its wake ripples slightly out of sync with the water around it.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "soul_stealer_carp",
@@ -1874,7 +1874,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 2850,
         museumValue: 6200,
         description: "Local legend says it remembers every angler who threw it back.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "runic_coelacanth",
@@ -1894,7 +1894,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         hidden: true,
         discoveryCondition: "Caught in the Ancient Temple with a Steel Rod or better.",
         description: "Symbols older than any written language run down both flanks.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "fossil_dunkleosteus",
@@ -1915,7 +1915,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         discoveryCondition: "Caught in the Dark Abyss with Dragon Blood equipped.",
         description:
           "Armored plating that should have gone extinct 350 million years ago. Should have.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "supernova_shrimp",
@@ -1936,7 +1936,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         discoveryCondition:
           "Caught in the Sky Lake while the Meteor Shower world weather is active.",
         description: "Detonates into a brief shower of light the moment it clears the water.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "galaxy_whale_shark",
@@ -1958,7 +1958,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
           "Caught in the Deep Ocean during Aurora weather, with Magical Dust equipped and Luck above 180.",
         minLuck: 180,
         description: "Its markings drift and rearrange like slow-moving constellations.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "seraphim_koi",
@@ -1980,7 +1980,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
           "Full moon, night, in the Dream World, with Magical Dust equipped and Luck above 280.",
         minLuck: 280,
         description: "Every scale is a small, perfect wing. It does not need water to move.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "chronos_wyrm",
@@ -2003,7 +2003,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         minLuck: 300,
         minCombo: 5,
         description: "Older than the Temple built around it. It was probably here first.",
-        worldId: 0,
+        worldId: 1,
       },
       {
         id: "bitterling",
@@ -2021,7 +2021,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 4,
         museumValue: 6,
         description: "A palm-sized carp that lays its eggs inside living mussels.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "brown_trout",
@@ -2039,7 +2039,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 7,
         museumValue: 9,
         description: "Speckled, stubborn, and smarter than the average river fish.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "mud_loach",
@@ -2057,7 +2057,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 6,
         museumValue: 7,
         description: "Buries itself in the silt and waits for the rod to give up.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "pond_smelt",
@@ -2075,7 +2075,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 7,
         museumValue: 9,
         description: "Runs in shivering schools under the winter ice.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "common_shiner",
@@ -2093,7 +2093,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 6,
         description: "Flashes silver in the shallows all day long, catching every eye but its own.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "silver_beam",
@@ -2111,7 +2111,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 8,
         museumValue: 10,
         description: "A flat, coin-bright bream that travels in polite, orderly shoals.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "mossy_stone_loach",
@@ -2130,7 +2130,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         museumValue: 12,
         description:
           "Wears a coat of river moss so convincing that most anglers hook a rock first.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "neon_tetra",
@@ -2148,7 +2148,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 15,
         museumValue: 30,
         description: "A living stripe of blue and red, brightest in dark water.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "archer_fish",
@@ -2167,7 +2167,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         museumValue: 34,
         description:
           "Shoots insects off branches with a jet of water. Occasionally shoots anglers.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "cherry_barb",
@@ -2185,7 +2185,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 16,
         museumValue: 31,
         description: "Turns deep crimson when it decides to show off, which is often.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "leaf_fish",
@@ -2203,7 +2203,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 20,
         museumValue: 36,
         description: "Drifts sideways like a fallen leaf until something edible swims past.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "spotted_gar",
@@ -2221,7 +2221,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 24,
         museumValue: 42,
         description: "An armored torpedo with a mouth full of needles and no rush at all.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "theradfin_ranbowfish",
@@ -2239,7 +2239,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 22,
         museumValue: 40,
         description: "Trails fins like fine thread and catches the sunrise in all of them.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "copper_corydoras",
@@ -2257,7 +2257,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 17,
         museumValue: 33,
         description: "A tireless little bottom cleaner plated in warm copper.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "discus_fish",
@@ -2275,7 +2275,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 45,
         museumValue: 70,
         description: "A perfect painted disc. Keepers call it the king of the still water.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "mandarin_fish",
@@ -2293,7 +2293,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 55,
         museumValue: 95,
         description: "Patterned like silk embroidery and just as delicate to land.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "bichir",
@@ -2311,7 +2311,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 62,
         museumValue: 110,
         description: "Breathes air, walks on its fins, and predates most things that do either.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "elephant_nose_fish",
@@ -2329,7 +2329,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 70,
         museumValue: 125,
         description: "Reads the riverbed with a weak electric field and a very odd chin.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "stargazer_fish",
@@ -2347,7 +2347,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 85,
         museumValue: 150,
         description: "Buries itself with only its eyes exposed, staring straight up forever.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "phanton_ribbon_eel",
@@ -2365,7 +2365,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 100,
         museumValue: 210,
         description: "A ribbon of pale light that fades out the moment you look directly at it.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "origami_koi",
@@ -2383,7 +2383,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 105,
         museumValue: 240,
         description: "Folded, not born. The creases still hold along every fin.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "bioluminescent_shark",
@@ -2401,7 +2401,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 165,
         museumValue: 380,
         description: "Lights its own belly to erase its silhouette. You never see it coming.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "magma_ray",
@@ -2527,7 +2527,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 660,
         museumValue: 1400,
         description: "A bar of living gold that jumps clean out of the water to feed.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "abyssal_goliath",
@@ -2805,7 +2805,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "blind_cave_minnow",
@@ -2823,7 +2823,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "cavern_leech_eel",
@@ -2841,7 +2841,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "chitin_plated_barb",
@@ -2859,7 +2859,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "damp_fungus_guppy",
@@ -2877,7 +2877,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "echo_fin_bream",
@@ -2895,7 +2895,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "gilded_vein_sardine",
@@ -2913,7 +2913,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "glow_moss_tetra",
@@ -2931,7 +2931,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "iron_dust_smelt",
@@ -2949,7 +2949,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "mud_burrower_catfish",
@@ -2967,7 +2967,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "pale_eyed_rasbora",
@@ -2985,7 +2985,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "pebble_hide_gudgeon",
@@ -3003,7 +3003,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "shadow_silk_dart",
@@ -3021,7 +3021,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "silt_glider_flounder",
@@ -3039,7 +3039,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "slate_scaled_loach",
@@ -3057,7 +3057,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "spore_dusted_roach",
@@ -3075,7 +3075,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "stalactite_horned_pike",
@@ -3093,7 +3093,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "sulfur_stripe_anchovy",
@@ -3111,7 +3111,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "whisker_sense_dace",
@@ -3129,7 +3129,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 5,
         museumValue: 8,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "acid_archerfish",
@@ -3147,7 +3147,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "amethyst_shard_koi",
@@ -3165,7 +3165,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "bone_plated_haddock",
@@ -3183,7 +3183,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "bronze_jaw_grouper",
@@ -3201,7 +3201,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "crimson_bio_shark",
@@ -3219,7 +3219,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "crystal_shell_crab",
@@ -3237,7 +3237,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "echo_chamber_puffer",
@@ -3255,7 +3255,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "ember_scale_tetra",
@@ -3273,7 +3273,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "fungal_parasite_salmon",
@@ -3291,7 +3291,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "ghost_flame_tetra",
@@ -3309,7 +3309,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "jade_eye_flounder",
@@ -3327,7 +3327,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "lantern_stalk_angelfish",
@@ -3345,7 +3345,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "magma_vent_skate",
@@ -3363,7 +3363,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "magnetite_nose_marlin",
@@ -3381,7 +3381,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "needle_spine_eel",
@@ -3399,7 +3399,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "neon_vein_snapper",
@@ -3417,7 +3417,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "slag_scale_carp",
@@ -3435,7 +3435,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "spore_cloud_dory",
@@ -3453,7 +3453,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "toxic_spore_puffer",
@@ -3471,7 +3471,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "venom_dart_killifish",
@@ -3489,7 +3489,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "webbed_cave_ray",
@@ -3507,7 +3507,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 25,
         museumValue: 45,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "abyssal_maw_grouper",
@@ -3525,7 +3525,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "blood_quartz_guppy",
@@ -3543,7 +3543,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "chlorophyll_mutant_pike",
@@ -3561,7 +3561,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "crystalline_barb",
@@ -3579,7 +3579,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "diamond_back_ray",
@@ -3597,7 +3597,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "emerald_prism_mahi",
@@ -3615,7 +3615,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "geode_core_snapper",
@@ -3633,7 +3633,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "glacial_shard_sturgeon",
@@ -3651,7 +3651,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "inferno_belly_coelacanth",
@@ -3669,7 +3669,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "iron_maiden_puffer",
@@ -3687,7 +3687,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "luminous_coral_angelfish",
@@ -3705,7 +3705,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "magma_blood_catfish",
@@ -3723,7 +3723,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "mycelium_network_carp",
@@ -3741,7 +3741,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "necro_bone_angler",
@@ -3759,7 +3759,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "petrified_eel",
@@ -3777,7 +3777,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "plasma_pulse_eel",
@@ -3795,7 +3795,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "razor_whip_ray",
@@ -3813,7 +3813,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "shadow_weaver_flounder",
@@ -3831,7 +3831,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "toxic_sludge_leviathan_pup",
@@ -3849,7 +3849,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "void_scale_mackerel",
@@ -3867,7 +3867,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 75,
         museumValue: 150,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "banshee_fish",
@@ -3885,7 +3885,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 200,
         museumValue: 450,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "blood_iron_swordfish",
@@ -3903,7 +3903,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 200,
         museumValue: 450,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "chrono_stasis_puffer",
@@ -3921,7 +3921,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 200,
         museumValue: 450,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "crystal_ray",
@@ -3939,7 +3939,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 200,
         museumValue: 450,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "crystal_titan_gar",
@@ -3957,7 +3957,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 200,
         museumValue: 450,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "deep_void_kraken",
@@ -3975,7 +3975,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         xp: 200,
         museumValue: 450,
         description: "A newly discovered species from the first prestige tier.",
-        worldId: 1,
+        worldId: 0,
       },
       {
         id: "fractal_glass_angler",
@@ -3992,7 +3992,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Its lure fractures into a thousand repeating images. Only one of them is real.",
         worldId: 1,
       },
       {
@@ -4010,7 +4010,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Snaps its jaws once and the water around it skins over with ice.",
         worldId: 1,
       },
       {
@@ -4028,7 +4028,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Turns its head to watch both directions at once. Missed nothing yet.",
         worldId: 1,
       },
       {
@@ -4046,7 +4046,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Swims through solid rock as easily as water, leaving a glowing seam behind it.",
         worldId: 1,
       },
       {
@@ -4064,7 +4064,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Its shell still radiates the heat of atmospheric entry.",
         worldId: 1,
       },
       {
@@ -4082,7 +4082,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Fins like shattered glass. Anything that gets too close, gets cut.",
         worldId: 1,
       },
       {
@@ -4100,7 +4100,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Slips through nets like it was never quite solid to begin with.",
         worldId: 1,
       },
       {
@@ -4118,7 +4118,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Nothing else lives long in the water it passes through.",
         worldId: 1,
       },
       {
@@ -4136,7 +4136,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "A slow, visible pulse of light beats beneath its skin.",
         worldId: 1,
       },
       {
@@ -4154,7 +4154,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Glows faintly green in the dark. The counters agree it shouldn't.",
         worldId: 1,
       },
       {
@@ -4172,7 +4172,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Trails a cloud of spores that takes root wherever it settles.",
         worldId: 1,
       },
       {
@@ -4190,7 +4190,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Hums with a current no sunken reactor should still be producing.",
         worldId: 1,
       },
       {
@@ -4208,7 +4208,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Every wingbeat cracks like distant thunder rolling under the waves.",
         worldId: 1,
       },
       {
@@ -4226,7 +4226,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 200,
         museumValue: 450,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Its whiskers trail off into nothing. Touch one and your hand goes numb.",
         worldId: 1,
       },
       {
@@ -4244,7 +4244,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 750,
         museumValue: 1600,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Lives at depths where the pressure alone should have crushed it flat.",
         worldId: 1,
       },
       {
@@ -4262,7 +4262,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 750,
         museumValue: 1600,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Cracked open once by accident. Someone's still finding the light from it.",
         worldId: 1,
       },
       {
@@ -4280,7 +4280,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 750,
         museumValue: 1600,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Loose threads drift from its body and never quite land.",
         worldId: 1,
       },
       {
@@ -4298,7 +4298,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 750,
         museumValue: 1600,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "An entire ecosystem has taken root along its spine.",
         worldId: 1,
       },
       {
@@ -4316,7 +4316,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 750,
         museumValue: 1600,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Bites clean through stone. The water near it never fully cools.",
         worldId: 1,
       },
       {
@@ -4334,7 +4334,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 750,
         museumValue: 1600,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Leaps clear of the surface and the sky answers with lightning.",
         worldId: 1,
       },
       {
@@ -4352,7 +4352,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 2200,
         museumValue: 4800,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Every angler who's caught it swears it belonged to a different world.",
         worldId: 1,
       },
       {
@@ -4370,7 +4370,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 2200,
         museumValue: 4800,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Its markings are still expanding, slowly, like a galaxy of its own.",
         worldId: 1,
       },
       {
@@ -4388,7 +4388,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 2200,
         museumValue: 4800,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Caught it once. Caught it twice. Not sure which memory is real.",
         worldId: 1,
       },
       {
@@ -4406,7 +4406,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 2200,
         museumValue: 4800,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Where it swims, the water briefly forgets which world it belongs to.",
         worldId: 1,
       },
       {
@@ -4424,7 +4424,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 2200,
         museumValue: 4800,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Its lure doesn't glow. It bends the light around it inward.",
         worldId: 1,
       },
       {
@@ -4442,7 +4442,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 2200,
         museumValue: 4800,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Drags the current into a slow spiral wherever it turns.",
         worldId: 1,
       },
       {
@@ -4460,7 +4460,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 6200,
         museumValue: 13000,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Older than the reef, and still quietly dissolving everything it touches.",
         worldId: 1,
       },
       {
@@ -4478,7 +4478,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 6200,
         museumValue: 13000,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Stone on the outside, somehow, still swimming.",
         worldId: 1,
       },
       {
@@ -4496,7 +4496,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 6200,
         museumValue: 13000,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Bound in symbols from a language nobody's cracked. It seems to understand them fine.",
         worldId: 1,
       },
       {
@@ -4514,7 +4514,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 12500,
         museumValue: 25000,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Wears a slowly turning spiral galaxy across both wings.",
         worldId: 1,
       },
       {
@@ -4532,7 +4532,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 12500,
         museumValue: 25000,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Leaves a trail of dim starlight that fades a minute after it passes.",
         worldId: 1,
       },
       {
@@ -4550,7 +4550,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 12500,
         museumValue: 25000,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Doesn't attack. Just detonates, and the water forgives it.",
         worldId: 1,
       },
       {
@@ -4568,7 +4568,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 80000,
         museumValue: 180000,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Some say the first world was built on its back.",
         worldId: 1,
       },
       {
@@ -4586,7 +4586,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
         requiredBait: null,
         xp: 80000,
         museumValue: 180000,
-        description: "A newly discovered species from the first prestige tier.",
+        description: "Every fin is a small wing of pure light. It answers to nothing.",
         worldId: 1,
       },
     ] as FishSeed[]

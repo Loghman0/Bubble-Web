@@ -60,7 +60,7 @@ export const wikiArticles: WikiArticle[] = [
     sections: [
       {
         heading: "From Common to Divine",
-        body: "There are 107 species distributed across 9 tiers: Common, Uncommon, Rare, Epic, Legendary, Mythic, Ancient, Celestial, and Divine. Catch rates drop exponentially—while Commons bite constantly, Divines might take thousands of casts.",
+        body: "There are 150 species distributed across 9 tiers: Common, Uncommon, Rare, Epic, Legendary, Mythic, Ancient, Celestial, and Divine. Catch rates drop exponentially—while Commons bite constantly, Divines might take thousands of casts.",
       },
       {
         heading: "Collection value",
@@ -296,7 +296,7 @@ export const faq: { category: string; items: { q: string; a: string }[] }[] = [
     items: [
       {
         q: "How many fish are there?",
-        a: "107 species spread across nine rarity tiers, from Common to Divine. Every species has its own page in the encyclopedia.",
+        a: "150 species spread across nine rarity tiers, from Common to Divine. Every species has its own page in the encyclopedia.",
       },
       {
         q: "How many rods and baits are there?",

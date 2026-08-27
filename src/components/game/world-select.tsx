@@ -12,29 +12,19 @@ import { cn } from "@/lib/utils";
 import { WORLDS, worldById } from "@/data/worlds";
 
 /**
- * Small glyph for a world: prefers the earned prestige badge, falls back to
- * the world icon, then to an emoji if neither PNG is available/loaded. World
- * 0 has no badge (it's the starting world, never prestiged into) so it always
- * falls through to its world icon.
+ * World icon with a graceful emoji fallback if the PNG hasn't been uploaded
+ * yet or fails to load. This selector identifies which world's catalog is
+ * being browsed, so it always shows the world icon — never the prestige
+ * badge, which is reserved for marking items/pills as belonging to a world
+ * the player has actually prestiged into (see `WorldBadge` in primitives.tsx).
  */
-function BadgeIcon({
-  badgeSrc,
-  iconSrc,
-  emoji,
-  size = 20,
-}: {
-  badgeSrc?: string | undefined;
-  iconSrc: string;
-  emoji: string;
-  size?: number;
-}) {
-  const primary = badgeSrc ?? iconSrc;
+function WorldIcon({ src, emoji, size = 20 }: { src: string; emoji: string; size?: number }) {
   const [failed, setFailed] = useState(false);
-  useEffect(() => setFailed(false), [primary]);
+  useEffect(() => setFailed(false), [src]);
   if (failed) return <span aria-hidden>{emoji}</span>;
   return (
     <img
-      src={primary}
+      src={src}
       alt=""
       aria-hidden
       width={size}
@@ -89,12 +79,7 @@ export function WorldSelect({
                 current.accent,
               )}
             >
-              <BadgeIcon
-                badgeSrc={current.badgeIcon}
-                iconSrc={current.worldIcon}
-                emoji={current.badge}
-                size={22}
-              />
+              <WorldIcon src={current.worldIcon} emoji={current.badge} size={22} />
             </span>
             <span className="flex flex-col leading-tight">
               <span className="font-display text-sm font-bold sm:text-base">{current.name}</span>
@@ -114,7 +99,7 @@ export function WorldSelect({
                   w.accent,
                 )}
               >
-                <BadgeIcon badgeSrc={w.badgeIcon} iconSrc={w.worldIcon} emoji={w.badge} size={18} />
+                <WorldIcon src={w.worldIcon} emoji={w.badge} size={18} />
               </span>
               <span className="flex flex-col leading-tight">
                 <span className="font-semibold">{w.name}</span>

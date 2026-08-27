@@ -4,15 +4,41 @@ import { motion } from "motion/react";
 import { GameAsset } from "@/components/game/asset";
 import { RarityBadge, WorldBadge } from "@/components/game/primitives";
 import { cn } from "@/lib/utils";
-import type { Bait, Egg, Enchant, Fish, Pet, Rod } from "@/types/game";
+import type { Bait, Egg, Enchant, Fish, Pet, Rarity, Rod } from "@/types/game";
 
-function TiltCard({ children, className }: { children: React.ReactNode; className?: string }) {
+/**
+ * Whole-card background tint by rarity — distinct from `rarityGlow` in
+ * primitives.tsx, which only tints the art frame. Intensity increases with
+ * rarity so Divine items read as visibly more special than Common ones.
+ */
+const rarityCardTint: Record<Rarity, string> = {
+  Common: "from-rarity-common/[0.06]",
+  Uncommon: "from-rarity-uncommon/[0.08]",
+  Rare: "from-rarity-rare/10",
+  Epic: "from-rarity-epic/[0.12]",
+  Legendary: "from-rarity-legendary/[0.14]",
+  Mythic: "from-rarity-mythic/[0.16]",
+  Ancient: "from-rarity-ancient/[0.14]",
+  Celestial: "from-rarity-celestial/[0.16]",
+  Divine: "from-rarity-divine/[0.18]",
+};
+
+function TiltCard({
+  children,
+  className,
+  rarity,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  rarity?: Rarity;
+}) {
   return (
     <motion.div
       whileHover={{ y: -6, rotateX: 2, rotateY: -2 }}
       transition={{ type: "spring", stiffness: 260, damping: 20 }}
       className={cn(
-        "glass group h-full rounded-2xl p-4 transition-shadow hover:shadow-[var(--shadow-glow)]",
+        "glass group h-full rounded-2xl bg-gradient-to-br to-transparent p-4 transition-shadow hover:shadow-[var(--shadow-glow)]",
+        rarity ? rarityCardTint[rarity] : undefined,
         className,
       )}
       style={{ transformPerspective: 900 }}
@@ -33,7 +59,7 @@ function TierPill({ tier }: { tier: string }) {
 export function FishCard({ fish }: { fish: Fish }) {
   return (
     <Link to="/fish/$slug" params={{ slug: fish.slug }} className="block h-full rounded-2xl">
-      <TiltCard>
+      <TiltCard rarity={fish.rarity}>
         <GameAsset src={fish.image} alt={fish.name} rarity={fish.rarity} />
         <div className="mt-3 flex items-start justify-between gap-2">
           <h3 className="font-display text-sm font-bold sm:text-base">{fish.name}</h3>
@@ -52,8 +78,8 @@ export function FishCard({ fish }: { fish: Fish }) {
 export function PetCard({ pet }: { pet: Pet }) {
   return (
     <Link to="/pets/$slug" params={{ slug: pet.slug }} className="block h-full rounded-2xl">
-      <TiltCard>
-        <GameAsset src={pet.image} alt={pet.name} />
+      <TiltCard rarity={pet.rarity}>
+        <GameAsset src={pet.image} alt={pet.name} rarity={pet.rarity} />
         <div className="mt-3 flex items-start justify-between gap-2">
           <h3 className="font-display text-sm font-bold sm:text-base">{pet.name}</h3>
           <RarityBadge rarity={pet.rarity} />

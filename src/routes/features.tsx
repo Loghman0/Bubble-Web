@@ -11,7 +11,7 @@ export const Route = createFileRoute("/features")({
   head: () => ({
     meta: pageMeta(
       "Features — Bubble Fishing MMORPG",
-      `Bubble's content at a glance: nine rarity tiers, 107 fish species, ${rods.length} rods, ${baits.length} baits, ${pets.length} pets, ${eggs.length} eggs, ${enchants.length} enchants and three currencies.`,
+      `Bubble's content at a glance: nine rarity tiers, 150 fish species, ${rods.length} rods, ${baits.length} baits, ${pets.length} pets, ${eggs.length} eggs, ${enchants.length} enchants and three currencies.`,
     ),
     links: [{ rel: "canonical", href: "/features" }],
   }),
@@ -22,7 +22,7 @@ const systems = [
   {
     icon: Fish,
     title: "Fishing",
-    body: "Cast your line in Discord and work through 107 species spread over nine rarity tiers, from Common all the way to Divine.",
+    body: "Cast your line in Discord and work through 150 species spread over nine rarity tiers, from Common all the way to Divine.",
   },
   {
     icon: Anchor,

@@ -22,7 +22,13 @@ export const Route = createFileRoute("/pets/")({
 function PetsIndex() {
   const [worldId, setWorldId] = useState(0);
 
-  const worldPets = useMemo(() => pets.filter((p) => (p.worldId ?? 0) === worldId), [worldId]);
+  const worldPets = useMemo(() => {
+    const list = pets.filter((p) => (p.worldId ?? 0) === worldId);
+    return [...list].sort(
+      (a, b) =>
+        RARITIES.indexOf(a.rarity) - RARITIES.indexOf(b.rarity) || a.name.localeCompare(b.name),
+    );
+  }, [worldId]);
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
@@ -37,24 +43,15 @@ function PetsIndex() {
       </div>
 
       <WorldTransition worldKey={worldId}>
-        {RARITIES.map((rarity) => {
-          const rarityPets = worldPets.filter((p) => p.rarity === rarity);
-          if (rarityPets.length === 0) return null;
-          return (
-            <div key={rarity} className="mt-12">
-              <h2 className="font-display text-xl font-bold">{rarity}</h2>
-              <ul className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                {rarityPets.map((p, i) => (
-                  <li key={p.slug}>
-                    <Reveal delay={i * 0.03}>
-                      <PetCard pet={p} />
-                    </Reveal>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })}
+        <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {worldPets.map((p, i) => (
+            <li key={p.slug}>
+              <Reveal delay={i * 0.02}>
+                <PetCard pet={p} />
+              </Reveal>
+            </li>
+          ))}
+        </ul>
       </WorldTransition>
     </section>
   );
