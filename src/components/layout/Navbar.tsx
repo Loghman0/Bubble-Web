@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ChevronDown, ExternalLink, Menu, MessagesSquare } from "lucide-react";
+import { ChevronDown, ExternalLink, Menu, MessagesSquare, Star } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -15,6 +15,8 @@ export const DISCORD_URL = "https://discord.gg/PGbQFCFTC2";
 
 export const INVITE_URL =
   "https://discord.com/oauth2/authorize?client_id=1314851118840414300&permissions=4504288969967680&integration_type=0&scope=bot";
+
+export const VOTE_URL = "https://top.gg/bot/1314851118840414300/vote";
 
 type NavLink = { label: string; to: string };
 
@@ -103,6 +105,11 @@ export function Navbar() {
               <MessagesSquare className="size-4" aria-hidden /> Discord
             </a>
           </Button>
+          <Button asChild size="sm" variant="ghost" className="hidden sm:inline-flex">
+            <a href={VOTE_URL} target="_blank" rel="noreferrer">
+              <Star className="size-4" aria-hidden /> Vote
+            </a>
+          </Button>
           <Button asChild size="sm" className="hidden sm:inline-flex">
             <a href={INVITE_URL} target="_blank" rel="noreferrer">
               Invite Bubble <ExternalLink className="size-4" aria-hidden />
@@ -141,6 +148,11 @@ export function Navbar() {
                 <Button asChild variant="outline">
                   <a href={DISCORD_URL} target="_blank" rel="noreferrer">
                     <MessagesSquare className="size-4" aria-hidden /> Join our Discord
+                  </a>
+                </Button>
+                <Button asChild variant="ghost">
+                  <a href={VOTE_URL} target="_blank" rel="noreferrer">
+                    <Star className="size-4" aria-hidden /> Vote on top.gg
                   </a>
                 </Button>
               </div>

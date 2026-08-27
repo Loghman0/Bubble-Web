@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 
-import { DISCORD_URL, INVITE_URL } from "@/components/layout/Navbar";
+import { DISCORD_URL, INVITE_URL, VOTE_URL } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
 
 const columns: { title: string; links: { label: string; to: string }[] }[] = [
@@ -56,6 +56,11 @@ export function Footer() {
             <Button asChild size="sm" variant="outline">
               <a href={DISCORD_URL} target="_blank" rel="noreferrer">
                 Join our Discord
+              </a>
+            </Button>
+            <Button asChild size="sm" variant="outline">
+              <a href={VOTE_URL} target="_blank" rel="noreferrer">
+                ⭐ Vote on top.gg
               </a>
             </Button>
           </div>

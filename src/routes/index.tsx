@@ -5,8 +5,6 @@ import { Anchor, ArrowRight, BookOpen, Egg as EggIcon, Fish, PawPrint, Ship, Spa
 import { OceanBackdrop } from "@/components/effects/OceanBackdrop";
 import { RarityBadge, Reveal, StatCard } from "@/components/game/primitives";
 import { DISCORD_URL, INVITE_URL } from "@/components/layout/Navbar";
-import { ServerShowcase } from "@/components/live/server-showcase";
-
 
 import { Button } from "@/components/ui/button";
 import { fishCountByRarity, rosterCounts } from "@/lib/api";
@@ -128,8 +126,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Servers using Bubble */}
-      <ServerShowcase />
+
 
       {/* Pillars */}
 

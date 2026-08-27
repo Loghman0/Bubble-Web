@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader, Reveal } from "@/components/game/primitives";
 import { CatchFeed } from "@/components/live/catch-feed";
 import { LeaderboardTable } from "@/components/live/leaderboard-table";
-import { ServerDirectory } from "@/components/live/server-directory";
+
 import { LiveStatsStrip } from "@/components/live/stats-strip";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { pageMeta } from "@/lib/seo";
@@ -34,11 +34,10 @@ function LeaderboardPage() {
 
       <Reveal delay={0.05} className="mt-8">
         <Tabs defaultValue="leaderboard">
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3">
             <TabsTrigger value="leaderboard">Leaderboard</TabsTrigger>
             <TabsTrigger value="recent">Latest Catches</TabsTrigger>
             <TabsTrigger value="rarest">Rarest Catches</TabsTrigger>
-            <TabsTrigger value="servers">Servers</TabsTrigger>
           </TabsList>
           <TabsContent value="leaderboard" className="mt-6">
             <LeaderboardTable />
@@ -49,9 +48,7 @@ function LeaderboardPage() {
           <TabsContent value="rarest" className="mt-6">
             <CatchFeed mode="rarest" />
           </TabsContent>
-          <TabsContent value="servers" className="mt-6">
-            <ServerDirectory />
-          </TabsContent>
+
         </Tabs>
       </Reveal>
 
