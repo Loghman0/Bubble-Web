@@ -211,3 +211,78 @@ export interface WikiArticle {
   /** Extra search keywords. */
   tags?: string[];
 }
+
+/** A purchasable inventory-capacity tier. Artwork: /assets/backpacks/<key>.png */
+export interface Backpack {
+  key: string;
+  slug: string;
+  name: string;
+  tier: number;
+  image: string;
+  price: number;
+  currency: "coins" | "gems";
+  /** Total stacked fish units this backpack can hold across every species combined. */
+  capacityUnits: number;
+  description: string;
+}
+
+/** A secondary fishing companion bought from the Museum Shop. Artwork: /assets/minions/<key>.png */
+export interface Minion {
+  key: string;
+  slug: string;
+  name: string;
+  tagline: string;
+  image: string;
+  price: number;
+  currency: "coins" | "gems" | "ancientTokens";
+  baseAttemptsPerMinute: number;
+  attemptsGrowthPerLevel: number;
+  baseBackpackCapacity: number;
+  legendaryChance: number;
+  mythicChance: number;
+  /** How much slower this minion drains its rod's durability vs. a player using the same rod. 1.25 = 25% slower. */
+  rodDurabilityEfficiency: number;
+  description: string;
+}
+
+/** One of the three lockbox tiers found while fishing. Artwork: /assets/lockboxes/<key>.png */
+export interface Lockbox {
+  key: string;
+  slug: string;
+  name: string;
+  image: string;
+  /** Matching key item id that opens this lockbox. */
+  keyId: string;
+  keyImage: string;
+  minLevel: number;
+  description: string;
+  rewards: {
+    coinsBase: number;
+    coinsRange: number;
+    gemsBase: number;
+    gemsRange: number;
+    enchantChance: number;
+    artifactChance: number;
+  };
+}
+
+/** Weather condition that can be active globally. Rotates every 10 minutes. */
+export interface Weather {
+  key: string;
+  name: string;
+  emoji: string;
+  description: string;
+  /** Relative chance to be picked on rotation — higher rolls more often. */
+  weight: number;
+  treasureChanceAdd: number;
+  monsterChanceAdd: number;
+}
+
+/** One paid guild member-capacity tier. Tier 0 is the free starting size. */
+export interface GuildTier {
+  tier: number;
+  memberLimit: number;
+  /** Gem cost to reach this tier FROM the previous one. 0 for the free starting tier. */
+  cost: number;
+}
+

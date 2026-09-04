@@ -19,13 +19,13 @@ export const Route = createFileRoute("/pets/$slug")({
   head: ({ loaderData, params }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Pet not found — Bubble" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Pet not found | Bubble" }, { name: "robots", content: "noindex" }],
       };
     }
     const p = loaderData.entry;
     return {
       meta: pageMeta(
-        `${p.name} — Pets — Bubble`,
+        `${p.name} | Pets | Bubble`,
         `${p.name} is one of the ${pets.length} companions you can hatch in Bubble, the Discord fishing MMORPG.`,
       ),
       links: [{ rel: "canonical", href: `/pets/${params.slug}` }],

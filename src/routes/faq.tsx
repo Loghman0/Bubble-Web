@@ -13,7 +13,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: pageMeta(
-      "FAQ — Bubble Questions Answered",
+      "FAQ | Bubble Questions Answered",
       "Answers about getting started, fishing, pets, the museum, guilds, eggs, the economy, and enchants in Bubble.",
     ),
     links: [{ rel: "canonical", href: "/faq" }],

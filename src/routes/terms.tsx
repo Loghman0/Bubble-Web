@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: pageMeta(
-      "Terms of Service — Bubble",
+      "Terms of Service | Bubble",
       "The rules for using Bubble: acceptable use, account handling, virtual items, availability, and liability.",
     ),
     links: [{ rel: "canonical", href: "/terms" }],

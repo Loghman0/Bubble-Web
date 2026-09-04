@@ -16,6 +16,13 @@
  * To add a new semantic color:
  * 1. Add the variable to :root (light value) and .dark (dark value)
  * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ *
+ * SHAPE SYSTEM (locked, see design-taste-frontend Section 4.4):
+ *   - Interactive / tag elements (buttons, badges, pills, nav chips) -> full pill (rounded-full)
+ *   - Containers (cards, panels, glass surfaces, modals)             -> rounded-2xl / rounded-3xl
+ *   - Form controls (inputs, selects, textareas)                    -> rounded-xl
+ * Every component in src/components/ui follows this — do not introduce
+ * rounded-md/rounded-lg on new components without updating this comment.
  */
 
 @theme inline {
@@ -204,6 +211,35 @@
   background: var(--gradient-abyss);
 }
 
+/* Split-horizon composition (hero reference: pale sky above, deep teal below a
+   hard waterline). Used once, on the homepage hero, as the signature moment. */
+@utility surface-horizon {
+  background:
+    linear-gradient(
+      180deg,
+      oklch(0.86 0.045 195) 0%,
+      oklch(0.78 0.06 195) 32%,
+      var(--surface-water) 34%,
+      var(--deep) 62%,
+      var(--abyss) 100%
+    );
+}
+
+/* Fine grain overlay for atmospheric depth on large dark surfaces. Keep opacity low. */
+@utility grain {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
 @keyframes bubble-rise {
   0% {
     transform: translateY(0) translateX(0) scale(0.8);
@@ -227,6 +263,28 @@
   50% {
     transform: translate3d(-3%, 2%, 0) scale(1.08);
     opacity: 0.55;
+  }
+}
+
+@keyframes light-rays-drift {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 0.22;
+  }
+  50% {
+    transform: translateX(2%) rotate(0.6deg);
+    opacity: 0.36;
+  }
+}
+
+@keyframes tentacle-sway {
+  0%,
+  100% {
+    transform: rotate(-2deg) translateY(0);
+  }
+  50% {
+    transform: rotate(2deg) translateY(-6px);
   }
 }
 

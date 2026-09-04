@@ -9,7 +9,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/enchants/")({
   head: () => ({
     meta: pageMeta(
-      "Enchants — Bubble Rod Enchanting Guide",
+      "Enchants | Bubble Rod Enchanting Guide",
       `All ${enchants.length} rod enchants in Bubble, the Discord fishing MMORPG, with their exact bonus at level I, II and III.`,
     ),
     links: [{ rel: "canonical", href: "/enchants" }],
@@ -27,7 +27,7 @@ function EnchantsPage() {
           <PageHeader
             eyebrow="Rod Upgrades"
             title="Enchants"
-            description={`${enchants.length} enchants for Journeyman and Master rods. Each one has 3 levels — open an enchant to see every level's book and bonus.`}
+            description={`${enchants.length} enchants for Journeyman and Master rods. Each one has 3 levels. Open an enchant to see every level's book and bonus.`}
           />
         </div>
       </section>
@@ -45,7 +45,7 @@ function EnchantsPage() {
 
 
         <p className="mt-10 text-sm text-muted-foreground">
-          Enchants aren&apos;t sold in the shop — find them in treasure chests, guild raid rewards,
+          Enchants aren&apos;t sold in the shop. Find them in treasure chests, guild raid rewards,
           high-level quest rewards, or trade Ancient Museum Coins for one at the Museum Shop. A rod
           can hold as many enchants at once as it has enchant slots, and never the same enchant
           twice.

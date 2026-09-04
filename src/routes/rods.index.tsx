@@ -10,7 +10,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/rods/")({
   head: () => ({
     meta: pageMeta(
-      "Rods — Bubble Gear Catalogue",
+      "Rods | Bubble Gear Catalogue",
       "Every Bubble fishing rod across every prestige World, grouped into Beginner, Journeyman and Master tiers.",
     ),
     links: [{ rel: "canonical", href: "/rods" }],

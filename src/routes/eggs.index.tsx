@@ -8,8 +8,8 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/eggs/")({
   head: () => ({
     meta: pageMeta(
-      "Eggs — Bubble Hatching Guide",
-      "The three Bubble eggs — Common, Rare and Ancient — and the companions they hatch.",
+      "Eggs | Bubble Hatching Guide",
+      "The three Bubble eggs, Common, Rare and Ancient, and the companions they hatch.",
     ),
     links: [{ rel: "canonical", href: "/eggs" }],
   }),

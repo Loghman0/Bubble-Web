@@ -55,7 +55,7 @@ export function LiveError({ message, onRetry }: { message: string; onRetry?: () 
   const hint = !isLiveApiConfigured
     ? "The site has no live API address configured yet, so there is nothing to read from."
     : isLocalOnlyApi
-      ? "The configured API address is a localhost address. That only works while the bot API and this site run on the same computer — set VITE_BUBBLE_API_URL to a public https:// address."
+      ? "The configured API address is a localhost address. That only works while the bot API and this site run on the same computer. Set VITE_BUBBLE_API_URL to a public https:// address."
       : "The bot API is unreachable from your browser. It may be offline, or it may need to allow requests from this site (CORS).";
 
   return (

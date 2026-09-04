@@ -83,7 +83,7 @@ const ROD_DATA: Record<string, RodStats> = {
     power: 22,
     durability: 260,
     enchantSlots: 2,
-    description: "Reliable and battle-tested \u2014 the workhorse of any serious angler.",
+    description: "Reliable and battle-tested, the workhorse of any serious angler.",
   },
   reinforced_rod: {
     price: 160000,
@@ -134,7 +134,7 @@ const ROD_DATA: Record<string, RodStats> = {
     durability: 880,
     enchantSlots: 9,
     description:
-      "Reportedly not from this world. Endgame players only \u2014 gates the Celestial Leviathan.",
+      "Reportedly not from this world. Endgame players only, it gates the Celestial Leviathan.",
   },
   sunflower_rod: {
     price: 0,

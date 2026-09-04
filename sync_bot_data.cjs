@@ -11,7 +11,6 @@ function processList(botFilename, webFilename, constName) {
 
     const webFile = path.join(WEB_DATA_DIR, webFilename);
     let webContent = fs.readFileSync(webFile, 'utf8');
-    const regex = new RegExp('const ' + constName + ': Record<string, any> = Object\\.fromEntries\\([\\s\\S]*?\\.map\\(\\([\\s\\S]*?\\)\\s*=>\\s*\\[[\\s\\S]*?\\],\\n\\);');
 
     // Convert array to a JS string literal format
     const arrStr = JSON.stringify(arr, null, 2);
@@ -26,13 +25,22 @@ function processList(botFilename, webFilename, constName) {
         fixedArrStr = fixedArrStr.replace(/Frist Wyrm Fish/g, 'Frost Wyrm Fish');
     }
 
-    const newBlock = 'const ' + constName + ': Record<string, any> = Object.fromEntries(\n  ' + fixedArrStr + '.map((x: any) => [x.id, x]),\n);';
-    if (!regex.test(webContent)) {
-        console.error('Failed to match regex for ' + constName + ' in ' + webFilename);
+    const typeDefEnd = webContent.indexOf(' = Object.fromEntries(', webContent.indexOf('const ' + constName + ':'));
+    if (typeDefEnd === -1) {
+        console.error('Failed to match signature for ' + constName + ' in ' + webFilename);
     } else {
-        webContent = webContent.replace(regex, newBlock);
-        fs.writeFileSync(webFile, webContent);
-        console.log('✓ Synced ' + webFilename);
+        const blockStart = webContent.lastIndexOf('const ' + constName + ':', typeDefEnd);
+        const signature = webContent.slice(blockStart, typeDefEnd + ' = Object.fromEntries('.length);
+        const newBlock = signature + '\n  (\n    ' + fixedArrStr + ' as any[]\n  ).map((x: any) => [x.id, x]),\n);';
+
+        const blockEnd = webContent.indexOf('\n);\n', blockStart);
+        if (blockEnd !== -1) {
+            webContent = webContent.slice(0, blockStart) + newBlock + webContent.slice(blockEnd + 4);
+            fs.writeFileSync(webFile, webContent);
+            console.log('✓ Synced ' + webFilename);
+        } else {
+            console.error('Failed to find end of block for ' + constName);
+        }
     }
 }
 

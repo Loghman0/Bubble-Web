@@ -11,7 +11,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/leaderboard")({
   head: () => ({
     meta: pageMeta(
-      "Live Leaderboard — Bubble",
+      "Live Leaderboard | Bubble",
       "Real-time Bubble leaderboard: top anglers, the latest and rarest catches server-wide, and every Discord server running Bubble.",
     ),
     links: [{ rel: "canonical", href: "/leaderboard" }],
@@ -25,7 +25,7 @@ function LeaderboardPage() {
       <PageHeader
         eyebrow="Live"
         title="Leaderboard & Live Stats"
-        description="Real player data, straight from the bot. Updates automatically — no need to refresh."
+        description="Real player data, straight from the bot. Updates automatically. No need to refresh."
       />
 
       <Reveal className="mt-10">
@@ -54,7 +54,7 @@ function LeaderboardPage() {
 
       <Reveal delay={0.1} className="mt-10">
         <p className="text-center text-sm text-muted-foreground">
-          Only your Discord username and the server a catch happened in are ever shown here — never
+          Only your Discord username and the server a catch happened in are ever shown here. Never
           your Discord ID. Run <code className="rounded bg-muted px-1.5 py-0.5">.privacy hide</code>{" "}
           in Discord to opt out any time. See the{" "}
           <a href="/privacy" className="underline underline-offset-4">

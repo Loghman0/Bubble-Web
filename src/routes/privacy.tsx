@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: pageMeta(
-      "Privacy Policy — Bubble",
+      "Privacy Policy | Bubble",
       "What data Bubble stores, why it is stored, how long it is kept, and how to request deletion.",
     ),
     links: [{ rel: "canonical", href: "/privacy" }],

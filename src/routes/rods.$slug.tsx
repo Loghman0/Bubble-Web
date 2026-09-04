@@ -15,13 +15,13 @@ export const Route = createFileRoute("/rods/$slug")({
   head: ({ loaderData, params }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Rod not found — Bubble" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Rod not found | Bubble" }, { name: "robots", content: "noindex" }],
       };
     }
     const r = loaderData.entry;
     return {
       meta: pageMeta(
-        `${r.name} — Rods — Bubble`,
+        `${r.name} | Rods | Bubble`,
         `${r.name} is a ${r.tier}-tier fishing rod in Bubble, the Discord fishing MMORPG.`,
       ),
       links: [{ rel: "canonical", href: `/rods/${params.slug}` }],

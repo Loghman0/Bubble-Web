@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/wiki/")({
   head: () => ({
     meta: pageMeta(
-      "Wiki — Bubble Documentation",
+      "Wiki | Bubble Documentation",
       "Official Bubble documentation: getting started, commands, energy, fishing, weather, rods, enchants, baits, pets, eggs, market, museum, guilds and quests.",
     ),
     links: [{ rel: "canonical", href: "/wiki" }],
@@ -58,7 +58,7 @@ function WikiIndex() {
       <PageHeader
         eyebrow="Documentation"
         title="Bubble Wiki"
-        description="Everything about how the game actually works — mechanics, commands, items and progression, written for players who want the detail."
+        description="Everything about how the game actually works. Mechanics, commands, items and progression, written for players who want the detail."
       />
 
       <div className="relative mx-auto mt-8 max-w-lg">

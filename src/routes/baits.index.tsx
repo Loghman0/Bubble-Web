@@ -10,7 +10,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/baits/")({
   head: () => ({
     meta: pageMeta(
-      "Baits — Bubble Bait Catalogue",
+      "Baits | Bubble Bait Catalogue",
       "Every Bubble bait across every prestige World, from beginner worms to master-tier magical dust.",
     ),
     links: [{ rel: "canonical", href: "/baits" }],

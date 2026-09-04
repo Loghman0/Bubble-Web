@@ -10,7 +10,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/features")({
   head: () => ({
     meta: pageMeta(
-      "Features — Bubble Fishing MMORPG",
+      "Features | Bubble Fishing MMORPG",
       `Bubble's content at a glance: nine rarity tiers, 150 fish species, ${rods.length} rods, ${baits.length} baits, ${pets.length} pets, ${eggs.length} eggs, ${enchants.length} enchants and three currencies.`,
     ),
     links: [{ rel: "canonical", href: "/features" }],
@@ -42,7 +42,7 @@ const systems = [
   {
     icon: Egg,
     title: "Eggs",
-    body: "Three eggs — Common, Rare and Ancient — each a route to a new companion.",
+    body: "Three eggs. Common, Rare and Ancient. Each a route to a new companion.",
   },
   {
     icon: Wand2,

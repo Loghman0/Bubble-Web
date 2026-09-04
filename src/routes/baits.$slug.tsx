@@ -16,13 +16,13 @@ export const Route = createFileRoute("/baits/$slug")({
   head: ({ loaderData, params }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Bait not found — Bubble" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Bait not found | Bubble" }, { name: "robots", content: "noindex" }],
       };
     }
     const b = loaderData.entry;
     return {
       meta: pageMeta(
-        `${b.name} — Baits — Bubble`,
+        `${b.name} | Baits | Bubble`,
         `${b.name} is a fishing bait in Bubble, the Discord fishing MMORPG.`,
       ),
       links: [{ rel: "canonical", href: `/baits/${params.slug}` }],

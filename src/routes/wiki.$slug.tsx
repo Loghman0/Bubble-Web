@@ -13,12 +13,12 @@ export const Route = createFileRoute("/wiki/$slug")({
   head: ({ loaderData, params }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Article not found — Bubble" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Article not found | Bubble" }, { name: "robots", content: "noindex" }],
       };
     }
     const a = loaderData.entry;
     return {
-      meta: pageMeta(`${a.title} — Bubble Wiki`, a.summary),
+      meta: pageMeta(`${a.title} | Bubble Wiki`, a.summary),
       links: [{ rel: "canonical", href: `/wiki/${params.slug}` }],
     };
   },

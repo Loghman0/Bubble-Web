@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Star } from "lucide-react";
 
 import { DISCORD_URL, INVITE_URL, VOTE_URL } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
@@ -34,11 +35,12 @@ const columns: { title: string; links: { label: string; to: string }[] }[] = [
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-border/60 bg-deep/40">
+    <footer className="relative mt-24 overflow-hidden border-t border-border/60 bg-abyss/60">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-lagoon/50 to-transparent" />
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
           <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold">
-            <span className="flex size-9 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-lagoon to-primary">
+            <span className="flex size-9 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-lagoon to-primary">
               <img src="/bubble.png" alt="" className="size-7 object-contain" />
             </span>
             <span className="text-gradient-ocean">Bubble</span>
@@ -55,12 +57,12 @@ export function Footer() {
             </Button>
             <Button asChild size="sm" variant="outline">
               <a href={DISCORD_URL} target="_blank" rel="noreferrer">
-                Join our Discord
+                Join the Discord
               </a>
             </Button>
             <Button asChild size="sm" variant="outline">
               <a href={VOTE_URL} target="_blank" rel="noreferrer">
-                ⭐ Vote on top.gg
+                <Star className="size-3.5" aria-hidden /> Vote on top.gg
               </a>
             </Button>
           </div>

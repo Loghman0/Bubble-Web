@@ -3,6 +3,8 @@ import { motion } from "motion/react";
 
 import { GameAsset } from "@/components/game/asset";
 import { RarityBadge, WorldBadge } from "@/components/game/primitives";
+import { baitBySlug } from "@/lib/api";
+import { formatCondition } from "@/lib/game-format";
 import { cn } from "@/lib/utils";
 import type { Bait, Egg, Enchant, Fish, Pet, Rarity, Rod } from "@/types/game";
 

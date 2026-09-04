@@ -15,13 +15,13 @@ export const Route = createFileRoute("/enchants/$slug")({
   head: ({ loaderData, params }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Enchant not found — Bubble" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Enchant not found | Bubble" }, { name: "robots", content: "noindex" }],
       };
     }
     const e = loaderData.entry;
     return {
       meta: pageMeta(
-        `${e.name} — Enchants — Bubble`,
+        `${e.name} | Enchants | Bubble`,
         `${e.name}: ${e.description} Exact bonus at level I, II and III in Bubble, the Discord fishing MMORPG.`,
       ),
       links: [{ rel: "canonical", href: `/enchants/${params.slug}` }],
@@ -110,7 +110,7 @@ function EnchantDetail() {
 
         <h2 className="mt-10 font-display text-xl font-bold">Slot rules</h2>
         <p className="mt-3 text-muted-foreground">
-          Enchants apply to a specific owned rod, not to your account — switching rods means
+          Enchants apply to a specific owned rod, not to your account. Switching rods means
           starting over on that rod. A rod can hold as many enchants as it has enchant slots, and
           the same enchant can never be applied twice to one rod.
         </p>

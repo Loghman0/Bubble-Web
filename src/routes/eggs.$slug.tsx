@@ -16,13 +16,13 @@ export const Route = createFileRoute("/eggs/$slug")({
   head: ({ loaderData, params }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Egg not found — Bubble" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Egg not found | Bubble" }, { name: "robots", content: "noindex" }],
       };
     }
     const e = loaderData.entry;
     return {
       meta: pageMeta(
-        `${e.name} — Eggs — Bubble`,
+        `${e.name} | Eggs | Bubble`,
         `${e.name} is one of the three eggs in Bubble, the Discord fishing MMORPG. Hatch it for a companion.`,
       ),
       links: [{ rel: "canonical", href: `/eggs/${params.slug}` }],

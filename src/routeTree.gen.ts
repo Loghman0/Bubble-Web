@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ConditionsRouteImport } from './routes/conditions'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
@@ -33,6 +34,11 @@ import { Route as WikiSlugRouteImport } from './routes/wiki.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConditionsRoute = ConditionsRouteImport.update({
+  id: '/conditions',
+  path: '/conditions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -133,6 +139,7 @@ const WikiSlugRoute = WikiSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/conditions': typeof ConditionsRoute
   '/faq': typeof FaqRoute
   '/features': typeof FeaturesRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -155,6 +162,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/conditions': typeof ConditionsRoute
   '/faq': typeof FaqRoute
   '/features': typeof FeaturesRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -178,6 +186,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/conditions': typeof ConditionsRoute
   '/faq': typeof FaqRoute
   '/features': typeof FeaturesRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -202,6 +211,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/conditions'
     | '/faq'
     | '/features'
     | '/leaderboard'
@@ -224,6 +234,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/conditions'
     | '/faq'
     | '/features'
     | '/leaderboard'
@@ -246,6 +257,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/conditions'
     | '/faq'
     | '/features'
     | '/leaderboard'
@@ -269,6 +281,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ConditionsRoute: typeof ConditionsRoute
   FaqRoute: typeof FaqRoute
   FeaturesRoute: typeof FeaturesRoute
   LeaderboardRoute: typeof LeaderboardRoute
@@ -297,6 +310,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conditions': {
+      id: '/conditions'
+      path: '/conditions'
+      fullPath: '/conditions'
+      preLoaderRoute: typeof ConditionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -437,6 +457,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ConditionsRoute: ConditionsRoute,
   FaqRoute: FaqRoute,
   FeaturesRoute: FeaturesRoute,
   LeaderboardRoute: LeaderboardRoute,

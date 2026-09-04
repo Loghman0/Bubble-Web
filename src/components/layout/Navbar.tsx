@@ -14,7 +14,7 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/s
 export const DISCORD_URL = "https://discord.gg/PGbQFCFTC2";
 
 export const INVITE_URL =
-  "https://discord.com/oauth2/authorize?client_id=1314851118840414300&permissions=4504288969967680&integration_type=0&scope=bot";
+  "https://discord.com/oauth2/authorize?client_id=1314851118840414300&permissions=4503601775232000&integration_type=0&scope=bot";
 
 export const VOTE_URL = "https://top.gg/bot/1314851118840414300/vote";
 
@@ -31,6 +31,8 @@ const groups: { label: string; links: NavLink[] }[] = [
     label: "Encyclopedia",
     links: [
       { label: "Fish Encyclopedia", to: "/fish" },
+      { label: "Catch Conditions", to: "/conditions" },
+
       { label: "Pets", to: "/pets" },
       { label: "Eggs", to: "/eggs" },
       { label: "Rods", to: "/rods" },
@@ -62,7 +64,7 @@ export function Navbar() {
         className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6"
       >
         <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold">
-          <span className="flex size-9 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-lagoon to-primary">
+          <span className="flex size-9 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-lagoon to-primary">
             <img src="/bubble.png" alt="" className="size-7 object-contain" />
           </span>
           <span className="text-gradient-ocean">Bubble</span>
@@ -75,14 +77,14 @@ export function Navbar() {
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
               activeProps={activeProps}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+              className="rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
               {l.label}
             </Link>
           ))}
           {groups.map((g) => (
             <DropdownMenu key={g.label}>
-              <DropdownMenuTrigger className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+              <DropdownMenuTrigger className="flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
                 {g.label}
                 <ChevronDown className="size-3.5" aria-hidden />
               </DropdownMenuTrigger>
@@ -132,7 +134,7 @@ export function Navbar() {
                       activeOptions={{ exact: l.to === "/" }}
                       activeProps={activeProps}
                       onClick={() => setOpen(false)}
-                      className="block rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                      className="block rounded-full px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                     >
                       {l.label}
                     </Link>
@@ -147,7 +149,7 @@ export function Navbar() {
                 </Button>
                 <Button asChild variant="outline">
                   <a href={DISCORD_URL} target="_blank" rel="noreferrer">
-                    <MessagesSquare className="size-4" aria-hidden /> Join our Discord
+                    <MessagesSquare className="size-4" aria-hidden /> Join the Discord
                   </a>
                 </Button>
                 <Button asChild variant="ghost">

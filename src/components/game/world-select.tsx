@@ -95,8 +95,7 @@ export function WorldSelect({
               <span
                 aria-hidden
                 className={cn(
-                  "flex size-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br text-sm",
-                  w.accent,
+                  "flex size-7 shrink-0 items-center justify-center text-sm",
                 )}
               >
                 <WorldIcon src={w.worldIcon} emoji={w.badge} size={18} />

@@ -11,7 +11,7 @@ import { RARITIES } from "@/types/game";
 export const Route = createFileRoute("/pets/")({
   head: () => ({
     meta: pageMeta(
-      "Pets — Bubble Companion Index",
+      "Pets | Bubble Companion Index",
       `All ${pets.length} Bubble companions across every prestige World, from the Parrot and Otter to the Kraken Hatchling, Dragon and Void Wisp.`,
     ),
     links: [{ rel: "canonical", href: "/pets" }],
