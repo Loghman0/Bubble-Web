@@ -16,6 +16,8 @@ import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as BackpacksIndexRouteImport } from './routes/backpacks.index'
+import { Route as BackpacksSlugRouteImport } from './routes/backpacks.$slug'
 import { Route as BaitsIndexRouteImport } from './routes/baits.index'
 import { Route as BaitsSlugRouteImport } from './routes/baits.$slug'
 import { Route as EggsIndexRouteImport } from './routes/eggs.index'
@@ -24,6 +26,8 @@ import { Route as EnchantsIndexRouteImport } from './routes/enchants.index'
 import { Route as EnchantsSlugRouteImport } from './routes/enchants.$slug'
 import { Route as FishIndexRouteImport } from './routes/fish.index'
 import { Route as FishSlugRouteImport } from './routes/fish.$slug'
+import { Route as MinionsIndexRouteImport } from './routes/minions.index'
+import { Route as MinionsSlugRouteImport } from './routes/minions.$slug'
 import { Route as PetsIndexRouteImport } from './routes/pets.index'
 import { Route as PetsSlugRouteImport } from './routes/pets.$slug'
 import { Route as RodsIndexRouteImport } from './routes/rods.index'
@@ -66,6 +70,16 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BackpacksIndexRoute = BackpacksIndexRouteImport.update({
+  id: '/backpacks/',
+  path: '/backpacks/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BackpacksSlugRoute = BackpacksSlugRouteImport.update({
+  id: '/backpacks/$slug',
+  path: '/backpacks/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BaitsIndexRoute = BaitsIndexRouteImport.update({
   id: '/baits/',
   path: '/baits/',
@@ -104,6 +118,16 @@ const FishIndexRoute = FishIndexRouteImport.update({
 const FishSlugRoute = FishSlugRouteImport.update({
   id: '/fish/$slug',
   path: '/fish/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MinionsIndexRoute = MinionsIndexRouteImport.update({
+  id: '/minions/',
+  path: '/minions/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MinionsSlugRoute = MinionsSlugRouteImport.update({
+  id: '/minions/$slug',
+  path: '/minions/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PetsIndexRoute = PetsIndexRouteImport.update({
@@ -145,17 +169,21 @@ export interface FileRoutesByFullPath {
   '/leaderboard': typeof LeaderboardRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/backpacks/$slug': typeof BackpacksSlugRoute
   '/baits/$slug': typeof BaitsSlugRoute
   '/eggs/$slug': typeof EggsSlugRoute
   '/enchants/$slug': typeof EnchantsSlugRoute
   '/fish/$slug': typeof FishSlugRoute
+  '/minions/$slug': typeof MinionsSlugRoute
   '/pets/$slug': typeof PetsSlugRoute
   '/rods/$slug': typeof RodsSlugRoute
   '/wiki/$slug': typeof WikiSlugRoute
+  '/backpacks/': typeof BackpacksIndexRoute
   '/baits/': typeof BaitsIndexRoute
   '/eggs/': typeof EggsIndexRoute
   '/enchants/': typeof EnchantsIndexRoute
   '/fish/': typeof FishIndexRoute
+  '/minions/': typeof MinionsIndexRoute
   '/pets/': typeof PetsIndexRoute
   '/rods/': typeof RodsIndexRoute
   '/wiki/': typeof WikiIndexRoute
@@ -168,17 +196,21 @@ export interface FileRoutesByTo {
   '/leaderboard': typeof LeaderboardRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/backpacks/$slug': typeof BackpacksSlugRoute
   '/baits/$slug': typeof BaitsSlugRoute
   '/eggs/$slug': typeof EggsSlugRoute
   '/enchants/$slug': typeof EnchantsSlugRoute
   '/fish/$slug': typeof FishSlugRoute
+  '/minions/$slug': typeof MinionsSlugRoute
   '/pets/$slug': typeof PetsSlugRoute
   '/rods/$slug': typeof RodsSlugRoute
   '/wiki/$slug': typeof WikiSlugRoute
+  '/backpacks': typeof BackpacksIndexRoute
   '/baits': typeof BaitsIndexRoute
   '/eggs': typeof EggsIndexRoute
   '/enchants': typeof EnchantsIndexRoute
   '/fish': typeof FishIndexRoute
+  '/minions': typeof MinionsIndexRoute
   '/pets': typeof PetsIndexRoute
   '/rods': typeof RodsIndexRoute
   '/wiki': typeof WikiIndexRoute
@@ -192,17 +224,21 @@ export interface FileRoutesById {
   '/leaderboard': typeof LeaderboardRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/backpacks/$slug': typeof BackpacksSlugRoute
   '/baits/$slug': typeof BaitsSlugRoute
   '/eggs/$slug': typeof EggsSlugRoute
   '/enchants/$slug': typeof EnchantsSlugRoute
   '/fish/$slug': typeof FishSlugRoute
+  '/minions/$slug': typeof MinionsSlugRoute
   '/pets/$slug': typeof PetsSlugRoute
   '/rods/$slug': typeof RodsSlugRoute
   '/wiki/$slug': typeof WikiSlugRoute
+  '/backpacks/': typeof BackpacksIndexRoute
   '/baits/': typeof BaitsIndexRoute
   '/eggs/': typeof EggsIndexRoute
   '/enchants/': typeof EnchantsIndexRoute
   '/fish/': typeof FishIndexRoute
+  '/minions/': typeof MinionsIndexRoute
   '/pets/': typeof PetsIndexRoute
   '/rods/': typeof RodsIndexRoute
   '/wiki/': typeof WikiIndexRoute
@@ -217,17 +253,21 @@ export interface FileRouteTypes {
     | '/leaderboard'
     | '/privacy'
     | '/terms'
+    | '/backpacks/$slug'
     | '/baits/$slug'
     | '/eggs/$slug'
     | '/enchants/$slug'
     | '/fish/$slug'
+    | '/minions/$slug'
     | '/pets/$slug'
     | '/rods/$slug'
     | '/wiki/$slug'
+    | '/backpacks/'
     | '/baits/'
     | '/eggs/'
     | '/enchants/'
     | '/fish/'
+    | '/minions/'
     | '/pets/'
     | '/rods/'
     | '/wiki/'
@@ -240,17 +280,21 @@ export interface FileRouteTypes {
     | '/leaderboard'
     | '/privacy'
     | '/terms'
+    | '/backpacks/$slug'
     | '/baits/$slug'
     | '/eggs/$slug'
     | '/enchants/$slug'
     | '/fish/$slug'
+    | '/minions/$slug'
     | '/pets/$slug'
     | '/rods/$slug'
     | '/wiki/$slug'
+    | '/backpacks'
     | '/baits'
     | '/eggs'
     | '/enchants'
     | '/fish'
+    | '/minions'
     | '/pets'
     | '/rods'
     | '/wiki'
@@ -263,17 +307,21 @@ export interface FileRouteTypes {
     | '/leaderboard'
     | '/privacy'
     | '/terms'
+    | '/backpacks/$slug'
     | '/baits/$slug'
     | '/eggs/$slug'
     | '/enchants/$slug'
     | '/fish/$slug'
+    | '/minions/$slug'
     | '/pets/$slug'
     | '/rods/$slug'
     | '/wiki/$slug'
+    | '/backpacks/'
     | '/baits/'
     | '/eggs/'
     | '/enchants/'
     | '/fish/'
+    | '/minions/'
     | '/pets/'
     | '/rods/'
     | '/wiki/'
@@ -287,17 +335,21 @@ export interface RootRouteChildren {
   LeaderboardRoute: typeof LeaderboardRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
+  BackpacksSlugRoute: typeof BackpacksSlugRoute
   BaitsSlugRoute: typeof BaitsSlugRoute
   EggsSlugRoute: typeof EggsSlugRoute
   EnchantsSlugRoute: typeof EnchantsSlugRoute
   FishSlugRoute: typeof FishSlugRoute
+  MinionsSlugRoute: typeof MinionsSlugRoute
   PetsSlugRoute: typeof PetsSlugRoute
   RodsSlugRoute: typeof RodsSlugRoute
   WikiSlugRoute: typeof WikiSlugRoute
+  BackpacksIndexRoute: typeof BackpacksIndexRoute
   BaitsIndexRoute: typeof BaitsIndexRoute
   EggsIndexRoute: typeof EggsIndexRoute
   EnchantsIndexRoute: typeof EnchantsIndexRoute
   FishIndexRoute: typeof FishIndexRoute
+  MinionsIndexRoute: typeof MinionsIndexRoute
   PetsIndexRoute: typeof PetsIndexRoute
   RodsIndexRoute: typeof RodsIndexRoute
   WikiIndexRoute: typeof WikiIndexRoute
@@ -352,6 +404,20 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/backpacks/': {
+      id: '/backpacks/'
+      path: '/backpacks'
+      fullPath: '/backpacks/'
+      preLoaderRoute: typeof BackpacksIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/backpacks/$slug': {
+      id: '/backpacks/$slug'
+      path: '/backpacks/$slug'
+      fullPath: '/backpacks/$slug'
+      preLoaderRoute: typeof BackpacksSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/baits/': {
@@ -410,6 +476,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FishSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/minions/': {
+      id: '/minions/'
+      path: '/minions'
+      fullPath: '/minions/'
+      preLoaderRoute: typeof MinionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/minions/$slug': {
+      id: '/minions/$slug'
+      path: '/minions/$slug'
+      fullPath: '/minions/$slug'
+      preLoaderRoute: typeof MinionsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pets/': {
       id: '/pets/'
       path: '/pets'
@@ -463,17 +543,21 @@ const rootRouteChildren: RootRouteChildren = {
   LeaderboardRoute: LeaderboardRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
+  BackpacksSlugRoute: BackpacksSlugRoute,
   BaitsSlugRoute: BaitsSlugRoute,
   EggsSlugRoute: EggsSlugRoute,
   EnchantsSlugRoute: EnchantsSlugRoute,
   FishSlugRoute: FishSlugRoute,
+  MinionsSlugRoute: MinionsSlugRoute,
   PetsSlugRoute: PetsSlugRoute,
   RodsSlugRoute: RodsSlugRoute,
   WikiSlugRoute: WikiSlugRoute,
+  BackpacksIndexRoute: BackpacksIndexRoute,
   BaitsIndexRoute: BaitsIndexRoute,
   EggsIndexRoute: EggsIndexRoute,
   EnchantsIndexRoute: EnchantsIndexRoute,
   FishIndexRoute: FishIndexRoute,
+  MinionsIndexRoute: MinionsIndexRoute,
   PetsIndexRoute: PetsIndexRoute,
   RodsIndexRoute: RodsIndexRoute,
   WikiIndexRoute: WikiIndexRoute,

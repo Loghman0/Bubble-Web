@@ -288,6 +288,15 @@
   }
 }
 
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -12,13 +12,14 @@ import { cn } from "@/lib/utils";
 import { WORLDS, worldById } from "@/data/worlds";
 
 /**
- * World icon with a graceful emoji fallback if the PNG hasn't been uploaded
- * yet or fails to load. This selector identifies which world's catalog is
- * being browsed, so it always shows the world icon — never the prestige
- * badge, which is reserved for marking items/pills as belonging to a world
- * the player has actually prestiged into (see `WorldBadge` in primitives.tsx).
+ * Prestige icon with a graceful emoji fallback if the PNG hasn't been
+ * uploaded yet or fails to load. Prefers `badgeIcon` (the numbered prestige
+ * medallion) over `worldIcon` — the globe-style world icons are retired site
+ * wide; every prestige tier (1-10) has its own numbered badge, and World 0
+ * (Base Game, not actually a prestige) is the one deliberate exception that
+ * still falls back to its globe icon since no "0th prestige" badge exists.
  */
-function WorldIcon({ src, emoji, size = 20 }: { src: string; emoji: string; size?: number }) {
+function PrestigeIcon({ src, emoji, size = 26 }: { src: string; emoji: string; size?: number }) {
   const [failed, setFailed] = useState(false);
   useEffect(() => setFailed(false), [src]);
   if (failed) return <span aria-hidden>{emoji}</span>;
@@ -72,14 +73,12 @@ export function WorldSelect({
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="flex items-center gap-3"
           >
-            <span
-              aria-hidden
-              className={cn(
-                "flex size-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-lg",
-                current.accent,
-              )}
-            >
-              <WorldIcon src={current.worldIcon} emoji={current.badge} size={22} />
+            <span aria-hidden className="flex size-9 shrink-0 items-center justify-center">
+              <PrestigeIcon
+                src={current.badgeIcon ?? current.worldIcon}
+                emoji={current.badge}
+                size={30}
+              />
             </span>
             <span className="flex flex-col leading-tight">
               <span className="font-display text-sm font-bold sm:text-base">{current.name}</span>
@@ -92,13 +91,8 @@ export function WorldSelect({
         {WORLDS.map((w) => (
           <SelectItem key={w.id} value={String(w.id)} className="py-2.5">
             <span className="flex items-center gap-3">
-              <span
-                aria-hidden
-                className={cn(
-                  "flex size-7 shrink-0 items-center justify-center text-sm",
-                )}
-              >
-                <WorldIcon src={w.worldIcon} emoji={w.badge} size={18} />
+              <span aria-hidden className="flex size-8 shrink-0 items-center justify-center">
+                <PrestigeIcon src={w.badgeIcon ?? w.worldIcon} emoji={w.badge} size={24} />
               </span>
               <span className="flex flex-col leading-tight">
                 <span className="font-semibold">{w.name}</span>

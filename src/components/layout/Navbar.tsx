@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
 import { useState } from "react";
 import { ChevronDown, ExternalLink, Menu, MessagesSquare, Star } from "lucide-react";
 
@@ -38,6 +39,8 @@ const groups: { label: string; links: NavLink[] }[] = [
       { label: "Rods", to: "/rods" },
       { label: "Baits", to: "/baits" },
       { label: "Enchants", to: "/enchants" },
+      { label: "Backpacks", to: "/backpacks" },
+      { label: "Minions", to: "/minions" },
     ],
   },
   {
@@ -56,17 +59,34 @@ const activeProps = { className: "text-primary" };
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const reduced = useReducedMotion();
+
+  // Read-page-progress bar along the header's bottom edge, and a slight
+  // header compression once the page has actually scrolled — both driven off
+  // one useScroll() subscription, never a raw scroll listener (see
+  // design-taste-frontend §5.D).
+  const { scrollY, scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 200, damping: 32, mass: 0.3 });
+  const barScale = useTransform(progress, (p) => (reduced ? 0 : p));
+
+  const headerHeight = useTransform(scrollY, [0, 120], [64, 56], { clamp: true });
+  const heightPx = useSpring(headerHeight, { stiffness: 260, damping: 30 });
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/70 backdrop-blur-xl">
-      <nav
+      <motion.nav
         aria-label="Main navigation"
-        className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6"
+        style={{ height: reduced ? 64 : heightPx }}
+        className="mx-auto flex max-w-7xl items-center gap-4 px-4 sm:px-6"
       >
-        <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold">
-          <span className="flex size-9 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-lagoon to-primary">
+        <Link to="/" className="group flex items-center gap-2 font-display text-lg font-bold">
+          <motion.span
+            whileHover={reduced ? {} : { rotate: [0, -8, 8, -4, 0] }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="flex size-9 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-lagoon to-primary"
+          >
             <img src="/bubble.png" alt="" className="size-7 object-contain" />
-          </span>
+          </motion.span>
           <span className="text-gradient-ocean">Bubble</span>
         </Link>
 
@@ -161,7 +181,14 @@ export function Navbar() {
             </SheetContent>
           </Sheet>
         </div>
-      </nav>
+      </motion.nav>
+      {reduced ? null : (
+        <motion.div
+          aria-hidden
+          className="h-[2px] w-full origin-left bg-gradient-to-r from-lagoon via-primary to-treasure"
+          style={{ scaleX: barScale }}
+        />
+      )}
     </header>
   );
 }

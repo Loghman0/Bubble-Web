@@ -119,17 +119,24 @@ function FishIndex() {
 
       if (search.season !== "all") {
         const seasons = fishSeasons(f);
-        if (search.season === "any" ? seasons.length > 0 : !seasons.includes(search.season))
-          return false;
+        if (search.season === "any"
+          ? seasons.length > 0                                        // "No requirement": only unrestricted
+          : seasons.length > 0 && !seasons.includes(search.season)   // specific season: unrestricted always pass
+        ) return false;
       }
       if (search.time !== "all") {
         const times = fishTimes(f);
-        if (search.time === "any" ? times.length > 0 : !times.includes(search.time)) return false;
+        if (search.time === "any"
+          ? times.length > 0                                          // "No requirement": only unrestricted
+          : times.length > 0 && !times.includes(search.time)         // specific time: unrestricted always pass
+        ) return false;
       }
       if (search.weather !== "all") {
         const weather = fishWeather(f);
-        if (search.weather === "any" ? weather.length > 0 : !weather.includes(search.weather))
-          return false;
+        if (search.weather === "any"
+          ? weather.length > 0                                        // "No requirement": only unrestricted
+          : weather.length > 0 && !weather.includes(search.weather)  // specific weather: unrestricted always pass
+        ) return false;
       }
       if (search.bait === "none" && f.requiredBait) return false;
       if (search.bait !== "all" && search.bait !== "none") {

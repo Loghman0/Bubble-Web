@@ -1,3 +1,4 @@
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useState } from "react";
 import { Crown, Medal } from "lucide-react";
 
@@ -38,6 +39,7 @@ const rankIcon = (rank: number) => {
 
 export function LeaderboardTable() {
   const [sort, setSort] = useState<LeaderboardSort>("level");
+  const reduced = useReducedMotion();
   const { data, error, loading, updatedAt, refresh } = useLivePoll(
     () => liveApi.leaderboard(sort, 25),
     { intervalMs: 20_000, deps: [sort] },
@@ -53,7 +55,7 @@ export function LeaderboardTable() {
           <LiveIndicator updatedAt={updatedAt} offline={Boolean(error) && !data} />
         </div>
         <Select value={sort} onValueChange={(v) => setSort(v as LeaderboardSort)}>
-          <SelectTrigger className="w-[220px]">
+          <SelectTrigger className="w-[220px]" aria-label="Sort leaderboard by">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -86,26 +88,36 @@ export function LeaderboardTable() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {data.players.map((p) => (
-                <TableRow
-                  key={`${p.rank}-${p.username}`}
-                  className={cn(p.rank <= 3 && "bg-primary/5")}
-                >
-                  <TableCell className="font-mono text-muted-foreground">
-                    <span className="inline-flex items-center gap-1.5">
-                      {rankIcon(p.rank)}
-                      {p.rank}
-                    </span>
-                  </TableCell>
-                  <TableCell className="font-medium">{p.username}</TableCell>
-                  <TableCell className="text-right tabular-nums">
-                    {sort === "level" && `Lv. ${p.level}`}
-                    {sort === "coins" && p.coins.toLocaleString()}
-                    {sort === "coinsEarned" && p.totalCoinsEarned.toLocaleString()}
-                    {sort === "catches" && p.totalCaught.toLocaleString()}
-                  </TableCell>
-                </TableRow>
-              ))}
+              <AnimatePresence initial={false}>
+                {data.players.map((p) => (
+                  <motion.tr
+                    key={`${p.rank}-${p.username}`}
+                    layout={!reduced}
+                    initial={reduced ? false : { opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={reduced ? {} : { opacity: 0 }}
+                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                    className={cn(
+                      "border-b transition-colors data-[state=selected]:bg-muted hover:bg-muted/50",
+                      p.rank <= 3 && "bg-primary/5",
+                    )}
+                  >
+                    <TableCell className="font-mono text-muted-foreground">
+                      <span className="inline-flex items-center gap-1.5">
+                        {rankIcon(p.rank)}
+                        {p.rank}
+                      </span>
+                    </TableCell>
+                    <TableCell className="font-medium">{p.username}</TableCell>
+                    <TableCell className="text-right tabular-nums">
+                      {sort === "level" && `Lv. ${p.level}`}
+                      {sort === "coins" && p.coins.toLocaleString()}
+                      {sort === "coinsEarned" && p.totalCoinsEarned.toLocaleString()}
+                      {sort === "catches" && p.totalCaught.toLocaleString()}
+                    </TableCell>
+                  </motion.tr>
+                ))}
+              </AnimatePresence>
             </TableBody>
           </Table>
         )}

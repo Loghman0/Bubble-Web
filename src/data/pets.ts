@@ -6,8 +6,9 @@ import type { Egg, Pet, Rarity } from "@/types/game";
  * egg's `eligiblePetIds`. Artwork: `public/assets/pets/<key>.png`.
  *
  * Post-Phase-6 (Prestige System): every pet and egg carries a `worldId`.
- * World 1 ("The Neon Tide") reuses World 0's exact rarity/skillValue/tier
- * curve with a reskinned roster — see `data/worlds.ts`.
+ * Each prestige tier (World 1 "The Neon Tide", World 2 "2nd Prestige")
+ * reuses World 0's exact rarity/skillValue/tier curve with a reskinned
+ * roster — see `data/worlds.ts`.
  */
 interface PetSeed {
   id: string;
@@ -187,6 +188,7 @@ const PET_DATA: Record<string, PetSeed> = Object.fromEntries(
     "id": "capybara",
     "numId": 13,
     "name": "Capybara",
+    "emoji": "🦫",
     "unlockLevel": 1,
     "skill": "energy_regen",
     "skillCategory": "energy_regen",
@@ -199,6 +201,7 @@ const PET_DATA: Record<string, PetSeed> = Object.fromEntries(
     "id": "kitsune_pup",
     "numId": 14,
     "name": "Kitsune Pup",
+    "emoji": "🦊",
     "unlockLevel": 35,
     "skill": "luck",
     "skillCategory": "luck",
@@ -211,6 +214,7 @@ const PET_DATA: Record<string, PetSeed> = Object.fromEntries(
     "id": "monolith_golem",
     "numId": 15,
     "name": "Monolith Golem",
+    "emoji": "🗿",
     "unlockLevel": 200,
     "skill": "rarity_boost",
     "skillCategory": "rarity",
@@ -412,11 +416,205 @@ const PET_DATA: Record<string, PetSeed> = Object.fromEntries(
     "skillValue": 0.5,
     "rarity": "mythic",
     "description": "Curves through the sky above the fishing spot. Things look up, into your hook."
+  },
+  {
+    "worldId": 2,
+    "id": "cowlet",
+    "numId": 31,
+    "name": "Cowlet",
+    "emoji": "🐄",
+    "unlockLevel": 1,
+    "skill": "coin_bonus",
+    "skillCategory": "coin",
+    "skillValue": 0.1,
+    "rarity": "common",
+    "description": "Moos softly whenever you reel in. Coins seem to follow it."
+  },
+  {
+    "worldId": 2,
+    "id": "squirrel",
+    "numId": 32,
+    "name": "Squirrel",
+    "emoji": "🐿️",
+    "unlockLevel": 1,
+    "skill": "extra_xp",
+    "skillCategory": "xp",
+    "skillValue": 0.12,
+    "rarity": "common",
+    "description": "Scurries around gathering anything dropped. Very diligent about XP."
+  },
+  {
+    "worldId": 2,
+    "id": "hedgehog",
+    "numId": 33,
+    "name": "Hedgehog",
+    "emoji": "🦔",
+    "unlockLevel": 1,
+    "skill": "energy_regen",
+    "skillCategory": "energy_regen",
+    "skillValue": 0.14,
+    "rarity": "common",
+    "description": "Curls up between casts. Its calm presence speeds your recovery."
+  },
+  {
+    "worldId": 2,
+    "id": "fawn",
+    "numId": 34,
+    "name": "Fawn",
+    "emoji": "🦌",
+    "unlockLevel": 1,
+    "skill": "luck",
+    "skillCategory": "luck",
+    "skillValue": 8,
+    "rarity": "uncommon",
+    "description": "Skittish but lucky. Good things happen near it."
+  },
+  {
+    "worldId": 2,
+    "id": "racoon",
+    "numId": 35,
+    "name": "Racoon",
+    "emoji": "🦝",
+    "unlockLevel": 1,
+    "skill": "treasure_chance",
+    "skillCategory": "treasure",
+    "skillValue": 0.06,
+    "rarity": "uncommon",
+    "description": "Rummages through the tackle box looking for shiny things. Finds them."
+  },
+  {
+    "worldId": 2,
+    "id": "turtle",
+    "numId": 36,
+    "name": "Turtle",
+    "emoji": "🐢",
+    "unlockLevel": 18,
+    "skill": "auto_repair",
+    "skillCategory": "repair",
+    "skillValue": 3,
+    "rarity": "rare",
+    "description": "Patient and steady. Slowly patches the rod while you wait."
+  },
+  {
+    "worldId": 2,
+    "id": "armadillo",
+    "numId": 37,
+    "name": "Armadillo",
+    "emoji": "🦔",
+    "unlockLevel": 28,
+    "skill": "critical_catch",
+    "skillCategory": "critical",
+    "skillValue": 0.25,
+    "rarity": "rare",
+    "description": "Rolls into a ball and launches at the water. Extra weight is guaranteed."
+  },
+  {
+    "worldId": 2,
+    "id": "monkey",
+    "numId": 38,
+    "name": "Monkey",
+    "emoji": "🐒",
+    "unlockLevel": 28,
+    "skill": "extra_fish",
+    "skillCategory": "extra_fish",
+    "skillValue": 0.16,
+    "rarity": "rare",
+    "description": "Climbs wherever it pleases and occasionally drops a second fish in the bucket."
+  },
+  {
+    "worldId": 2,
+    "id": "horse",
+    "numId": 39,
+    "name": "Horse",
+    "emoji": "🐴",
+    "unlockLevel": 40,
+    "skill": "energy_saver",
+    "skillCategory": "energy_cost",
+    "skillValue": 0.18,
+    "rarity": "epic",
+    "description": "Carries the load. Casting costs a bit less when it's by your side."
+  },
+  {
+    "worldId": 2,
+    "id": "eaglet",
+    "numId": 40,
+    "name": "Eaglet",
+    "emoji": "🦅",
+    "unlockLevel": 60,
+    "skill": "luck",
+    "skillCategory": "luck",
+    "skillValue": 20,
+    "rarity": "epic",
+    "description": "Circles overhead scanning the water. Sharp eyes mean better odds."
+  },
+  {
+    "worldId": 2,
+    "id": "baby_crocodile",
+    "numId": 41,
+    "name": "Baby Crocodile",
+    "emoji": "🐊",
+    "unlockLevel": 60,
+    "skill": "extra_fish",
+    "skillCategory": "extra_fish",
+    "skillValue": 0.32,
+    "rarity": "epic",
+    "description": "Snaps at the water beside your line. Sometimes brings up something extra."
+  },
+  {
+    "worldId": 2,
+    "id": "elephant",
+    "numId": 42,
+    "name": "Elephant",
+    "emoji": "🐘",
+    "unlockLevel": 90,
+    "skill": "luck",
+    "skillCategory": "luck",
+    "skillValue": 45,
+    "rarity": "legendary",
+    "description": "Never forgets where the rare fish hide. Neither will you."
+  },
+  {
+    "worldId": 2,
+    "id": "wolf",
+    "numId": 43,
+    "name": "Wolf",
+    "emoji": "🐺",
+    "unlockLevel": 140,
+    "skill": "treasure_chance",
+    "skillCategory": "treasure",
+    "skillValue": 0.15,
+    "rarity": "legendary",
+    "description": "Howls when a chest is near. You've learned to trust the howl."
+  },
+  {
+    "worldId": 2,
+    "id": "snow_golem",
+    "numId": 44,
+    "name": "Snow Golem",
+    "emoji": "⛄",
+    "unlockLevel": 280,
+    "skill": "critical_catch",
+    "skillCategory": "critical",
+    "skillValue": 0.5,
+    "rarity": "mythic",
+    "description": "Made of impossible ice. Bends the cold odds in your favor."
+  },
+  {
+    "worldId": 2,
+    "id": "red_dragon",
+    "numId": 45,
+    "name": "Red Dragon",
+    "emoji": "🐲",
+    "unlockLevel": 400,
+    "skill": "rarity_boost",
+    "skillCategory": "rarity",
+    "skillValue": 0.28,
+    "rarity": "celestial",
+    "description": "The apex of World 3 companions. Its presence pulls rarest things from the deep."
   }
 ] as any[]
   ).map((x: any) => [x.id, x]),
-);
-const rarityLabel = (r: string): Rarity => (r.charAt(0).toUpperCase() + r.slice(1)) as Rarity;
+);const rarityLabel = (r: string): Rarity => (r.charAt(0).toUpperCase() + r.slice(1)) as Rarity;
 
 export const pets: Pet[] = Object.values(PET_DATA)
   .sort((a: PetSeed, b: PetSeed) => a.numId - b.numId)
@@ -560,6 +758,50 @@ const EGG_DATA: Record<string, EggSeed> = Object.fromEntries(
         description:
           "Ancient beyond The Neon Tide. Whatever hatches from this was waiting a long time.",
         worldId: 1,
+      },
+      {
+        id: "w3_common_egg",
+        tier: 1,
+        name: "Common Egg",
+        emoji: "🥚",
+        price: 150,
+        currency: "gems",
+        requiredLevel: 1,
+        baseHatchXp: 120,
+        hatchXpPerLevel: 2,
+        eligiblePetIds: ["cowlet", "squirrel", "hedgehog", "fawn", "racoon"],
+        dropWeights: { common: 580, uncommon: 420 },
+        description: "A warm egg from World 3. Something small and scrappy is ready to emerge.",
+        worldId: 2,
+      },
+      {
+        id: "w3_rare_egg",
+        tier: 2,
+        name: "Rare Egg",
+        emoji: "💎",
+        price: 500,
+        currency: "gems",
+        requiredLevel: 30,
+        baseHatchXp: 260,
+        hatchXpPerLevel: 3,
+        eligiblePetIds: ["turtle", "armadillo", "monkey", "horse", "eaglet"],
+        dropWeights: { rare: 700, epic: 300 },
+        description: "A glimmering World 3 egg. A capable companion waits inside.",
+        worldId: 2,
+      },
+      {
+        id: "w3_ancient_egg",
+        tier: 3,
+        name: "Ancient Egg",
+        price: 1500,
+        currency: "gems",
+        requiredLevel: 80,
+        baseHatchXp: 420,
+        hatchXpPerLevel: 4,
+        eligiblePetIds: ["baby_crocodile", "elephant", "wolf", "snow_golem", "red_dragon"],
+        dropWeights: { epic: 700, legendary: 250, mythic: 100, celestial: 60 },
+        description: "A World 3 relic egg. What hatches from this commands the wilderness.",
+        worldId: 2,
       },
     ] as EggSeed[]
   ).map((e) => [e.id, e]),

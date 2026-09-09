@@ -8,9 +8,9 @@ import type { Rod } from "@/types/game";
  * Post-Phase-6 (Prestige System): every rod carries a `worldId` and a
  * `requiredLevel` (the player level needed to purchase it — distinct from
  * the bot's internal `level` field, which gates against `fish.requiredRodLevel`
- * and isn't otherwise surfaced here). World 1 ("The Neon Tide") reuses World
- * 0's exact level/price curve with a reskinned id/name/description per rod
- * — see `data/worlds.ts`.
+ * and isn't otherwise surfaced here). Each prestige tier (World 1 "The Neon
+ * Tide", World 2 "2nd Prestige") reuses World 0's exact level/price curve
+ * with a reskinned id/name/description per rod — see `data/worlds.ts`.
  */
 const seeds: [key: string, worldId: number, tier: Rod["tier"], name: string][] = [
   ["wood_rod", 0, "Beginner", "Wood Rod"],
@@ -31,6 +31,15 @@ const seeds: [key: string, worldId: number, tier: Rod["tier"], name: string][] =
   ["steampunk_rod", 1, "Master", "Steampunk Rod"],
   ["royalscepter_rod", 1, "Master", "Royal Scepter Rod"],
   ["necobone_rod", 1, "Master", "Neco Bone Rod"],
+  ["makeshift_rod", 2, "Beginner", "Makeshift Rod"],
+  ["standard_rod", 2, "Beginner", "Standard Rod"],
+  ["clockwork_rod", 2, "Beginner", "Clockwork Rod"],
+  ["druidic_rod", 2, "Journeyman", "Druidic Rod"],
+  ["deep_sea_rod", 2, "Journeyman", "Deep Sea Rod"],
+  ["volcanic_rod", 2, "Journeyman", "Volcanic Rod"],
+  ["futuristic_tech_rod", 2, "Master", "Futuristic Tech Rod"],
+  ["crystal_magic_rod", 2, "Master", "Crystal Magic Rod"],
+  ["aurora_rod", 2, "Master", "Aurora Rod"],
 ];
 
 interface RodStats {
@@ -226,6 +235,98 @@ const ROD_DATA: Record<string, RodStats> = {
     enchantSlots: 9,
     description:
       "Ancient bone from something that ruled the first world. Still radiates authority.",
+  },
+  makeshift_rod: {
+    price: 0,
+    currency: "coins",
+    requiredLevel: 1,
+    luck: 0,
+    power: 1,
+    durability: 100,
+    enchantSlots: 0,
+    description: "Cobbled together from salvage. It casts. That is enough.",
+  },
+  standard_rod: {
+    price: 1500,
+    currency: "coins",
+    requiredLevel: 5,
+    luck: 3,
+    power: 4,
+    durability: 140,
+    enchantSlots: 0,
+    description: "Nothing special about it. That's the point.",
+  },
+  clockwork_rod: {
+    price: 9000,
+    currency: "coins",
+    requiredLevel: 15,
+    luck: 7,
+    power: 9,
+    durability: 190,
+    enchantSlots: 1,
+    description: "Gears tick inside the handle. Each cast is measured, precise.",
+  },
+  druidic_rod: {
+    price: 45000,
+    currency: "coins",
+    requiredLevel: 40,
+    luck: 16,
+    power: 22,
+    durability: 260,
+    enchantSlots: 2,
+    description: "Carved from a living branch. The wood still grows, very slowly.",
+  },
+  deep_sea_rod: {
+    price: 160000,
+    currency: "coins",
+    requiredLevel: 90,
+    luck: 30,
+    power: 42,
+    durability: 350,
+    enchantSlots: 3,
+    description: "Pressure-rated to the abyss. Pulls things up that have never seen light.",
+  },
+  volcanic_rod: {
+    price: 300000,
+    currency: "coins",
+    requiredLevel: 160,
+    luck: 48,
+    power: 66,
+    durability: 440,
+    enchantSlots: 4,
+    description: "Forged in a caldera. The line never freezes, no matter how cold the water.",
+  },
+  futuristic_tech_rod: {
+    price: 750000,
+    currency: "coins",
+    requiredLevel: 200,
+    luck: 72,
+    power: 98,
+    durability: 540,
+    enchantSlots: 5,
+    description: "Nanowire line, auto-tensioning reel. Fish don't stand a chance.",
+  },
+  crystal_magic_rod: {
+    price: 3000000,
+    currency: "coins",
+    requiredLevel: 260,
+    luck: 108,
+    power: 150,
+    durability: 680,
+    enchantSlots: 7,
+    description:
+      "A prism of pure mana shaped into a rod. The cast leaves a rainbow in the air.",
+  },
+  aurora_rod: {
+    price: 7500000,
+    currency: "coins",
+    requiredLevel: 320,
+    luck: 165,
+    power: 230,
+    durability: 880,
+    enchantSlots: 9,
+    description:
+      "Spun from the light of a polar aurora. Gates the most divine entities in World 3.",
   },
 };
 

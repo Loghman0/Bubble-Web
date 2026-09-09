@@ -9,9 +9,9 @@ import type { Fish, Rarity } from "@/types/game";
  *
  * Post-Phase-6 (Prestige System): every row carries a `worldId`. World 0 is
  * the base game (150 species); World 1 ("The Neon Tide") is the first
- * prestige tier's roster (100 species), unlocked by prestiging out of
- * World 0. Filter any consumer of `fish` by `worldId` to scope it to a
- * single world — see `data/worlds.ts`.
+ * prestige tier's roster (100 species); World 2 (2nd Prestige) is the
+ * second (100 species). Filter any consumer of `fish` by `worldId` to scope
+ * it to a single world — see `data/worlds.ts`.
  */
 interface FishSeed {
   id: string;
@@ -231,10 +231,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "morning",
-      "day"
-    ],
+    "activeTime": ["morning","day"],
     "difficulty": 3,
     "requiredRodLevel": 3,
     "requiredBait": null,
@@ -259,10 +256,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "evening",
-      "night"
-    ],
+    "activeTime": ["evening","night"],
     "difficulty": 5,
     "requiredRodLevel": 6,
     "requiredBait": null,
@@ -289,9 +283,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "fog"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 6,
     "requiredRodLevel": 10,
     "requiredBait": null,
@@ -341,9 +333,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 3,
     "requiredRodLevel": 6,
     "requiredBait": null,
@@ -393,9 +383,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 5,
     "requiredRodLevel": 10,
     "requiredBait": null,
@@ -597,9 +585,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 4,
     "requiredRodLevel": 22,
     "requiredBait": null,
@@ -649,9 +635,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 7,
     "requiredRodLevel": 30,
     "requiredBait": null,
@@ -701,9 +685,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 9,
     "requiredRodLevel": 40,
     "requiredBait": null,
@@ -832,9 +814,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "snow"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 8,
     "requiredRodLevel": 42,
     "requiredBait": null,
@@ -886,9 +866,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 4,
     "requiredRodLevel": 42,
     "requiredBait": null,
@@ -940,9 +918,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "fog"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 7,
     "requiredRodLevel": 50,
     "requiredBait": null,
@@ -969,9 +945,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "rain"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 9,
     "requiredRodLevel": 55,
     "requiredBait": null,
@@ -1250,9 +1224,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 5,
     "requiredRodLevel": 85,
     "requiredBait": null,
@@ -1327,9 +1299,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 8,
     "requiredRodLevel": 95,
     "requiredBait": null,
@@ -1354,9 +1324,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 9,
     "requiredRodLevel": 100,
     "requiredBait": null,
@@ -1769,9 +1737,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 10,
     "requiredRodLevel": 310,
     "requiredBait": null,
@@ -1823,11 +1789,9 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "full_moon"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 10,
-    "requiredRodLevel": 400,
+    "requiredRodLevel": 380,
     "requiredBait": "magical_dust",
     "minLuck": 250,
     "xp": 200000,
@@ -1903,10 +1867,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "morning",
-      "day"
-    ],
+    "activeTime": ["morning","day"],
     "difficulty": 1,
     "requiredRodLevel": 1,
     "requiredBait": null,
@@ -2033,9 +1994,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 4,
     "requiredRodLevel": 8,
     "requiredBait": null,
@@ -2093,7 +2052,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "requiredBait": null,
     "xp": 30,
     "museumValue": 58,
-    "description": "Nearly transparent. You can watch its skeleton swim.",
+    "description": "Nearly transparent — you can watch its skeleton swim.",
     "worldId": 0,
     "progressionRequired": true
   },
@@ -2114,9 +2073,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "windy"
     ],
-    "activeTime": [
-      "day"
-    ],
+    "activeTime": ["day"],
     "difficulty": 4,
     "requiredRodLevel": 12,
     "requiredBait": null,
@@ -2141,9 +2098,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 4,
     "requiredRodLevel": 14,
     "requiredBait": null,
@@ -2195,9 +2150,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "storm"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 6,
     "requiredRodLevel": 30,
     "requiredBait": null,
@@ -2222,9 +2175,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 5,
     "requiredRodLevel": 22,
     "requiredBait": null,
@@ -2326,9 +2277,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 7,
     "requiredRodLevel": 55,
     "requiredBait": null,
@@ -2355,9 +2304,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "sunny"
     ],
-    "activeTime": [
-      "day"
-    ],
+    "activeTime": ["day"],
     "difficulty": 7,
     "requiredRodLevel": 65,
     "requiredBait": null,
@@ -2382,9 +2329,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 8,
     "requiredRodLevel": 78,
     "requiredBait": null,
@@ -2409,9 +2354,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 6,
     "requiredRodLevel": 60,
     "requiredBait": null,
@@ -2439,9 +2382,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "aurora",
       "sunny"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 8,
     "requiredRodLevel": 95,
     "requiredBait": null,
@@ -2491,9 +2432,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 8,
     "requiredRodLevel": 28,
     "requiredBait": null,
@@ -2572,9 +2511,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "fog"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 9,
     "requiredRodLevel": 105,
     "requiredBait": null,
@@ -2601,9 +2538,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "sunny"
     ],
-    "activeTime": [
-      "day"
-    ],
+    "activeTime": ["day"],
     "difficulty": 9,
     "requiredRodLevel": 145,
     "requiredBait": null,
@@ -2628,9 +2563,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 9,
     "requiredRodLevel": 50,
     "requiredBait": null,
@@ -2682,9 +2615,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "blood_moon"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 10,
     "requiredRodLevel": 190,
     "requiredBait": null,
@@ -2765,9 +2696,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "meteor_shower"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 10,
     "requiredRodLevel": 180,
     "requiredBait": null,
@@ -2796,9 +2725,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "aurora"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 10,
     "requiredRodLevel": 240,
     "requiredBait": "magical_dust",
@@ -2828,9 +2755,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "full_moon"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 10,
     "requiredRodLevel": 380,
     "requiredBait": "magical_dust",
@@ -2838,7 +2763,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "xp": 85000,
     "museumValue": 180000,
     "hidden": true,
-    "discoveryCondition": "Full moon, night, in the Dream World, with Magical Dust equipped and Luck above 280.",
+    "discoveryCondition": "Full moon, morning, in the Dream World, with Magical Dust equipped and Luck above 280.",
     "description": "Every scale is a small, perfect wing. It does not need water to move.",
     "worldId": 0,
     "progressionRequired": true
@@ -2861,17 +2786,15 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "blood_moon",
       "full_moon"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 10,
-    "requiredRodLevel": 400,
+    "requiredRodLevel": 380,
     "requiredBait": "magical_dust",
     "minLuck": 300,
     "xp": 165000,
     "museumValue": 420000,
     "hidden": true,
-    "discoveryCondition": "Blood Moon or Full Moon, night, in the Ancient Temple, Magical Dust equipped, Luck above 300.",
+    "discoveryCondition": "Blood Moon or Full Moon, evening, in the Ancient Temple, Magical Dust equipped, Luck above 300.",
     "description": "Older than the Temple built around it. It was probably here first.",
     "worldId": 0,
     "progressionRequired": true
@@ -2941,9 +2864,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 2,
     "requiredRodLevel": 2,
     "requiredBait": null,
@@ -3096,10 +3017,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "morning",
-      "day"
-    ],
+    "activeTime": ["morning","day"],
     "difficulty": 4,
     "requiredRodLevel": 8,
     "requiredBait": null,
@@ -3199,9 +3117,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "morning"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 4,
     "requiredRodLevel": 11,
     "requiredBait": null,
@@ -3276,9 +3192,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "evening"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 5,
     "requiredRodLevel": 20,
     "requiredBait": null,
@@ -3303,9 +3217,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 5,
     "requiredRodLevel": 25,
     "requiredBait": null,
@@ -3330,9 +3242,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 6,
     "requiredRodLevel": 30,
     "requiredBait": null,
@@ -3357,9 +3267,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 6,
     "requiredRodLevel": 36,
     "requiredBait": null,
@@ -3436,9 +3344,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 7,
     "requiredRodLevel": 58,
     "requiredBait": null,
@@ -3490,9 +3396,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "fog"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 7,
     "requiredRodLevel": 64,
     "requiredBait": null,
@@ -3597,9 +3501,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["day"],
     "difficulty": 8,
     "requiredRodLevel": 68,
     "requiredBait": null,
@@ -3649,9 +3551,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 9,
     "requiredRodLevel": 95,
     "requiredBait": null,
@@ -3701,9 +3601,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "summer",
     "weather": "any",
-    "activeTime": [
-      "day"
-    ],
+    "activeTime": ["day"],
     "difficulty": 9,
     "requiredRodLevel": 150,
     "requiredBait": null,
@@ -3755,9 +3653,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 8,
     "requiredRodLevel": 70,
     "requiredBait": null,
@@ -3807,9 +3703,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 10,
     "requiredRodLevel": 150,
     "requiredBait": null,
@@ -3865,9 +3759,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "blood_moon",
       "fog"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 10,
     "requiredRodLevel": 195,
     "requiredBait": null,
@@ -3947,9 +3839,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "aurora",
       "meteor_shower"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["day"],
     "difficulty": 10,
     "requiredRodLevel": 200,
     "requiredBait": null,
@@ -3978,9 +3868,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "meteor_shower",
       "full_moon"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 10,
     "requiredRodLevel": 220,
     "requiredBait": "starlight_dust",
@@ -4009,11 +3897,9 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "aurora",
       "full_moon"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["day"],
     "difficulty": 10,
-    "requiredRodLevel": 390,
+    "requiredRodLevel": 380,
     "requiredBait": "starlight_dust",
     "minLuck": 260,
     "xp": 120000,
@@ -5195,7 +5081,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "requiredBait": null,
     "xp": 75,
     "museumValue": 150,
-    "description": "Crack one open. Carefully. And there's a small hollow of crystal at its core."
+    "description": "Crack one open — carefully — and there's a small hollow of crystal at its core."
   },
   {
     "worldId": 1,
@@ -5541,9 +5427,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "fog"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 7,
     "requiredRodLevel": 60,
     "requiredBait": null,
@@ -5623,9 +5507,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "aurora",
       "sunny"
     ],
-    "activeTime": [
-      "day"
-    ],
+    "activeTime": ["day"],
     "difficulty": 7,
     "requiredRodLevel": 60,
     "requiredBait": null,
@@ -5677,15 +5559,13 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 7,
     "requiredRodLevel": 60,
     "requiredBait": null,
     "xp": 200,
     "museumValue": 450,
-    "description": "Rises from nothing. Returns to nothing. Only ever seen between midnight and dawn."
+    "description": "Rises from nothing. Returns to nothing. Only ever seen as the light fails."
   },
   {
     "worldId": 1,
@@ -5706,9 +5586,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "fog"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 7,
     "requiredRodLevel": 60,
     "requiredBait": null,
@@ -5735,10 +5613,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "snow"
     ],
-    "activeTime": [
-      "morning",
-      "day"
-    ],
+    "activeTime": ["morning","day"],
     "difficulty": 7,
     "requiredRodLevel": 60,
     "requiredBait": null,
@@ -5765,9 +5640,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "sunny"
     ],
-    "activeTime": [
-      "day"
-    ],
+    "activeTime": ["day"],
     "difficulty": 7,
     "requiredRodLevel": 60,
     "requiredBait": null,
@@ -5819,9 +5692,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "meteor_shower"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 7,
     "requiredRodLevel": 60,
     "requiredBait": null,
@@ -5848,9 +5719,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "storm"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["day"],
     "difficulty": 7,
     "requiredRodLevel": 60,
     "requiredBait": null,
@@ -5878,9 +5747,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "fog",
       "blood_moon"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 7,
     "requiredRodLevel": 60,
     "requiredBait": null,
@@ -5932,9 +5799,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "aurora"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["day"],
     "difficulty": 7,
     "requiredRodLevel": 60,
     "requiredBait": null,
@@ -5959,9 +5824,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["day"],
     "difficulty": 7,
     "requiredRodLevel": 60,
     "requiredBait": null,
@@ -6065,9 +5928,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "fog"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 7,
     "requiredRodLevel": 60,
     "requiredBait": null,
@@ -6119,9 +5980,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "aurora"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["day"],
     "difficulty": 8,
     "requiredRodLevel": 100,
     "requiredBait": null,
@@ -6200,10 +6059,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     ],
     "season": "any",
     "weather": "any",
-    "activeTime": [
-      "evening",
-      "night"
-    ],
+    "activeTime": ["evening","night"],
     "difficulty": 8,
     "requiredRodLevel": 100,
     "requiredBait": null,
@@ -6231,10 +6087,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "storm"
     ],
-    "activeTime": [
-      "day",
-      "evening"
-    ],
+    "activeTime": ["day","evening"],
     "difficulty": 8,
     "requiredRodLevel": 100,
     "requiredBait": null,
@@ -6262,9 +6115,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "meteor_shower"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["day"],
     "difficulty": 9,
     "requiredRodLevel": 180,
     "requiredBait": null,
@@ -6272,7 +6123,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "xp": 2200,
     "museumValue": 4800,
     "hidden": true,
-    "discoveryCondition": "Caught during a Meteor Shower at night in The Neon Tide.",
+    "discoveryCondition": "Caught during a Meteor Shower in the day in The Neon Tide.",
     "description": "Every angler who's caught it swears it belonged to a different world."
   },
   {
@@ -6294,9 +6145,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "aurora"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 9,
     "requiredRodLevel": 180,
     "requiredBait": null,
@@ -6304,7 +6153,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "xp": 2200,
     "museumValue": 4800,
     "hidden": true,
-    "discoveryCondition": "Caught during Aurora weather at night in The Neon Tide.",
+    "discoveryCondition": "Caught during Aurora weather in the evening in The Neon Tide.",
     "description": "Its markings are still expanding, slowly, like a galaxy of its own."
   },
   {
@@ -6326,9 +6175,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "fog"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 9,
     "requiredRodLevel": 180,
     "requiredBait": null,
@@ -6336,7 +6183,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "xp": 2200,
     "museumValue": 4800,
     "hidden": true,
-    "discoveryCondition": "Caught in dense fog at night in The Neon Tide.",
+    "discoveryCondition": "Caught in dense morning fog in The Neon Tide.",
     "description": "Caught it once. Caught it twice. Not sure which memory is real."
   },
   {
@@ -6389,9 +6236,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "blood_moon",
       "fog"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 9,
     "requiredRodLevel": 180,
     "requiredBait": null,
@@ -6399,7 +6244,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "xp": 2200,
     "museumValue": 4800,
     "hidden": true,
-    "discoveryCondition": "Caught on a Blood Moon or in heavy fog at night in The Neon Tide.",
+    "discoveryCondition": "Caught on a Blood Moon or in heavy evening fog in The Neon Tide.",
     "description": "Its lure doesn't glow. It bends the light around it inward."
   },
   {
@@ -6421,10 +6266,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "storm"
     ],
-    "activeTime": [
-      "evening",
-      "night"
-    ],
+    "activeTime": ["evening","night"],
     "difficulty": 9,
     "requiredRodLevel": 180,
     "requiredBait": null,
@@ -6455,9 +6297,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "rain",
       "fog"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 10,
     "requiredRodLevel": 250,
     "requiredBait": "magical_dust",
@@ -6465,7 +6305,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "xp": 6200,
     "museumValue": 13000,
     "hidden": true,
-    "discoveryCondition": "Caught in rain or fog at night in The Neon Tide, with Magical Dust equipped and Luck above 140.",
+    "discoveryCondition": "Caught in rain or fog in the evening in The Neon Tide, with Magical Dust equipped and Luck above 140.",
     "description": "Older than the reef, and still quietly dissolving everything it touches."
   },
   {
@@ -6487,9 +6327,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "fog"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 10,
     "requiredRodLevel": 250,
     "requiredBait": "dragon_blood",
@@ -6497,7 +6335,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "xp": 6200,
     "museumValue": 13000,
     "hidden": true,
-    "discoveryCondition": "Caught in heavy fog at night with Dragon Blood equipped and Luck above 160 in The Neon Tide.",
+    "discoveryCondition": "Caught in heavy morning fog with Dragon Blood equipped and Luck above 160 in The Neon Tide.",
     "description": "Stone on the outside, somehow, still swimming."
   },
   {
@@ -6519,9 +6357,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "blood_moon"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 10,
     "requiredRodLevel": 250,
     "requiredBait": null,
@@ -6529,7 +6365,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "xp": 6200,
     "museumValue": 13000,
     "hidden": true,
-    "discoveryCondition": "Caught on a Blood Moon at night with Luck above 180 in The Neon Tide.",
+    "discoveryCondition": "Caught on a Blood Moon in the evening with Luck above 180 in The Neon Tide.",
     "description": "Bound in symbols from a language nobody's cracked. It seems to understand them fine."
   },
   {
@@ -6552,9 +6388,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "aurora",
       "meteor_shower"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["morning"],
     "difficulty": 10,
     "requiredRodLevel": 300,
     "requiredBait": "starlight_dust",
@@ -6562,7 +6396,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "xp": 12500,
     "museumValue": 25000,
     "hidden": true,
-    "discoveryCondition": "Caught during Aurora or Meteor Shower at night in The Neon Tide, with Starlight Dust equipped and Luck above 200.",
+    "discoveryCondition": "Caught during Aurora or Meteor Shower in the morning in The Neon Tide, with Starlight Dust equipped and Luck above 200.",
     "description": "Wears a slowly turning spiral galaxy across both wings."
   },
   {
@@ -6585,9 +6419,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "full_moon",
       "meteor_shower"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["evening"],
     "difficulty": 10,
     "requiredRodLevel": 300,
     "requiredBait": "starlight_dust",
@@ -6595,7 +6427,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "xp": 12500,
     "museumValue": 25000,
     "hidden": true,
-    "discoveryCondition": "Caught under a Full Moon or Meteor Shower at night in The Neon Tide, with Starlight Dust equipped and Luck above 220.",
+    "discoveryCondition": "Caught under a Full Moon or Meteor Shower in the evening in The Neon Tide, with Starlight Dust equipped and Luck above 220.",
     "description": "Leaves a trail of dim starlight that fades a minute after it passes."
   },
   {
@@ -6617,9 +6449,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "meteor_shower"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["day"],
     "difficulty": 10,
     "requiredRodLevel": 300,
     "requiredBait": "magical_dust",
@@ -6627,7 +6457,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "xp": 12500,
     "museumValue": 25000,
     "hidden": true,
-    "discoveryCondition": "Caught during a Meteor Shower at night in The Neon Tide, with Magical Dust equipped and Luck above 250.",
+    "discoveryCondition": "Caught during a Meteor Shower in the day in The Neon Tide, with Magical Dust equipped and Luck above 250.",
     "description": "Doesn't attack. Just detonates, and the water forgives it."
   },
   {
@@ -6649,9 +6479,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "weather": [
       "full_moon"
     ],
-    "activeTime": [
-      "night"
-    ],
+    "activeTime": ["night"],
     "difficulty": 10,
     "requiredRodLevel": 350,
     "requiredBait": "magical_dust",
@@ -6682,10 +6510,7 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
       "sunny",
       "full_moon"
     ],
-    "activeTime": [
-      "day",
-      "night"
-    ],
+    "activeTime": ["day","night"],
     "difficulty": 10,
     "requiredRodLevel": 350,
     "requiredBait": "starlight_dust",
@@ -6695,11 +6520,2627 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "hidden": true,
     "discoveryCondition": "Sunny day or Full Moon night in summer in The Neon Tide, with Starlight Dust equipped and Luck above 320.",
     "description": "Every fin is a small wing of pure light. It answers to nothing."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "amberjaw_darter",
+    "name": "Amberjaw Darter",
+    "rarity": "common",
+    "price": 11,
+    "weight": [
+      0.05,
+      0.5
+    ],
+    "length": [
+      5,
+      18
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 1,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "A small amber-jawed fish that darts between the reeds too fast to see clearly."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "azuretail_rudd",
+    "name": "Azuretail Rudd",
+    "rarity": "common",
+    "price": 11,
+    "weight": [
+      0.05,
+      0.5
+    ],
+    "length": [
+      5,
+      18
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 1,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "Common in shallow pools. Its blue tail is the only splash of color in muddy water."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "birchscale_roach",
+    "name": "Birchscale Roach",
+    "rarity": "common",
+    "price": 11,
+    "weight": [
+      0.05,
+      0.5
+    ],
+    "length": [
+      5,
+      18
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 1,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "Pale and patterned like birch bark. Blends into pebbly shallows."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "boulderhead_tetra",
+    "name": "Boulderhead Tetra",
+    "rarity": "common",
+    "price": 11,
+    "weight": [
+      0.05,
+      0.5
+    ],
+    "length": [
+      5,
+      18
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 2,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "Its oversized head looks comical. The grip it has on the hook does not."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "brookscale_minnow",
+    "name": "Brookscale Minnow",
+    "rarity": "common",
+    "price": 11,
+    "weight": [
+      0.05,
+      0.5
+    ],
+    "length": [
+      5,
+      18
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["morning","day"],
+    "difficulty": 1,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "Runs in every brook in World 3. The first thing new anglers catch."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "brookscale_sculpin",
+    "name": "Brookscale Sculpin",
+    "rarity": "common",
+    "price": 12,
+    "weight": [
+      0.05,
+      0.5
+    ],
+    "length": [
+      5,
+      18
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 2,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 6,
+    "museumValue": 9,
+    "description": "Hides under flat rocks and darts out. Mistaken for a brookscale minnow until it bites."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "claybelly_chub",
+    "name": "Claybelly Chub",
+    "rarity": "common",
+    "price": 11,
+    "weight": [
+      0.1,
+      0.8
+    ],
+    "length": [
+      8,
+      22
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 2,
+    "requiredRodLevel": 2,
+    "requiredBait": null,
+    "xp": 6,
+    "museumValue": 9,
+    "description": "Belly the color of river clay. Sits on the bottom and waits for the rod to do the work."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "cloverbelly_tetra",
+    "name": "Cloverbelly Tetra",
+    "rarity": "common",
+    "price": 11,
+    "weight": [
+      0.05,
+      0.4
+    ],
+    "length": [
+      4,
+      12
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 1,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "The green patch on its belly looks painted. It is not."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "driftleaf_minnow",
+    "name": "Driftleaf Minnow",
+    "rarity": "common",
+    "price": 12,
+    "weight": [
+      0.02,
+      0.2
+    ],
+    "length": [
+      3,
+      9
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 1,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "Flat-bodied, drifts like a fallen leaf at the surface. Hard to hook."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "duststripe_perch",
+    "name": "Duststripe Perch",
+    "rarity": "common",
+    "price": 14,
+    "weight": [
+      0.1,
+      0.9
+    ],
+    "length": [
+      10,
+      25
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["morning","day"],
+    "difficulty": 2,
+    "requiredRodLevel": 2,
+    "requiredBait": null,
+    "xp": 7,
+    "museumValue": 10,
+    "description": "Dusty brown stripes run head to tail. You almost miss it on the surface."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "dusttail_darter",
+    "name": "Dusttail Darter",
+    "rarity": "common",
+    "price": 11,
+    "weight": [
+      0.02,
+      0.15
+    ],
+    "length": [
+      3,
+      8
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 2,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "Its tail kicks up a tiny plume of silt with every dart. Always moving."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "embernose_chub",
+    "name": "Embernose Chub",
+    "rarity": "common",
+    "price": 14,
+    "weight": [
+      0.15,
+      1
+    ],
+    "length": [
+      12,
+      28
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 2,
+    "requiredRodLevel": 3,
+    "requiredBait": null,
+    "xp": 7,
+    "museumValue": 10,
+    "description": "The tip of its snout glows faintly orange. Not bioluminescence — just sunburn."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "glassscale_smelt",
+    "name": "Glassscale Smelt",
+    "rarity": "common",
+    "price": 12,
+    "weight": [
+      0.02,
+      0.12
+    ],
+    "length": [
+      5,
+      14
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 1,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "Translucent scales catch light like fragments of bottle glass."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "maplefin_bream",
+    "name": "Maplefin Bream",
+    "rarity": "common",
+    "price": 14,
+    "weight": [
+      0.2,
+      1.2
+    ],
+    "length": [
+      14,
+      30
+    ],
+    "season": "autumn",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 2,
+    "requiredRodLevel": 3,
+    "requiredBait": null,
+    "xp": 7,
+    "museumValue": 10,
+    "description": "Autumn-red fins. Most abundant when the leaves turn."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "mossback_bleak",
+    "name": "Mossback Bleak",
+    "rarity": "common",
+    "price": 11,
+    "weight": [
+      0.02,
+      0.15
+    ],
+    "length": [
+      4,
+      10
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 1,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "A thin coat of green moss has taken root on its dorsal. It does not mind."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "pebble_dartfish",
+    "name": "Pebble Dartfish",
+    "rarity": "common",
+    "price": 11,
+    "weight": [
+      0.01,
+      0.08
+    ],
+    "length": [
+      3,
+      7
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 1,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "Pebble-colored. You've mistaken it for a pebble three times and it knows."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "rainpool_gudgeon",
+    "name": "Rainpool Gudgeon",
+    "rarity": "common",
+    "price": 12,
+    "weight": [
+      0.05,
+      0.35
+    ],
+    "length": [
+      6,
+      15
+    ],
+    "season": "any",
+    "weather": [
+      "rain"
+    ],
+    "activeTime": "any",
+    "difficulty": 2,
+    "requiredRodLevel": 2,
+    "requiredBait": null,
+    "xp": 6,
+    "museumValue": 9,
+    "description": "Only appears in standing rainwater. Gone when it dries."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "reedtip_tetra",
+    "name": "Reedtip Tetra",
+    "rarity": "common",
+    "price": 11,
+    "weight": [
+      0.02,
+      0.15
+    ],
+    "length": [
+      4,
+      10
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 1,
+    "requiredRodLevel": 1,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "The tip of its dorsal fin looks exactly like a reed. Anglers have cast at the wrong thing."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "saffron_shad",
+    "name": "Saffron Shad",
+    "rarity": "common",
+    "price": 13,
+    "weight": [
+      0.1,
+      0.8
+    ],
+    "length": [
+      10,
+      22
+    ],
+    "season": "summer",
+    "weather": "any",
+    "activeTime": ["day"],
+    "difficulty": 2,
+    "requiredRodLevel": 2,
+    "requiredBait": null,
+    "xp": 6,
+    "museumValue": 9,
+    "description": "Warm gold scales brighten in summer sun. Popular at market."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "sandnose_roach",
+    "name": "Sandnose Roach",
+    "rarity": "common",
+    "price": 11,
+    "weight": [
+      0.1,
+      0.7
+    ],
+    "length": [
+      8,
+      20
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 2,
+    "requiredRodLevel": 2,
+    "requiredBait": null,
+    "xp": 5,
+    "museumValue": 8,
+    "description": "Ploughs the sandy riverbed snout-first. Occasionally comes up with something in its mouth."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "brookamber_smelt",
+    "name": "Brookamber Smelt",
+    "rarity": "uncommon",
+    "price": 90,
+    "weight": [
+      0.05,
+      0.5
+    ],
+    "length": [
+      8,
+      18
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 3,
+    "requiredRodLevel": 5,
+    "requiredBait": null,
+    "xp": 22,
+    "museumValue": 42,
+    "description": "Amber-tinted, swims in loose schools over gravel-bed brooks."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "cobalt_threefin",
+    "name": "Cobalt Threefin",
+    "rarity": "uncommon",
+    "price": 95,
+    "weight": [
+      0.1,
+      0.8
+    ],
+    "length": [
+      10,
+      25
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["day"],
+    "difficulty": 3,
+    "requiredRodLevel": 6,
+    "requiredBait": null,
+    "xp": 24,
+    "museumValue": 44,
+    "description": "Three distinct fins, each cobalt blue. Navigates with uncanny precision."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "copperball_loach",
+    "name": "Copperball Loach",
+    "rarity": "uncommon",
+    "price": 85,
+    "weight": [
+      0.05,
+      0.4
+    ],
+    "length": [
+      6,
+      15
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 3,
+    "requiredRodLevel": 5,
+    "requiredBait": null,
+    "xp": 21,
+    "museumValue": 40,
+    "description": "Rolls into a copper-sheened ball when threatened. Still gets caught anyway."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "copperglass_darter",
+    "name": "Copperglass Darter",
+    "rarity": "uncommon",
+    "price": 88,
+    "weight": [
+      0.05,
+      0.35
+    ],
+    "length": [
+      5,
+      14
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 3,
+    "requiredRodLevel": 5,
+    "requiredBait": null,
+    "xp": 22,
+    "museumValue": 41,
+    "description": "Copper-tinted scales that look transparent in shallow light."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "coralstripe_wrasse",
+    "name": "Coralstripe Wrasse",
+    "rarity": "uncommon",
+    "price": 100,
+    "weight": [
+      0.1,
+      0.6
+    ],
+    "length": [
+      10,
+      22
+    ],
+    "season": "summer",
+    "weather": "any",
+    "activeTime": ["day"],
+    "difficulty": 4,
+    "requiredRodLevel": 8,
+    "requiredBait": null,
+    "xp": 26,
+    "museumValue": 46,
+    "description": "Bright coral stripes run along its flanks. A tropical stowaway."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "fernstripe_pikelet",
+    "name": "Fernstripe Pikelet",
+    "rarity": "uncommon",
+    "price": 85,
+    "weight": [
+      0.1,
+      0.7
+    ],
+    "length": [
+      8,
+      20
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 3,
+    "requiredRodLevel": 5,
+    "requiredBait": null,
+    "xp": 21,
+    "museumValue": 40,
+    "description": "Fern-green stripes, miniature pike attitude. Bites harder than its size warrants."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "fogwater_shiner",
+    "name": "Fogwater Shiner",
+    "rarity": "uncommon",
+    "price": 90,
+    "weight": [
+      0.05,
+      0.4
+    ],
+    "length": [
+      6,
+      14
+    ],
+    "season": "any",
+    "weather": [
+      "fog"
+    ],
+    "activeTime": "any",
+    "difficulty": 3,
+    "requiredRodLevel": 6,
+    "requiredBait": null,
+    "xp": 22,
+    "museumValue": 42,
+    "description": "Active only in foggy conditions. The mist seems to feed it."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "goldenflare_mackerel",
+    "name": "Goldenflare Mackerel",
+    "rarity": "uncommon",
+    "price": 105,
+    "weight": [
+      0.3,
+      1.5
+    ],
+    "length": [
+      15,
+      35
+    ],
+    "season": "any",
+    "weather": [
+      "sunny"
+    ],
+    "activeTime": ["day"],
+    "difficulty": 4,
+    "requiredRodLevel": 9,
+    "requiredBait": null,
+    "xp": 27,
+    "museumValue": 48,
+    "description": "Golden flares radiate from its gills when it catches sunlight."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "lilyroot_sculpin",
+    "name": "Lilyroot Sculpin",
+    "rarity": "uncommon",
+    "price": 85,
+    "weight": [
+      0.1,
+      0.6
+    ],
+    "length": [
+      8,
+      20
+    ],
+    "season": "spring",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 3,
+    "requiredRodLevel": 5,
+    "requiredBait": null,
+    "xp": 21,
+    "museumValue": 40,
+    "description": "Nests among lily roots in spring. Territorial enough to bite your fingers."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "marblehorn_fish",
+    "name": "Marblehorn Fish",
+    "rarity": "uncommon",
+    "price": 95,
+    "weight": [
+      0.1,
+      0.8
+    ],
+    "length": [
+      10,
+      24
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 4,
+    "requiredRodLevel": 7,
+    "requiredBait": null,
+    "xp": 24,
+    "museumValue": 44,
+    "description": "A small horn of marbled stone grows from its forehead. A natural curiosity."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "mosscrest_killifish",
+    "name": "Mosscrest Killifish",
+    "rarity": "uncommon",
+    "price": 88,
+    "weight": [
+      0.02,
+      0.2
+    ],
+    "length": [
+      4,
+      10
+    ],
+    "season": "any",
+    "weather": [
+      "rain",
+      "fog"
+    ],
+    "activeTime": "any",
+    "difficulty": 3,
+    "requiredRodLevel": 6,
+    "requiredBait": null,
+    "xp": 22,
+    "museumValue": 41,
+    "description": "A crest of soft green algae grows from its head, season after season."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "pinecone_goby",
+    "name": "Pinecone Goby",
+    "rarity": "uncommon",
+    "price": 85,
+    "weight": [
+      0.05,
+      0.3
+    ],
+    "length": [
+      5,
+      12
+    ],
+    "season": "autumn",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 3,
+    "requiredRodLevel": 5,
+    "requiredBait": null,
+    "xp": 21,
+    "museumValue": 40,
+    "description": "Scales textured and shaped like a pinecone. Falls to the bottom when alarmed."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "puddlefin_killifish",
+    "name": "Puddlefin Killifish",
+    "rarity": "uncommon",
+    "price": 88,
+    "weight": [
+      0.02,
+      0.18
+    ],
+    "length": [
+      3,
+      9
+    ],
+    "season": "any",
+    "weather": [
+      "rain"
+    ],
+    "activeTime": "any",
+    "difficulty": 3,
+    "requiredRodLevel": 5,
+    "requiredBait": null,
+    "xp": 22,
+    "museumValue": 41,
+    "description": "Colonizes roadside puddles overnight. Disappears before the puddle does."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "rainspot_dace",
+    "name": "Rainspot Dace",
+    "rarity": "uncommon",
+    "price": 90,
+    "weight": [
+      0.05,
+      0.4
+    ],
+    "length": [
+      6,
+      16
+    ],
+    "season": "any",
+    "weather": [
+      "rain"
+    ],
+    "activeTime": "any",
+    "difficulty": 3,
+    "requiredRodLevel": 6,
+    "requiredBait": null,
+    "xp": 23,
+    "museumValue": 43,
+    "description": "Spots appear on its flanks only when wet. In the rain, it looks like a different fish."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "reedwhisker_carp",
+    "name": "Reedwhisker Carp",
+    "rarity": "uncommon",
+    "price": 95,
+    "weight": [
+      0.5,
+      2.5
+    ],
+    "length": [
+      18,
+      38
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 4,
+    "requiredRodLevel": 8,
+    "requiredBait": null,
+    "xp": 24,
+    "museumValue": 44,
+    "description": "Long whiskers trail behind it through the reeds. Never in a hurry."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "slatewhisker_barbel",
+    "name": "Slatewhisker Barbel",
+    "rarity": "uncommon",
+    "price": 95,
+    "weight": [
+      0.5,
+      2.5
+    ],
+    "length": [
+      18,
+      38
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["morning"],
+    "difficulty": 4,
+    "requiredRodLevel": 8,
+    "requiredBait": null,
+    "xp": 24,
+    "museumValue": 44,
+    "description": "Slate-grey whiskers that feel the riverbed in total darkness."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "stonefin_bramiet",
+    "name": "Stonefin Bramiet",
+    "rarity": "uncommon",
+    "price": 90,
+    "weight": [
+      0.1,
+      0.8
+    ],
+    "length": [
+      10,
+      22
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 3,
+    "requiredRodLevel": 7,
+    "requiredBait": null,
+    "xp": 23,
+    "museumValue": 43,
+    "description": "Fins rigid as stone. They scratch anything they brush against."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "sunbrick_tench",
+    "name": "Sunbrick Tench",
+    "rarity": "uncommon",
+    "price": 100,
+    "weight": [
+      0.5,
+      2.5
+    ],
+    "length": [
+      18,
+      38
+    ],
+    "season": "summer",
+    "weather": [
+      "sunny"
+    ],
+    "activeTime": ["day"],
+    "difficulty": 4,
+    "requiredRodLevel": 9,
+    "requiredBait": null,
+    "xp": 26,
+    "museumValue": 46,
+    "description": "Warm orange-red scales, brightest in full summer sun. Slow and heavy."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "willowfin_roach",
+    "name": "Willowfin Roach",
+    "rarity": "uncommon",
+    "price": 88,
+    "weight": [
+      0.1,
+      0.8
+    ],
+    "length": [
+      10,
+      22
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 3,
+    "requiredRodLevel": 6,
+    "requiredBait": null,
+    "xp": 22,
+    "museumValue": 41,
+    "description": "Fins droop and sway like willow branches. Remarkably peaceful to watch."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "yellowtail_gudgeon",
+    "name": "Yellowtail Gudgeon",
+    "rarity": "uncommon",
+    "price": 88,
+    "weight": [
+      0.05,
+      0.4
+    ],
+    "length": [
+      6,
+      14
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["morning","day"],
+    "difficulty": 3,
+    "requiredRodLevel": 6,
+    "requiredBait": null,
+    "xp": 22,
+    "museumValue": 41,
+    "description": "Yellow tail catches the morning light. Schools in sunny shallows."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "ambercrest_lungfish",
+    "name": "Ambercrest Lungfish",
+    "rarity": "rare",
+    "price": 420,
+    "weight": [
+      1,
+      5
+    ],
+    "length": [
+      30,
+      70
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 5,
+    "requiredRodLevel": 20,
+    "requiredBait": null,
+    "xp": 68,
+    "museumValue": 155,
+    "description": "Breathes air when the water is too warm. Amber crest rises like a crown."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "bramblefin_catfish",
+    "name": "Bramblefin Catfish",
+    "rarity": "rare",
+    "price": 450,
+    "weight": [
+      2,
+      8
+    ],
+    "length": [
+      35,
+      80
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["morning"],
+    "difficulty": 5,
+    "requiredRodLevel": 22,
+    "requiredBait": null,
+    "xp": 72,
+    "museumValue": 162,
+    "description": "Thorned fins like briar brambles. The net pays for it every time."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "brookruby_dory",
+    "name": "Brookruby Dory",
+    "rarity": "rare",
+    "price": 400,
+    "weight": [
+      0.3,
+      1.5
+    ],
+    "length": [
+      15,
+      35
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 5,
+    "requiredRodLevel": 18,
+    "requiredBait": null,
+    "xp": 64,
+    "museumValue": 148,
+    "description": "Ruby-red shimmer in running water. Very fast, very nervous."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "copperleaf_sunfish",
+    "name": "Copperleaf Sunfish",
+    "rarity": "rare",
+    "price": 430,
+    "weight": [
+      0.5,
+      2.5
+    ],
+    "length": [
+      18,
+      40
+    ],
+    "season": "summer",
+    "weather": [
+      "sunny"
+    ],
+    "activeTime": ["day"],
+    "difficulty": 5,
+    "requiredRodLevel": 20,
+    "requiredBait": null,
+    "xp": 70,
+    "museumValue": 158,
+    "description": "Scales the color of copper leaf, blazing in afternoon sun."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "jadeglass_surgeon",
+    "name": "Jadeglass Surgeon",
+    "rarity": "rare",
+    "price": 500,
+    "weight": [
+      0.5,
+      2.5
+    ],
+    "length": [
+      20,
+      40
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 6,
+    "requiredRodLevel": 26,
+    "requiredBait": null,
+    "xp": 80,
+    "museumValue": 175,
+    "description": "Jade-green with a razor spine at the base of its tail. Surgeons are named for something."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "moonberry_gourami",
+    "name": "Moonberry Gourami",
+    "rarity": "rare",
+    "price": 440,
+    "weight": [
+      0.2,
+      1.2
+    ],
+    "length": [
+      12,
+      28
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["night"],
+    "difficulty": 5,
+    "requiredRodLevel": 22,
+    "requiredBait": null,
+    "xp": 71,
+    "museumValue": 160,
+    "description": "Moon-silver with berry-blue spots. Only feeds under starlight."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "opalwing_flyingfish",
+    "name": "Opalwing Flyingfish",
+    "rarity": "rare",
+    "price": 480,
+    "weight": [
+      0.3,
+      1.5
+    ],
+    "length": [
+      20,
+      40
+    ],
+    "season": "any",
+    "weather": [
+      "windy"
+    ],
+    "activeTime": ["day"],
+    "difficulty": 6,
+    "requiredRodLevel": 25,
+    "requiredBait": null,
+    "xp": 78,
+    "museumValue": 172,
+    "description": "Opal-shimmering pectoral fins that catch the wind and carry it out of the water."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "orchidfin_tetra",
+    "name": "Orchidfin Tetra",
+    "rarity": "rare",
+    "price": 410,
+    "weight": [
+      0.05,
+      0.4
+    ],
+    "length": [
+      5,
+      12
+    ],
+    "season": "spring",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 5,
+    "requiredRodLevel": 18,
+    "requiredBait": null,
+    "xp": 66,
+    "museumValue": 152,
+    "description": "Orchid-purple fins bloom open when it senses a threat. Doesn't help much."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "prismback_discus",
+    "name": "Prismback Discus",
+    "rarity": "rare",
+    "price": 460,
+    "weight": [
+      0.3,
+      1.5
+    ],
+    "length": [
+      15,
+      32
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 6,
+    "requiredRodLevel": 24,
+    "requiredBait": null,
+    "xp": 74,
+    "museumValue": 165,
+    "description": "Every scale on its back splits light into a tiny prism. Dense schools look like a mirror."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "prismfin_wrasse",
+    "name": "Prismfin Wrasse",
+    "rarity": "rare",
+    "price": 460,
+    "weight": [
+      0.3,
+      1.5
+    ],
+    "length": [
+      15,
+      35
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["day"],
+    "difficulty": 6,
+    "requiredRodLevel": 24,
+    "requiredBait": null,
+    "xp": 74,
+    "museumValue": 165,
+    "description": "Fins fracture light into spectral beams. Divers spot it from twenty meters above."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "rosewater_gar",
+    "name": "Rosewater Gar",
+    "rarity": "rare",
+    "price": 430,
+    "weight": [
+      1,
+      5
+    ],
+    "length": [
+      35,
+      80
+    ],
+    "season": "spring",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 5,
+    "requiredRodLevel": 21,
+    "requiredBait": null,
+    "xp": 69,
+    "museumValue": 156,
+    "description": "Rose-pink hue fades to white at the tips. A gar that forgot it was supposed to look dangerous."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "rubywing_swordtail",
+    "name": "Rubywing Swordtail",
+    "rarity": "rare",
+    "price": 440,
+    "weight": [
+      0.1,
+      0.8
+    ],
+    "length": [
+      8,
+      20
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 5,
+    "requiredRodLevel": 22,
+    "requiredBait": null,
+    "xp": 71,
+    "museumValue": 160,
+    "description": "Ruby-red wings bracket a rapier tail extension. Slices through current effortlessly."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "rumicheart_carp",
+    "name": "Rumicheart Carp",
+    "rarity": "rare",
+    "price": 420,
+    "weight": [
+      1,
+      4
+    ],
+    "length": [
+      25,
+      55
+    ],
+    "season": "any",
+    "weather": [
+      "rain"
+    ],
+    "activeTime": "any",
+    "difficulty": 5,
+    "requiredRodLevel": 20,
+    "requiredBait": null,
+    "xp": 68,
+    "museumValue": 155,
+    "description": "A perfect heart marking on its flank in deep maroon. Poets pay well for the sight of one."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "sapphire_cheek_barb",
+    "name": "Sapphire Cheek Barb",
+    "rarity": "rare",
+    "price": 450,
+    "weight": [
+      0.1,
+      0.7
+    ],
+    "length": [
+      8,
+      18
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["morning"],
+    "difficulty": 5,
+    "requiredRodLevel": 22,
+    "requiredBait": null,
+    "xp": 72,
+    "museumValue": 162,
+    "description": "Sapphire blue cheek patches that light up at first light. Early anglers know to look."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "scarlet_mudfish",
+    "name": "Scarlet Mudfish",
+    "rarity": "rare",
+    "price": 410,
+    "weight": [
+      0.5,
+      2.5
+    ],
+    "length": [
+      15,
+      35
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["evening"],
+    "difficulty": 5,
+    "requiredRodLevel": 19,
+    "requiredBait": null,
+    "xp": 66,
+    "museumValue": 152,
+    "description": "Scarlet against dark mud. Only emerges at dusk to feed."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "stonefang_gar",
+    "name": "Stonefang Gar",
+    "rarity": "rare",
+    "price": 500,
+    "weight": [
+      2,
+      8
+    ],
+    "length": [
+      40,
+      90
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 6,
+    "requiredRodLevel": 27,
+    "requiredBait": null,
+    "xp": 80,
+    "museumValue": 175,
+    "description": "Fangs calcified stone-hard. Bites clean through standard leaders."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "sunset_ribbonfish",
+    "name": "Sunset Ribbonfish",
+    "rarity": "rare",
+    "price": 480,
+    "weight": [
+      0.5,
+      2.5
+    ],
+    "length": [
+      60,
+      140
+    ],
+    "season": "any",
+    "weather": [
+      "sunny"
+    ],
+    "activeTime": ["evening"],
+    "difficulty": 6,
+    "requiredRodLevel": 26,
+    "requiredBait": null,
+    "xp": 78,
+    "museumValue": 172,
+    "description": "Long as a ribbon, sunset-orange. Surfaces only at dusk."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "topazback_mollie",
+    "name": "Topazback Mollie",
+    "rarity": "rare",
+    "price": 400,
+    "weight": [
+      0.05,
+      0.4
+    ],
+    "length": [
+      4,
+      10
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 5,
+    "requiredRodLevel": 18,
+    "requiredBait": null,
+    "xp": 64,
+    "museumValue": 148,
+    "description": "Topaz yellow on its back, fading to white below. Common in clear, fast water."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "amethyst_emperor_fish",
+    "name": "Amethyst Emperor Fish",
+    "rarity": "epic",
+    "price": 2800,
+    "weight": [
+      15,
+      50
+    ],
+    "length": [
+      80,
+      170
+    ],
+    "season": "any",
+    "weather": [
+      "aurora"
+    ],
+    "activeTime": ["day"],
+    "difficulty": 7,
+    "requiredRodLevel": 60,
+    "requiredBait": null,
+    "xp": 280,
+    "museumValue": 600,
+    "description": "Amethyst bioluminescence runs from nose to tail. Rules the aurora pools."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "azure_anglerfish",
+    "name": "Azure Anglerfish",
+    "rarity": "epic",
+    "price": 2500,
+    "weight": [
+      3,
+      12
+    ],
+    "length": [
+      30,
+      65
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["evening"],
+    "difficulty": 7,
+    "requiredRodLevel": 55,
+    "requiredBait": null,
+    "xp": 250,
+    "museumValue": 540,
+    "description": "Azure lure bobs in the dark. Curious fish follow it straight to you."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "blueberry_lanternfish",
+    "name": "Blueberry Lanternfish",
+    "rarity": "epic",
+    "price": 2300,
+    "weight": [
+      0.5,
+      3
+    ],
+    "length": [
+      10,
+      25
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["night"],
+    "difficulty": 7,
+    "requiredRodLevel": 52,
+    "requiredBait": null,
+    "xp": 230,
+    "museumValue": 500,
+    "description": "Deep-blue photophores cluster along its belly like ripe berries."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "cobalt_lionfish",
+    "name": "Cobalt Lionfish",
+    "rarity": "epic",
+    "price": 2700,
+    "weight": [
+      0.5,
+      2.5
+    ],
+    "length": [
+      15,
+      40
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 7,
+    "requiredRodLevel": 58,
+    "requiredBait": null,
+    "xp": 270,
+    "museumValue": 580,
+    "description": "Cobalt-tipped venomous spines. Reef fish give it a wide berth."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "coralfire_grouper",
+    "name": "Coralfire Grouper",
+    "rarity": "epic",
+    "price": 2900,
+    "weight": [
+      10,
+      40
+    ],
+    "length": [
+      60,
+      130
+    ],
+    "season": "summer",
+    "weather": [
+      "sunny"
+    ],
+    "activeTime": ["day"],
+    "difficulty": 7,
+    "requiredRodLevel": 62,
+    "requiredBait": null,
+    "xp": 290,
+    "museumValue": 620,
+    "description": "Coral-red with fire-orange blotches. Territorial over its reef section."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "crimson_lanternfish",
+    "name": "Crimson Lanternfish",
+    "rarity": "epic",
+    "price": 2400,
+    "weight": [
+      0.5,
+      3
+    ],
+    "length": [
+      10,
+      25
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["evening"],
+    "difficulty": 7,
+    "requiredRodLevel": 54,
+    "requiredBait": null,
+    "xp": 240,
+    "museumValue": 520,
+    "description": "Crimson photophores pulse in a rhythm. Schools of them look like slow-moving fire."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "crimsonveil_manta",
+    "name": "Crimsonveil Manta",
+    "rarity": "epic",
+    "price": 3200,
+    "weight": [
+      30,
+      90
+    ],
+    "length": [
+      100,
+      220
+    ],
+    "season": "any",
+    "weather": [
+      "storm"
+    ],
+    "activeTime": "any",
+    "difficulty": 8,
+    "requiredRodLevel": 70,
+    "requiredBait": null,
+    "xp": 320,
+    "museumValue": 680,
+    "description": "Crimson-edged fins billow in storm surf. Appears only in rough weather."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "emberjaw_snapper",
+    "name": "Emberjaw Snapper",
+    "rarity": "epic",
+    "price": 2600,
+    "weight": [
+      5,
+      20
+    ],
+    "length": [
+      35,
+      75
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 7,
+    "requiredRodLevel": 57,
+    "requiredBait": null,
+    "xp": 260,
+    "museumValue": 560,
+    "description": "Jaws glow ember-orange when it opens wide. A warning. Not a nice one."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "jadefang_barracuda",
+    "name": "Jadefang Barracuda",
+    "rarity": "epic",
+    "price": 3000,
+    "weight": [
+      8,
+      30
+    ],
+    "length": [
+      60,
+      140
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["evening","night"],
+    "difficulty": 8,
+    "requiredRodLevel": 65,
+    "requiredBait": null,
+    "xp": 300,
+    "museumValue": 640,
+    "description": "Jade-tipped teeth. Faster than its size should allow."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "mirrorfin_sailfish",
+    "name": "Mirrorfin Sailfish",
+    "rarity": "epic",
+    "price": 3100,
+    "weight": [
+      20,
+      80
+    ],
+    "length": [
+      150,
+      300
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["day"],
+    "difficulty": 8,
+    "requiredRodLevel": 68,
+    "requiredBait": null,
+    "xp": 310,
+    "museumValue": 660,
+    "description": "Dorsal fin mirrors the sky above perfectly. You've mistaken its shadow for a cloud."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "moonveil_angler",
+    "name": "Moonveil Angler",
+    "rarity": "epic",
+    "price": 2700,
+    "weight": [
+      3,
+      12
+    ],
+    "length": [
+      25,
+      55
+    ],
+    "season": "any",
+    "weather": [
+      "full_moon"
+    ],
+    "activeTime": ["evening"],
+    "difficulty": 7,
+    "requiredRodLevel": 59,
+    "requiredBait": null,
+    "xp": 270,
+    "museumValue": 578,
+    "description": "Its lure glows silver-white under a rising full moon. Timing matters."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "opalcrest_discus",
+    "name": "Opalcrest Discus",
+    "rarity": "epic",
+    "price": 2900,
+    "weight": [
+      0.5,
+      3
+    ],
+    "length": [
+      15,
+      32
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 7,
+    "requiredRodLevel": 63,
+    "requiredBait": null,
+    "xp": 290,
+    "museumValue": 620,
+    "description": "An opal crest fans across its forehead, shifting color with each angle."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "opalwing_ray",
+    "name": "Opalwing Ray",
+    "rarity": "epic",
+    "price": 3100,
+    "weight": [
+      20,
+      70
+    ],
+    "length": [
+      100,
+      220
+    ],
+    "season": "any",
+    "weather": [
+      "aurora",
+      "sunny"
+    ],
+    "activeTime": ["night","day"],
+    "difficulty": 8,
+    "requiredRodLevel": 68,
+    "requiredBait": null,
+    "xp": 310,
+    "museumValue": 660,
+    "description": "Wings shift opal in aurora or sunlight. Hard to look at for long."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "sapphire_ribbon_eel",
+    "name": "Sapphire Ribbon Eel",
+    "rarity": "epic",
+    "price": 2800,
+    "weight": [
+      0.5,
+      3
+    ],
+    "length": [
+      60,
+      140
+    ],
+    "season": "any",
+    "weather": [
+      "fog"
+    ],
+    "activeTime": "any",
+    "difficulty": 7,
+    "requiredRodLevel": 61,
+    "requiredBait": null,
+    "xp": 280,
+    "museumValue": 600,
+    "description": "Sapphire ribbon, drifts on the current in fog. Almost impossible to distinguish from water."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "thundercheck_char",
+    "name": "Thundercheck Char",
+    "rarity": "epic",
+    "price": 3000,
+    "weight": [
+      2,
+      10
+    ],
+    "length": [
+      30,
+      70
+    ],
+    "season": "any",
+    "weather": [
+      "storm"
+    ],
+    "activeTime": "any",
+    "difficulty": 8,
+    "requiredRodLevel": 66,
+    "requiredBait": null,
+    "xp": 300,
+    "museumValue": 640,
+    "description": "Cheek markings like lightning strikes. Emerges whenever thunder rolls."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "abyssal_crown_ray",
+    "name": "Abyssal Crown Ray",
+    "rarity": "legendary",
+    "price": 10000,
+    "weight": [
+      50,
+      200
+    ],
+    "length": [
+      200,
+      400
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 8,
+    "requiredRodLevel": 90,
+    "requiredBait": null,
+    "xp": 1000,
+    "museumValue": 2100,
+    "description": "A crown of spines forms a natural diadem. Deep-water lords bow to nothing, and neither does this."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "astral_flamefin",
+    "name": "Astral Flamefin",
+    "rarity": "legendary",
+    "price": 11000,
+    "weight": [
+      10,
+      40
+    ],
+    "length": [
+      80,
+      160
+    ],
+    "season": "any",
+    "weather": [
+      "aurora",
+      "meteor_shower"
+    ],
+    "activeTime": ["day"],
+    "difficulty": 8,
+    "requiredRodLevel": 100,
+    "requiredBait": null,
+    "minLuck": 55,
+    "xp": 1100,
+    "museumValue": 2300,
+    "description": "Fins burn with an astral flame that doesn't consume itself. Appears during sky events."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "crystalmane_koi",
+    "name": "Crystalmane Koi",
+    "rarity": "legendary",
+    "price": 9500,
+    "weight": [
+      5,
+      20
+    ],
+    "length": [
+      50,
+      100
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 8,
+    "requiredRodLevel": 88,
+    "requiredBait": null,
+    "xp": 950,
+    "museumValue": 2000,
+    "description": "A mane of crystal filaments trails behind it. They chime in moving water."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "dreamfire_koi",
+    "name": "Dreamfire Koi",
+    "rarity": "legendary",
+    "price": 12000,
+    "weight": [
+      5,
+      20
+    ],
+    "length": [
+      50,
+      110
+    ],
+    "season": "any",
+    "weather": [
+      "full_moon"
+    ],
+    "activeTime": ["evening"],
+    "difficulty": 9,
+    "requiredRodLevel": 110,
+    "requiredBait": null,
+    "minLuck": 60,
+    "xp": 1200,
+    "museumValue": 2550,
+    "description": "Leaves a glowing wake of dreamfire behind it under a full moon."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "frostcrown_sturgeon",
+    "name": "Frostcrown Sturgeon",
+    "rarity": "legendary",
+    "price": 10500,
+    "weight": [
+      40,
+      150
+    ],
+    "length": [
+      150,
+      300
+    ],
+    "season": "winter",
+    "weather": [
+      "snow"
+    ],
+    "activeTime": "any",
+    "difficulty": 8,
+    "requiredRodLevel": 95,
+    "requiredBait": null,
+    "xp": 1050,
+    "museumValue": 2200,
+    "description": "Frost crystallizes across its crown plates in winter. Heavy with cold."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "leviathan_pike",
+    "name": "Leviathan Pike",
+    "rarity": "legendary",
+    "price": 13000,
+    "weight": [
+      60,
+      250
+    ],
+    "length": [
+      200,
+      450
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["evening","night"],
+    "difficulty": 9,
+    "requiredRodLevel": 120,
+    "requiredBait": null,
+    "minLuck": 65,
+    "xp": 1300,
+    "museumValue": 2750,
+    "description": "The largest pike ever catalogued. Fishers who've seen it argue over the length."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "obsidian_sailfish",
+    "name": "Obsidian Sailfish",
+    "rarity": "legendary",
+    "price": 11500,
+    "weight": [
+      50,
+      180
+    ],
+    "length": [
+      180,
+      350
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["day"],
+    "difficulty": 9,
+    "requiredRodLevel": 105,
+    "requiredBait": null,
+    "xp": 1150,
+    "museumValue": 2420,
+    "description": "Black as volcanic glass from sail to tail. Reflects nothing."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "solarfin_marlin",
+    "name": "Solarfin Marlin",
+    "rarity": "legendary",
+    "price": 12500,
+    "weight": [
+      60,
+      220
+    ],
+    "length": [
+      200,
+      380
+    ],
+    "season": "summer",
+    "weather": [
+      "sunny"
+    ],
+    "activeTime": ["day"],
+    "difficulty": 9,
+    "requiredRodLevel": 115,
+    "requiredBait": null,
+    "xp": 1250,
+    "museumValue": 2640,
+    "description": "Its dorsal fin charges with solar energy at noon. Handle with rubber gloves."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "stormscale_arowana",
+    "name": "Stormscale Arowana",
+    "rarity": "legendary",
+    "price": 11000,
+    "weight": [
+      8,
+      30
+    ],
+    "length": [
+      80,
+      150
+    ],
+    "season": "any",
+    "weather": [
+      "storm"
+    ],
+    "activeTime": "any",
+    "difficulty": 8,
+    "requiredRodLevel": 100,
+    "requiredBait": null,
+    "minLuck": 58,
+    "xp": 1100,
+    "museumValue": 2310,
+    "description": "Leaps out of storm surf to feed. Scale pattern matches thunderhead clouds."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "thundercrest_pike",
+    "name": "Thundercrest Pike",
+    "rarity": "legendary",
+    "price": 12000,
+    "weight": [
+      30,
+      120
+    ],
+    "length": [
+      150,
+      320
+    ],
+    "season": "any",
+    "weather": [
+      "storm"
+    ],
+    "activeTime": ["evening","night"],
+    "difficulty": 9,
+    "requiredRodLevel": 112,
+    "requiredBait": null,
+    "minLuck": 62,
+    "xp": 1200,
+    "museumValue": 2530,
+    "description": "Crest crackles blue-white in storms. The line goes live with current when you reel it in."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "eclipse_serpent",
+    "name": "Eclipse Serpent",
+    "rarity": "mythic",
+    "price": 26000,
+    "weight": [
+      10,
+      40
+    ],
+    "length": [
+      100,
+      250
+    ],
+    "season": "any",
+    "weather": [
+      "blood_moon",
+      "full_moon"
+    ],
+    "activeTime": ["day"],
+    "difficulty": 9,
+    "requiredRodLevel": 160,
+    "requiredBait": null,
+    "xp": 2600,
+    "museumValue": 5500,
+    "description": "Only appears during ecliptic weather. Its body blocks the light below the surface."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "eden_bloomfish",
+    "name": "Eden Bloomfish",
+    "rarity": "mythic",
+    "price": 28000,
+    "weight": [
+      5,
+      20
+    ],
+    "length": [
+      40,
+      90
+    ],
+    "season": "spring",
+    "weather": "any",
+    "activeTime": ["morning","day"],
+    "difficulty": 9,
+    "requiredRodLevel": 170,
+    "requiredBait": null,
+    "minLuck": 90,
+    "xp": 2800,
+    "museumValue": 5900,
+    "description": "Flowers bloom from its fins in spring. The water it swam through smells like a garden."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "gilded_mooneel",
+    "name": "Gilded Mooneel",
+    "rarity": "mythic",
+    "price": 27000,
+    "weight": [
+      5,
+      20
+    ],
+    "length": [
+      90,
+      180
+    ],
+    "season": "any",
+    "weather": [
+      "full_moon"
+    ],
+    "activeTime": ["night"],
+    "difficulty": 9,
+    "requiredRodLevel": 165,
+    "requiredBait": null,
+    "minLuck": 95,
+    "xp": 2700,
+    "museumValue": 5700,
+    "description": "Every scale is gilded. Surfaces only under a full moon, like it is waiting for applause."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "phoenixfin_koi",
+    "name": "Phoenixfin Koi",
+    "rarity": "mythic",
+    "price": 30000,
+    "weight": [
+      5,
+      20
+    ],
+    "length": [
+      50,
+      110
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 10,
+    "requiredRodLevel": 180,
+    "requiredBait": null,
+    "minLuck": 100,
+    "xp": 3000,
+    "museumValue": 6300,
+    "description": "Fins ignite and regrow with each cast of light. Some anglers swear it has been caught before."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "primordial_wishfish",
+    "name": "Primordial Wishfish",
+    "rarity": "mythic",
+    "price": 32000,
+    "weight": [
+      3,
+      12
+    ],
+    "length": [
+      30,
+      70
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 10,
+    "requiredRodLevel": 190,
+    "requiredBait": null,
+    "minLuck": 110,
+    "xp": 3200,
+    "museumValue": 6700,
+    "description": "Said to grant the desire of whoever hooks it. Nobody has proven it. Nobody has disproven it."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "wyrmfin_deepseer",
+    "name": "Wyrmfin Deepseer",
+    "rarity": "mythic",
+    "price": 29000,
+    "weight": [
+      20,
+      80
+    ],
+    "length": [
+      150,
+      320
+    ],
+    "season": "any",
+    "weather": [
+      "fog",
+      "blood_moon"
+    ],
+    "activeTime": ["evening"],
+    "difficulty": 10,
+    "requiredRodLevel": 175,
+    "requiredBait": null,
+    "minLuck": 105,
+    "xp": 2900,
+    "museumValue": 6100,
+    "description": "Its eyes are open even in the deepest dark. It has been watching you cast."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "fossiljaw_titanfish",
+    "name": "Fossiljaw Titanfish",
+    "rarity": "ancient",
+    "price": 68000,
+    "weight": [
+      300,
+      900
+    ],
+    "length": [
+      350,
+      700
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 10,
+    "requiredRodLevel": 230,
+    "requiredBait": "dream_blob",
+    "minLuck": 130,
+    "xp": 6800,
+    "museumValue": 14500,
+    "hidden": true,
+    "discoveryCondition": "Caught in the Fossil Trench with Dream Blob equipped.",
+    "description": "A jaw that has been fossilized, refossilized, and is still biting."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "fossilwing_paddlefish",
+    "name": "Fossilwing Paddlefish",
+    "rarity": "ancient",
+    "price": 65000,
+    "weight": [
+      150,
+      500
+    ],
+    "length": [
+      250,
+      550
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 10,
+    "requiredRodLevel": 220,
+    "requiredBait": null,
+    "minLuck": 120,
+    "xp": 6500,
+    "museumValue": 13800,
+    "hidden": true,
+    "discoveryCondition": "Caught in the Fossil Trench with Luck above 120.",
+    "description": "Stone wings stretch across its flanks, still shaped for swimming through ancient seas."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "ironplate_placodont",
+    "name": "Ironplate Placodont",
+    "rarity": "ancient",
+    "price": 72000,
+    "weight": [
+      200,
+      600
+    ],
+    "length": [
+      300,
+      600
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": "any",
+    "difficulty": 10,
+    "requiredRodLevel": 240,
+    "requiredBait": "dream_blob",
+    "minLuck": 145,
+    "xp": 7200,
+    "museumValue": 15200,
+    "hidden": true,
+    "discoveryCondition": "Caught in the Fossil Trench with Dream Blob and Luck above 145.",
+    "description": "Iron-dense plates cover it completely. The fossil record says this one shouldn't exist anymore."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "rootspine_coelacanth",
+    "name": "Rootspine Coelacanth",
+    "rarity": "ancient",
+    "price": 63000,
+    "weight": [
+      50,
+      200
+    ],
+    "length": [
+      150,
+      350
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["evening"],
+    "difficulty": 10,
+    "requiredRodLevel": 215,
+    "requiredBait": null,
+    "minLuck": 115,
+    "xp": 6300,
+    "museumValue": 13200,
+    "hidden": true,
+    "discoveryCondition": "Caught in the evening in the Fossil Trench with Luck above 115.",
+    "description": "Root-like spines branch from its spine. A living fossil older than most rocks."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "garden_of_stars_koi",
+    "name": "Garden of Stars Koi",
+    "rarity": "celestial",
+    "price": 140000,
+    "weight": [
+      20,
+      80
+    ],
+    "length": [
+      120,
+      280
+    ],
+    "season": "any",
+    "weather": [
+      "aurora",
+      "meteor_shower"
+    ],
+    "activeTime": ["evening"],
+    "difficulty": 10,
+    "requiredRodLevel": 290,
+    "requiredBait": "dream_blob",
+    "minLuck": 200,
+    "xp": 14000,
+    "museumValue": 29500,
+    "hidden": true,
+    "discoveryCondition": "Caught during Aurora or Meteor Shower in the evening with Dream Blob and Luck above 200.",
+    "description": "Each scale is a different constellation. The full map rotates with the season."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "seraphic_voidfish",
+    "name": "Seraphic Voidfish",
+    "rarity": "celestial",
+    "price": 155000,
+    "weight": [
+      30,
+      120
+    ],
+    "length": [
+      150,
+      350
+    ],
+    "season": "any",
+    "weather": "any",
+    "activeTime": ["evening"],
+    "difficulty": 10,
+    "requiredRodLevel": 310,
+    "requiredBait": "dream_blob",
+    "minLuck": 220,
+    "xp": 15500,
+    "museumValue": 32500,
+    "hidden": true,
+    "discoveryCondition": "Caught in the evening with Dream Blob and Luck above 220 anywhere in World 3.",
+    "description": "Neither fully here nor elsewhere. Seraphic in form, void in substance."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "starforge_arowana",
+    "name": "Starforge Arowana",
+    "rarity": "celestial",
+    "price": 145000,
+    "weight": [
+      10,
+      50
+    ],
+    "length": [
+      100,
+      220
+    ],
+    "season": "any",
+    "weather": [
+      "meteor_shower"
+    ],
+    "activeTime": ["day"],
+    "difficulty": 10,
+    "requiredRodLevel": 295,
+    "requiredBait": "dream_blob",
+    "minLuck": 210,
+    "xp": 14500,
+    "museumValue": 30500,
+    "hidden": true,
+    "discoveryCondition": "Caught during a Meteor Shower in the day with Dream Blob and Luck above 210.",
+    "description": "Forged in a stellar nursery, then somehow ended up here. The scales still hold heat."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "starforge_ray",
+    "name": "Starforge Ray",
+    "rarity": "celestial",
+    "price": 148000,
+    "weight": [
+      80,
+      350
+    ],
+    "length": [
+      200,
+      500
+    ],
+    "season": "any",
+    "weather": [
+      "aurora",
+      "meteor_shower"
+    ],
+    "activeTime": ["morning"],
+    "difficulty": 10,
+    "requiredRodLevel": 300,
+    "requiredBait": "dream_blob",
+    "minLuck": 215,
+    "xp": 14800,
+    "museumValue": 31000,
+    "hidden": true,
+    "discoveryCondition": "Caught during Aurora or Meteor Shower in the morning with Dream Blob and Luck above 215.",
+    "description": "Wings of stardust, pressed flat. Glides through the space between water and sky."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "celestine_leviathan",
+    "name": "Celestine Leviathan",
+    "rarity": "divine",
+    "price": 900000,
+    "weight": [
+      200,
+      700
+    ],
+    "length": [
+      400,
+      900
+    ],
+    "season": "any",
+    "weather": [
+      "aurora"
+    ],
+    "activeTime": ["evening"],
+    "difficulty": 10,
+    "requiredRodLevel": 350,
+    "requiredBait": "dream_blob",
+    "minLuck": 280,
+    "xp": 90000,
+    "museumValue": 200000,
+    "hidden": true,
+    "discoveryCondition": "Aurora weather, evening, in World 3, with Dream Blob and Luck above 280.",
+    "description": "Crystal-blue leviathan older than the world it swims in. Moves in slow circles for reasons only it knows."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "eternal_tide_dragonfish",
+    "name": "Eternal Tide Dragonfish",
+    "rarity": "divine",
+    "price": 1800000,
+    "weight": [
+      300,
+      900
+    ],
+    "length": [
+      500,
+      1000
+    ],
+    "season": "any",
+    "weather": [
+      "full_moon",
+      "blood_moon"
+    ],
+    "activeTime": ["evening"],
+    "difficulty": 10,
+    "requiredRodLevel": 350,
+    "requiredBait": "dream_blob",
+    "minLuck": 310,
+    "xp": 180000,
+    "museumValue": 450000,
+    "hidden": true,
+    "discoveryCondition": "Full Moon or Blood Moon, evening, in World 3, with Dream Blob and Luck above 310.",
+    "description": "Dragonfish of the eternal tide. The tide is not referring to water."
+  },
+  {
+    "worldId": 2,
+    "progressionRequired": true,
+    "id": "worldspring_leviathan",
+    "name": "Worldspring Leviathan",
+    "rarity": "divine",
+    "price": 2500000,
+    "weight": [
+      400,
+      1500
+    ],
+    "length": [
+      600,
+      1200
+    ],
+    "season": "spring",
+    "weather": [
+      "full_moon"
+    ],
+    "activeTime": ["morning"],
+    "difficulty": 10,
+    "requiredRodLevel": 380,
+    "requiredBait": "dream_blob",
+    "minLuck": 350,
+    "xp": 250000,
+    "museumValue": 600000,
+    "hidden": true,
+    "discoveryCondition": "Spring, Full Moon, morning, World 3, Dream Blob equipped, Luck above 350. The rarest gate in World 3.",
+    "description": "The first player to catch this triggers a server-wide announcement. It has been here since the world was new."
   }
 ] as any[]
   ).map((x: any) => [x.id, x]),
-);
-const rarityLabel = (r: string): Rarity => (r.charAt(0).toUpperCase() + r.slice(1)) as Rarity;
+);const rarityLabel = (r: string): Rarity => (r.charAt(0).toUpperCase() + r.slice(1)) as Rarity;
 
 export const fish: Fish[] = Object.values(FISH_DATA).map((f: FishSeed) => ({
   key: f.id,

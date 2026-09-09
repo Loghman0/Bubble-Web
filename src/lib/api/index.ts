@@ -8,6 +8,8 @@
 import { baitBySlug, baits, baitsByWorld } from "@/data/baits";
 import { enchantBySlug, enchants } from "@/data/enchants";
 import { fish, fishByRarity, fishBySlug, fishByWorld } from "@/data/fish";
+import { backpacks, backpackBySlug } from "@/data/backpacks";
+import { minions, minionBySlug } from "@/data/minions";
 import {
   eggBySlug,
   eggs,
@@ -83,6 +85,10 @@ export {
   baitsByWorld,
   enchants,
   enchantBySlug,
+  backpacks,
+  backpackBySlug,
+  minions,
+  minionBySlug,
   currencies,
   wikiArticles,
   wikiBySlug,

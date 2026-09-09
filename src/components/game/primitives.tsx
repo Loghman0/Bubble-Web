@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion, useInView, useMotionValue, useReducedMotion, useScroll, useSpring } from "motion/react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -102,16 +102,95 @@ export const rarityGlow: Record<Rarity, string> = {
   Divine: "from-rarity-divine/40",
 };
 
+const shimmerTiers: Partial<Record<Rarity, boolean>> = {
+  Mythic: true,
+  Ancient: true,
+  Celestial: true,
+  Divine: true,
+};
+
+/** Emoji fallback shown until the real rarity icon art is uploaded to `public/assets/rarities/`. */
+const rarityEmoji: Record<Rarity, string> = {
+  Common: "⚪",
+  Uncommon: "🟢",
+  Rare: "🔵",
+  Epic: "🟣",
+  Legendary: "🟠",
+  Mythic: "💗",
+  Ancient: "🟤",
+  Celestial: "🩵",
+  Divine: "✨",
+};
+
+/** `public/assets/rarities/<lowercase-rarity>.png` — one small icon per tier. */
+export function rarityIconPath(rarity: Rarity): string {
+  return `/assets/rarities/${rarity.toLowerCase()}.png`;
+}
+
+/**
+ * A single rarity icon. Tries the uploaded PNG first; if it 404s (not
+ * uploaded yet, or a typo'd filename) it silently falls back to the emoji
+ * glyph instead of showing a broken image — same pattern as `GameAsset`.
+ */
+export function RarityIcon({
+  rarity,
+  className = "size-4",
+}: {
+  rarity: Rarity;
+  className?: string;
+}) {
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    setFailed(false);
+  }, [rarity]);
+
+  if (failed) {
+    return (
+      <span aria-hidden className="inline-block leading-none">
+        {rarityEmoji[rarity]}
+      </span>
+    );
+  }
+
+  return (
+    <img
+      src={rarityIconPath(rarity)}
+      alt=""
+      aria-hidden
+      width={16}
+      height={16}
+      loading="lazy"
+      decoding="async"
+      onError={() => setFailed(true)}
+      className={cn("inline-block object-contain", className)}
+    />
+  );
+}
+
+/**
+ * Mythic/Celestial/Divine badges get a light sweep, but only on hover of the
+ * badge itself (`group-hover` off the nearest `.group` ancestor, e.g. a
+ * TiltCard) — never a perpetual loop. A catalog page can show two dozen
+ * Legendary+ cards at once; an always-on shimmer on all of them is noise,
+ * not a signature. See design-taste-frontend §"Perpetual Micro-Interactions".
+ */
 export function RarityBadge({ rarity, className }: { rarity: Rarity; className?: string }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold tracking-wide uppercase",
+        "relative inline-flex shrink-0 items-center gap-1 rounded-full border px-2.5 py-0.5 text-xs font-semibold tracking-wide whitespace-nowrap uppercase",
         rarityClass[rarity],
         className,
       )}
     >
+      <RarityIcon rarity={rarity} className="size-3.5 shrink-0" />
       {rarity}
+      {shimmerTiers[rarity] ? (
+        <span aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden rounded-full">
+          <span className="absolute inset-y-0 left-0 w-1/3 -translate-x-[150%] skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 transition-opacity duration-150 group-hover:animate-[shimmer-sweep_1s_ease-in-out] group-hover:opacity-100" />
+        </span>
+      ) : null}
     </span>
   );
 }
@@ -314,5 +393,80 @@ export function ProgressBar({
         />
       </div>
     </div>
+  );
+}
+
+/* -------------------------------------------------- magnetic wrapper */
+
+/**
+ * Wraps a single interactive child (typically a primary CTA `Button`) and
+ * pulls it a few pixels toward the cursor within its own bounds — the
+ * "magnetic micro-physics" pattern, reserved for the handful of buttons that
+ * matter most (invite/join CTAs), not applied globally to every button.
+ * Driven entirely by motion values so hovering never triggers a re-render.
+ */
+export function Magnetic({
+  children,
+  strength = 14,
+  className,
+}: {
+  children: ReactNode;
+  strength?: number;
+  className?: string;
+}) {
+  const reduced = useReducedMotion();
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const springX = useSpring(x, { stiffness: 300, damping: 20, mass: 0.4 });
+  const springY = useSpring(y, { stiffness: 300, damping: 20, mass: 0.4 });
+
+  function handlePointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    if (reduced) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    x.set(((e.clientX - rect.left) / rect.width - 0.5) * strength);
+    y.set(((e.clientY - rect.top) / rect.height - 0.5) * strength);
+  }
+
+  function handlePointerLeave() {
+    x.set(0);
+    y.set(0);
+  }
+
+  return (
+    <motion.div
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
+      style={{ x: reduced ? 0 : springX, y: reduced ? 0 : springY }}
+      className={cn("inline-block", className)}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* -------------------------------------------------- reading progress */
+
+/**
+ * A thin bar that fills as the reader moves through a specific element
+ * (an article body), not the whole page — so it reaches 100% exactly when
+ * the content ends, regardless of footer height. Pass the same ref used on
+ * the article container.
+ */
+export function ReadingProgress({ target }: { target: React.RefObject<HTMLElement | null> }) {
+  const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target,
+    offset: ["start start", "end end"],
+  });
+  const progress = useSpring(scrollYProgress, { stiffness: 200, damping: 32, mass: 0.3 });
+
+  if (reduced) return null;
+
+  return (
+    <motion.div
+      aria-hidden
+      className="sticky top-16 z-30 h-[2px] w-full origin-left bg-gradient-to-r from-lagoon via-primary to-treasure"
+      style={{ scaleX: progress }}
+    />
   );
 }

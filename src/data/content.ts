@@ -72,7 +72,7 @@ export const wikiArticles: WikiArticle[] = [
     sections: [
       {
         heading: "From Common to Divine",
-        body: "There are 250 species across both worlds (150 in The Shallows, 100 in The Neon Tide) distributed across 9 tiers: Common, Uncommon, Rare, Epic, Legendary, Mythic, Ancient, Celestial, and Divine. Catch rates drop steeply. While Commons bite constantly, Divines might take thousands of casts.",
+        body: "There are 350 species across the three known worlds (150 in The Shallows, 100 in The Neon Tide, 100 in The Frontier) distributed across 9 tiers: Common, Uncommon, Rare, Epic, Legendary, Mythic, Ancient, Celestial, and Divine. Catch rates drop steeply. While Commons bite constantly, Divines might take thousands of casts.",
       },
       {
         heading: "Collection value",
@@ -313,7 +313,7 @@ export const wikiArticles: WikiArticle[] = [
     title: "Worlds",
     category: "Extra Mechanics",
     summary: "Every Prestige unlocks an entire new world to fish in.",
-    tags: ["world", "shallows", "neon tide", "prestige"],
+    tags: ["world", "shallows", "neon tide", "frontier", "prestige"],
     related: ["prestige", "rods-and-enchants", "fishing-and-weather"],
     sections: [
       {
@@ -322,11 +322,15 @@ export const wikiArticles: WikiArticle[] = [
       },
       {
         heading: "World 1. The Neon Tide",
-        body: "Unlocked at your first Prestige. A stranger, bioluminescent, cavern-and-mutation-themed world with its own 100 fish species and its own parallel 9-rod ladder (Sunflower Rod through the equally powerful Necobone Rod). Check `/world` any time to see which world you're currently fishing in alongside the live weather, season, and time of day.",
+        body: "Unlocked at your first Prestige. A stranger, bioluminescent, cavern-and-mutation-themed world with its own 100 fish species and its own parallel 9-rod ladder (Sunflower Rod through the equally powerful Necobone Rod).",
+      },
+      {
+        heading: "World 2. The Frontier",
+        body: "Unlocked at your second Prestige. A wilder, more elemental world spanning druidic groves, deep-sea trenches, volcanic calderas, and clockwork machinery, with its own 100 fish species and its own parallel 9-rod ladder (Makeshift Rod through the equally powerful Aurora Rod). Check `/world` any time to see which world you're currently fishing in alongside the live weather, season, and time of day.",
       },
       {
         heading: "More worlds",
-        body: "Each further Prestige is designed to unlock another new world in the same way, with its own fish, rods, bait, and pets. The loop repeats for as many times as you're willing to reset and grind back up.",
+        body: "The roadmap has 10 Prestige tiers planned in total. Worlds 3 through 10 aren't live yet, each further Prestige is designed to unlock another new world in the same way, with its own fish, rods, bait, and pets. The loop repeats for as many times as you're willing to reset and grind back up.",
       },
     ],
   },
@@ -514,15 +518,19 @@ export const faq: { category: string; items: { q: string; a: string }[] }[] = [
     items: [
       {
         q: "How many fish are there?",
-        a: "250 species across two worlds. 150 in The Shallows (World 0) and 100 in The Neon Tide (World 1, unlocked at your first Prestige). Spread across nine rarity tiers, from Common to Divine. Every species has its own page in the encyclopedia.",
+        a: "350 species across the three known worlds. 150 in The Shallows (World 0), 100 in The Neon Tide (World 1, unlocked at your first Prestige), and 100 in The Frontier (World 2, unlocked at your second Prestige). Spread across nine rarity tiers, from Common to Divine. Every species has its own page in the encyclopedia.",
       },
       {
         q: "How many rods and baits are there?",
-        a: "18 rods (9 per world, each split into Beginner, Journeyman and Master tiers) and 24 baits (12 per world).",
+        a: "27 rods (9 per world, each split into Beginner, Journeyman and Master tiers) and 36 baits (12 per world).",
       },
       {
         q: "How many pets can I collect?",
-        a: "30 companions, hatched from 6 eggs total. Common, Rare and Ancient in each of the two worlds.",
+        a: "45 companions, hatched from 9 eggs total. Common, Rare and Ancient in each of the three known worlds.",
+      },
+      {
+        q: "How many Prestige tiers are there?",
+        a: "10 Prestige tiers are planned in total. The Shallows (base game), The Neon Tide (1st Prestige) and The Frontier (2nd Prestige) are live today; Prestiges 3 through 10 are still unrevealed.",
       },
       {
         q: "What do enchants do?",

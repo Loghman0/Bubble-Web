@@ -1,6 +1,8 @@
 import { baits } from "@/data/baits";
 import { enchants } from "@/data/enchants";
 import { fish } from "@/data/fish";
+import { backpacks } from "@/data/backpacks";
+import { minions } from "@/data/minions";
 import { eggs, pets } from "@/data/pets";
 import { rods } from "@/data/rods";
 import { WORLDS } from "@/data/worlds";
@@ -17,8 +19,10 @@ export const rosterCounts = {
   pets: pets.length,
   eggs: eggs.length,
   enchants: enchants.length,
+  backpacks: backpacks.length,
+  minions: minions.length,
   rarities: RARITIES.length,
-  worlds: WORLDS.length,
+  worlds: WORLDS.filter((w) => !w.comingSoon).length,
 };
 
 export const fishCountByRarity: { rarity: Rarity; count: number }[] = RARITIES.map((rarity) => ({

@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
 
 import { GameAsset } from "@/components/game/asset";
 import { RarityBadge, Reveal, WorldBadge } from "@/components/game/primitives";
@@ -43,6 +44,40 @@ export const Route = createFileRoute("/fish/$slug")({
   },
   component: FishDetail,
 });
+
+function FloatingArt({ children }: { children: React.ReactNode }) {
+  const reduced = useReducedMotion();
+  const rotateX = useSpring(0, { stiffness: 200, damping: 20, mass: 0.6 });
+  const rotateY = useSpring(0, { stiffness: 200, damping: 20, mass: 0.6 });
+
+  function handlePointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    if (reduced) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    rotateY.set((x - 0.5) * 14);
+    rotateX.set((0.5 - y) * 14);
+  }
+
+  function handlePointerLeave() {
+    rotateX.set(0);
+    rotateY.set(0);
+  }
+
+  return (
+    <motion.div
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
+      style={{
+        rotateX: reduced ? 0 : rotateX,
+        rotateY: reduced ? 0 : rotateY,
+        transformPerspective: 800,
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 function FishDetail() {
   const { entry: f } = Route.useLoaderData();
@@ -113,7 +148,9 @@ function FishDetail() {
 
       <div className="mt-8 grid gap-8 md:grid-cols-[300px_1fr]">
         <Reveal>
-          <GameAsset src={f.image} alt={f.name} rarity={f.rarity} />
+          <FloatingArt>
+            <GameAsset src={f.image} alt={f.name} rarity={f.rarity} />
+          </FloatingArt>
         </Reveal>
         <Reveal delay={0.08}>
           <div className="flex flex-wrap items-center gap-3">
@@ -142,14 +179,15 @@ function FishDetail() {
               : catchSummary(f)}
           </p>
           <dl className="mt-3 grid gap-2 sm:grid-cols-2">
-            {rows.map(([k, v]) => (
-              <div
+            {rows.map(([k, v], i) => (
+              <Reveal
                 key={k}
+                delay={0.04 * i}
                 className="glass flex justify-between gap-4 rounded-xl px-4 py-3 text-sm"
               >
                 <dt className="text-muted-foreground">{k}</dt>
                 <dd className="font-semibold">{v}</dd>
-              </div>
+              </Reveal>
             ))}
           </dl>
 

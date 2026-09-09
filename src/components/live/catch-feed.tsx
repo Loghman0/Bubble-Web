@@ -1,3 +1,4 @@
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Sparkles } from "lucide-react";
 
 import { LiveError, LiveIndicator, LiveSkeletonRows } from "@/components/live/status";
@@ -18,8 +19,16 @@ function timeAgo(iso: string): string {
 }
 
 function CatchRow({ entry }: { entry: PublicCatch }) {
+  const reduced = useReducedMotion();
   return (
-    <li className="flex items-center gap-3 rounded-xl border border-border/60 bg-card/40 px-4 py-3">
+    <motion.li
+      layout={!reduced}
+      initial={reduced ? false : { opacity: 0, y: -12, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={reduced ? {} : { opacity: 0, scale: 0.98 }}
+      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+      className="flex items-center gap-3 rounded-xl border border-border/60 bg-card/40 px-4 py-3"
+    >
       <span className="text-2xl" aria-hidden>
         {entry.isMutant ? "🧬" : "🐟"}
       </span>
@@ -46,7 +55,7 @@ function CatchRow({ entry }: { entry: PublicCatch }) {
         </p>
       </div>
       <span className="shrink-0 text-xs text-muted-foreground">{timeAgo(entry.caughtAt)}</span>
-    </li>
+    </motion.li>
   );
 }
 
@@ -82,9 +91,11 @@ export function CatchFeed({ mode }: { mode: "recent" | "rarest" }) {
           />
         ) : (
           <ul className="space-y-2">
-            {data.catches.map((c, i) => (
-              <CatchRow key={`${c.fishId}-${c.caughtAt}-${i}`} entry={c} />
-            ))}
+            <AnimatePresence initial={false}>
+              {data.catches.map((c, i) => (
+                <CatchRow key={`${c.fishId}-${c.caughtAt}-${i}`} entry={c} />
+              ))}
+            </AnimatePresence>
           </ul>
         )}
       </div>

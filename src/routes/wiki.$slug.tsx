@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 
-import { Reveal } from "@/components/game/primitives";
+import { ReadingProgress, Reveal } from "@/components/game/primitives";
+import { cn } from "@/lib/utils";
 import { wikiArticles, wikiBySlug } from "@/lib/api";
 import { pageMeta } from "@/lib/seo";
 
@@ -61,10 +63,39 @@ function WikiArticlePage() {
     .map((slug: string) => wikiArticles.find((x) => x.slug === slug))
     .filter(Boolean) as typeof wikiArticles;
 
+  const articleRef = useRef<HTMLElement>(null);
+  const [activeHeading, setActiveHeading] = useState<string | null>(null);
+
+  // Scroll-spy: highlight whichever section heading is currently nearest the
+  // top of the viewport, so the "On this page" list tracks reading position
+  // instead of being static. IntersectionObserver, not a scroll listener.
+  useEffect(() => {
+    const headings = a.sections.map((s: { heading: string }) => slugifyHeading(s.heading));
+    const elements = headings
+      .map((id: string) => document.getElementById(id))
+      .filter((el: HTMLElement | null): el is HTMLElement => el !== null);
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveHeading(entry.target.id);
+            break;
+          }
+        }
+      },
+      { rootMargin: "-96px 0px -70% 0px", threshold: 0 },
+    );
+    elements.forEach((el: HTMLElement) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [a.slug, a.sections]);
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <ReadingProgress target={articleRef} />
       <div className="grid gap-10 lg:grid-cols-[1fr_220px]">
-        <article className="max-w-3xl">
+        <article ref={articleRef} className="max-w-3xl">
           <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground">
             <Link to="/wiki" className="hover:text-foreground">
               Wiki
@@ -151,16 +182,25 @@ function WikiArticlePage() {
               On this page
             </h2>
             <ul className="mt-3 space-y-1 text-sm">
-              {a.sections.map((s: { heading: string }) => (
-                <li key={s.heading}>
-                  <a
-                    href={`#${slugifyHeading(s.heading)}`}
-                    className="block rounded-lg px-3 py-1.5 text-muted-foreground transition-colors hover:bg-muted/50 hover:text-foreground"
-                  >
-                    {s.heading}
-                  </a>
-                </li>
-              ))}
+              {a.sections.map((s: { heading: string }) => {
+                const id = slugifyHeading(s.heading);
+                const active = activeHeading === id;
+                return (
+                  <li key={s.heading}>
+                    <a
+                      href={`#${id}`}
+                      className={cn(
+                        "block rounded-lg px-3 py-1.5 transition-colors",
+                        active
+                          ? "bg-primary/10 font-medium text-primary"
+                          : "text-muted-foreground hover:bg-muted/50 hover:text-foreground",
+                      )}
+                    >
+                      {s.heading}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </aside>

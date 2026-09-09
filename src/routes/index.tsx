@@ -6,16 +6,19 @@ import {
   BookOpen,
   Egg as EggIcon,
   Fish,
+  Lock,
   MessagesSquare,
+  Package,
   PawPrint,
   Sparkles,
   Wand2,
+  Zap,
 } from "lucide-react";
 
 import { DeepHorizon } from "@/components/effects/DeepHorizon";
 import { OceanBackdrop } from "@/components/effects/OceanBackdrop";
-import { SwimmingFish } from "@/components/effects/SwimmingFish";
-import { RarityBadge, Reveal, StatCard } from "@/components/game/primitives";
+import { DiscordCastingEmbed, DiscordCatchEmbed } from "@/components/game/discord-embed";
+import { Magnetic, RarityBadge, Reveal, StatCard } from "@/components/game/primitives";
 import { DISCORD_URL, INVITE_URL } from "@/components/layout/Navbar";
 
 import { Button } from "@/components/ui/button";
@@ -59,6 +62,8 @@ const catalogLinks = [
   { icon: PawPrint, title: "Pets", to: "/pets" as const, count: rosterCounts.pets, unit: "companions" },
   { icon: EggIcon, title: "Eggs", to: "/eggs" as const, count: rosterCounts.eggs, unit: "eggs" },
   { icon: Wand2, title: "Enchants", to: "/enchants" as const, count: rosterCounts.enchants, unit: "enchants" },
+  { icon: Package, title: "Backpacks", to: "/backpacks" as const, count: rosterCounts.backpacks, unit: "tiers" },
+  { icon: Zap, title: "Minions", to: "/minions" as const, count: rosterCounts.minions, unit: "minions" },
 ];
 
 function Home() {
@@ -69,16 +74,6 @@ function Home() {
         <DeepHorizon />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pt-16 pb-24 sm:px-6 sm:pt-20 sm:pb-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:pt-24">
           <div>
-            <motion.span
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="glass inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-semibold tracking-wide text-foam uppercase"
-            >
-              <span className="size-1.5 rounded-full bg-lagoon" />
-              Free Discord fishing MMORPG
-            </motion.span>
-
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -106,46 +101,46 @@ function Home() {
               transition={{ duration: 0.6, delay: 0.24 }}
               className="mt-8 flex flex-wrap items-center gap-3"
             >
-              <Button asChild size="lg">
-                <a href={INVITE_URL} target="_blank" rel="noreferrer">
-                  Invite Bubble <ArrowRight className="size-4" aria-hidden />
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <a href={DISCORD_URL} target="_blank" rel="noreferrer">
-                  <MessagesSquare className="size-4" aria-hidden /> Join the Discord
-                </a>
-              </Button>
+              <Magnetic>
+                <Button asChild size="lg">
+                  <a href={INVITE_URL} target="_blank" rel="noreferrer">
+                    Invite Bubble <ArrowRight className="size-4" aria-hidden />
+                  </a>
+                </Button>
+              </Magnetic>
+              <Magnetic strength={10}>
+                <Button asChild size="lg" variant="outline">
+                  <a href={DISCORD_URL} target="_blank" rel="noreferrer">
+                    <MessagesSquare className="size-4" aria-hidden /> Join the Discord
+                  </a>
+                </Button>
+              </Magnetic>
             </motion.div>
           </div>
 
-          {/* Right column: floating glass stat card anchored over the depth art */}
+          {/* Right column: an actual Discord catch message — this is the product */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto hidden w-full max-w-sm lg:block"
+            className="relative mx-auto hidden w-full max-w-md lg:block"
           >
-            <div className="glass grain rounded-3xl p-6">
-              <p className="text-xs font-semibold tracking-[0.16em] text-foam/80 uppercase">
-                Live catalog
-              </p>
-              <div className="mt-4 grid grid-cols-2 gap-3">
-                <div>
-                  <p className="font-display text-3xl font-bold">{rosterCounts.fish}</p>
-                  <p className="text-xs text-muted-foreground">Fish species</p>
-                </div>
-                <div>
-                  <p className="font-display text-3xl font-bold">{rosterCounts.rarities}</p>
-                  <p className="text-xs text-muted-foreground">Rarity tiers</p>
-                </div>
-              </div>
-              <div className="mt-5 flex flex-wrap gap-1.5">
-                {fishCountByRarity.slice(0, 5).map((r) => (
-                  <RarityBadge key={r.rarity} rarity={r.rarity} />
-                ))}
-              </div>
-            </div>
+            <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-lagoon/20 to-treasure/10 blur-2xl" />
+            <DiscordCatchEmbed
+              fishName="Silent Deep Horror"
+              description="You never hear it approach. You only feel the line go still."
+              rarity="Celestial"
+              weight="118.76 kg"
+              length="216.6 cm"
+              image="/assets/fish/silent_deep_horror.png"
+              time="Today at 19:00"
+              detail={{
+                xp: "+14,085 XP",
+                critical: true,
+                levelUp: "491 → 496 · 🪙 24,950 · +3x Worm",
+              }}
+              className="rotate-[0.5deg]"
+            />
           </motion.div>
         </div>
       </section>
@@ -156,20 +151,87 @@ function Home() {
           <h2 id="how-it-plays" className="sr-only">
             How it plays
           </h2>
-          <div className="grid gap-8 sm:grid-cols-3">
-            {steps.map((s, i) => (
-              <Reveal key={s.number} delay={i * 0.08}>
-                <div className="flex gap-4">
-                  <span className="font-display text-3xl font-bold text-primary/40 tabular-nums">
-                    {s.number}
-                  </span>
+          <div className="grid gap-10 lg:grid-cols-[1fr_auto]">
+            <div className="grid gap-8 sm:grid-cols-3">
+              {steps.map((s, i) => (
+                <Reveal key={s.number} delay={i * 0.08}>
+                  <div className="flex gap-4">
+                    <span className="font-display text-3xl font-bold text-primary/40 tabular-nums">
+                      {s.number}
+                    </span>
+                    <div>
+                      <h3 className="font-display text-lg font-bold">{s.title}</h3>
+                      <p className="mt-1.5 text-sm text-muted-foreground">{s.body}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal delay={0.24} className="lg:w-64">
+              <div className="glass grain h-full rounded-3xl p-6">
+                <p className="text-xs font-semibold tracking-[0.16em] text-foam/80 uppercase">
+                  Live catalog
+                </p>
+                <div className="mt-4 grid grid-cols-2 gap-3">
                   <div>
-                    <h3 className="font-display text-lg font-bold">{s.title}</h3>
-                    <p className="mt-1.5 text-sm text-muted-foreground">{s.body}</p>
+                    <p className="font-display text-3xl font-bold">{rosterCounts.fish}</p>
+                    <p className="text-xs text-muted-foreground">Fish species</p>
+                  </div>
+                  <div>
+                    <p className="font-display text-3xl font-bold">{rosterCounts.rarities}</p>
+                    <p className="text-xs text-muted-foreground">Rarity tiers</p>
                   </div>
                 </div>
-              </Reveal>
-            ))}
+                <div className="mt-5 flex flex-wrap gap-1.5">
+                  {fishCountByRarity.map((r) => (
+                    <RarityBadge key={r.rarity} rarity={r.rarity} />
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Two real messages from a real server, cast to catch */}
+      <section className="relative isolate overflow-hidden border-y border-border/60 py-20" aria-labelledby="in-action">
+        <OceanBackdrop bubbles={10} />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+          <Reveal className="max-w-xl">
+            <p className="text-xs font-semibold tracking-[0.18em] text-primary uppercase">
+              In your server
+            </p>
+            <h2 id="in-action" className="mt-3 font-display text-3xl font-bold sm:text-4xl">
+              Cast, wait, reel it in
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              One slash command posts the whole exchange to your channel — everyone sees the cast
+              and the catch as it happens.
+            </p>
+          </Reveal>
+
+          <div className="mt-10 grid items-start gap-6 lg:grid-cols-2">
+            <Reveal delay={0.05} className="flex justify-center">
+              <DiscordCastingEmbed rodName="Coral Rod" time="Today at 15:06" />
+            </Reveal>
+            <Reveal delay={0.12} className="flex justify-center">
+              <DiscordCatchEmbed
+                fishName="Prism Serpent"
+                description='Bends light around itself. Half the "sightings" are guesses.'
+                rarity="Legendary"
+                weight="33.08 kg"
+                length="130.7 cm"
+                image="/assets/fish/prism_serpent.png"
+                time="Today at 15:06"
+                detail={{
+                  xp: "+2,388 XP",
+                  combo: "🔥 Combo streak: 2x (10% bonus)",
+                  critical: true,
+                  levelUp: "496 → 497 · 🪙 5,020",
+                }}
+              />
+            </Reveal>
           </div>
         </div>
       </section>
@@ -194,9 +256,8 @@ function Home() {
             >
               <Link
                 to={f.to}
-                className={`glass group flex h-full flex-col justify-between rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1.5 ${
-                  i === 0 ? "bg-gradient-to-br from-lagoon/20 to-transparent" : ""
-                }`}
+                className={`glass group flex h-full flex-col justify-between rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1.5 ${i === 0 ? "bg-gradient-to-br from-lagoon/20 to-transparent" : ""
+                  }`}
               >
                 <span className="flex size-11 items-center justify-center rounded-full bg-gradient-to-br from-lagoon/30 to-transparent text-primary">
                   <f.icon className="size-5" aria-hidden />
@@ -247,28 +308,52 @@ function Home() {
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
             {WORLDS.map((w, i) => (
               <Reveal key={w.id} delay={i * 0.08}>
-                <div
-                  className={`glass grain relative overflow-hidden rounded-3xl p-7 ${
-                    w.id === 0 ? "" : "border-neon/25"
-                  }`}
-                >
+                {w.comingSoon ? (
+                  /* Mystery / undiscovered world card */
+                  <div className="relative overflow-hidden rounded-3xl border border-white/5 bg-black/40 p-7 backdrop-blur-sm">
+                    <div
+                      className={`absolute -top-10 -right-10 size-40 rounded-full bg-gradient-to-br opacity-10 blur-2xl ${w.accent}`}
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(255,255,255,0.015)_2px,rgba(255,255,255,0.015)_4px)]" />
+                    <div className="relative flex items-start justify-between gap-4">
+                      <div>
+                        <p className="text-xs font-semibold tracking-[0.16em] text-white/30 uppercase">
+                          {w.tagline}
+                        </p>
+                        <h3 className="mt-2 font-display text-2xl font-bold tracking-widest text-white/20 select-none">
+                          {w.name}
+                        </h3>
+                        <p className="mt-3 max-w-xs text-sm italic text-white/25">
+                          {w.mysteryName}
+                        </p>
+                      </div>
+                      <Lock className="mt-1 size-5 shrink-0 text-white/15" aria-hidden />
+                    </div>
+                    <p className="relative mt-4 text-[10px] font-mono tracking-widest text-white/15 uppercase">
+                      Depth record: unknown
+                    </p>
+                  </div>
+                ) : (
+                  /* Known / unlocked world card */
                   <div
-                    className={`absolute -top-10 -right-10 size-40 rounded-full bg-gradient-to-br opacity-20 blur-2xl ${w.accent}`}
-                  />
-                  <p
-                    className={`relative text-xs font-semibold tracking-[0.16em] uppercase ${
-                      w.id === 0 ? "text-lagoon" : "text-neon"
-                    }`}
+                    className={`glass grain relative overflow-hidden rounded-3xl p-7 ${w.id === 0 ? "" : "border-neon/25"
+                      }`}
                   >
-                    {w.tagline}
-                  </p>
-                  <h3 className="relative mt-2 font-display text-2xl font-bold">{w.name}</h3>
-                  <p className="relative mt-2 max-w-xs text-sm text-muted-foreground">
-                    {w.id === 0
-                      ? "Where every angler starts. 150 species and the first nine rods."
-                      : "Unlocked at your first Prestige. A stranger, bioluminescent tide."}
-                  </p>
-                </div>
+                    <div
+                      className={`absolute -top-10 -right-10 size-40 rounded-full bg-gradient-to-br opacity-20 blur-2xl ${w.accent}`}
+                    />
+                    <p
+                      className={`relative text-xs font-semibold tracking-[0.16em] uppercase ${w.id === 0 ? "text-lagoon" : "text-neon"
+                        }`}
+                    >
+                      {w.tagline}
+                    </p>
+                    <h3 className="relative mt-2 font-display text-2xl font-bold">{w.name}</h3>
+                    <p className="relative mt-2 max-w-xs text-sm text-muted-foreground">
+                      {w.description}
+                    </p>
+                  </div>
+                )}
               </Reveal>
             ))}
           </div>
@@ -310,7 +395,7 @@ function Home() {
       {/* CTA. Full-bleed dark band, visually distinct from the hero's split composition */}
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 surface-abyss" />
-        <SwimmingFish />
+        <OceanBackdrop bubbles={12} />
         <div className="relative mx-auto max-w-3xl px-4 py-24 text-center sm:px-6">
           <Reveal>
             <h2 className="font-display text-3xl font-bold text-balance sm:text-4xl">
@@ -320,16 +405,20 @@ function Home() {
               Free to add, free to play. Bring Bubble to your Discord and start the collection.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button asChild size="lg">
-                <a href={INVITE_URL} target="_blank" rel="noreferrer">
-                  Invite Bubble <ArrowRight className="size-4" aria-hidden />
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link to="/wiki">
-                  <BookOpen className="size-4" aria-hidden /> Read the wiki
-                </Link>
-              </Button>
+              <Magnetic>
+                <Button asChild size="lg">
+                  <a href={INVITE_URL} target="_blank" rel="noreferrer">
+                    Invite Bubble <ArrowRight className="size-4" aria-hidden />
+                  </a>
+                </Button>
+              </Magnetic>
+              <Magnetic strength={10}>
+                <Button asChild size="lg" variant="outline">
+                  <Link to="/wiki">
+                    <BookOpen className="size-4" aria-hidden /> Read the wiki
+                  </Link>
+                </Button>
+              </Magnetic>
             </div>
           </Reveal>
         </div>

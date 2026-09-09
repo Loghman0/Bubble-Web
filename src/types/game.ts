@@ -10,13 +10,27 @@ export interface World {
   /**
    * Prestige badge artwork: /assets/World<id>/badge.png. Earned by prestiging
    * INTO this world, so World 0 (the starting world, never prestiged into)
-   * has none — leave undefined rather than pointing at a missing file.
+   * has none — leave undefined rather than pointing at a missing file. This
+   * is the primary icon shown everywhere (world selector, catalog cards,
+   * homepage) — see `worldIcon` for the one exception.
    */
   badgeIcon?: string;
-  /** World icon artwork: /assets/World<id>/icon.png (larger, used on page headers/cards). */
+  /**
+   * Globe-style world icon artwork: /assets/World<id>/icon.png. Retired as a
+   * primary visual in favor of `badgeIcon` everywhere except World 0, which
+   * has no prestige badge (it isn't a prestige tier) and so falls back to
+   * this. Kept only as that fallback — don't add new UI that prefers this
+   * over `badgeIcon`.
+   */
   worldIcon: string;
   /** Tailwind gradient stop classes used to theme cards/accents for this world. */
   accent: string;
+  /** One or two sentences of flavor shown on the homepage world card. Required for known (non-comingSoon) worlds. */
+  description?: string;
+  /** True for worlds not yet released — shown as themed mystery placeholders. */
+  comingSoon?: boolean;
+  /** Thematic in-universe lore name shown on mystery placeholders (e.g. "????? — Beyond the Rift"). */
+  mysteryName?: string;
 }
 
 export type Rarity =

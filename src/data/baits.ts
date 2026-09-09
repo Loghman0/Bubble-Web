@@ -7,11 +7,12 @@ import type { Bait } from "@/types/game";
  * coin sink. Artwork: `public/assets/baits/<key>.png`.
  *
  * Post-Phase-6 (Prestige System): every bait carries a `worldId` and a
- * `requiredLevel` (minimum player level to purchase). World 1 ("Neon
- * Frontier") reuses World 0's exact requiredLevel/price curve with a
- * reskinned id/name/description per bait — see `data/worlds.ts`. Tiers
- * (Beginner/Journeyman/Master) are derived here from `requiredLevel` bands
- * so a future world's baits are grouped automatically without manual tagging.
+ * `requiredLevel` (minimum player level to purchase). Each prestige tier
+ * (World 1 "The Neon Tide", World 2 "2nd Prestige") reuses World 0's exact
+ * requiredLevel/price curve with a reskinned id/name/description per bait —
+ * see `data/worlds.ts`. Tiers (Beginner/Journeyman/Master) are derived here
+ * from `requiredLevel` bands so a future world's baits are grouped
+ * automatically without manual tagging.
  */
 const seeds: [key: string, worldId: number, tier: Bait["tier"], name: string][] = [
   ["worm", 0, "Beginner", "Worm"],
@@ -38,6 +39,18 @@ const seeds: [key: string, worldId: number, tier: Bait["tier"], name: string][] 
   ["swiss_cheese", 1, "Master", "Swiss Cheese"],
   ["golden_scarab", 1, "Master", "Golden Scarab"],
   ["toxic_sludge", 1, "Master", "Toxic Sludge"],
+  ["meadow_grasshopper", 2, "Beginner", "Meadow Grasshopper"],
+  ["bog_leech", 2, "Beginner", "Bog Leech"],
+  ["phantom_spectral_worm", 2, "Beginner", "Phantom Spectral Worm"],
+  ["fungal_spore_grub", 2, "Beginner", "Fungal Spore Grub"],
+  ["bioluminescent_shrimp", 2, "Beginner", "Bioluminescent Shrimp"],
+  ["glacial_minnow_lure", 2, "Journeyman", "Glacial Minnow Lure"],
+  ["magma_leech", 2, "Journeyman", "Magma Leech"],
+  ["thunder_bug", 2, "Journeyman", "Thunder Bug"],
+  ["alchemists_sprite", 2, "Journeyman", "Alchemist's Sprite"],
+  ["cyber_nutrient_capsule", 2, "Master", "Cyber Nutrient Capsule"],
+  ["golden_desert_scarab", 2, "Master", "Golden Desert Scarab"],
+  ["dream_blob", 2, "Master", "Dream Blob"],
 ];
 
 interface BaitStats {
@@ -293,6 +306,129 @@ const BAIT_DATA: Record<string, BaitStats> = {
     treasureChanceAdd: 0.058,
     description:
       "Lethal to most things. Required to hook the most dangerous species in The Neon Tide.",
+  },
+  meadow_grasshopper: {
+    price: 4,
+    currency: "coins",
+    requiredLevel: 1,
+    rareChanceMult: 1,
+    legendaryChanceMult: 1,
+    weightMult: 1,
+    treasureChanceAdd: 0,
+    description: "Leaps into the water on its own. The fish appreciate the enthusiasm.",
+  },
+  bog_leech: {
+    price: 10,
+    currency: "coins",
+    requiredLevel: 1,
+    rareChanceMult: 1.08,
+    legendaryChanceMult: 1,
+    weightMult: 1.02,
+    treasureChanceAdd: 0,
+    description: "Thick and slow. Exactly what the deeper things prefer.",
+  },
+  phantom_spectral_worm: {
+    price: 18,
+    currency: "coins",
+    requiredLevel: 1,
+    rareChanceMult: 1.16,
+    legendaryChanceMult: 1,
+    weightMult: 1.05,
+    treasureChanceAdd: 0.003,
+    description: "Visible only underwater. From above, the line looks bare.",
+  },
+  fungal_spore_grub: {
+    price: 32,
+    currency: "coins",
+    requiredLevel: 1,
+    rareChanceMult: 1.26,
+    legendaryChanceMult: 1.03,
+    weightMult: 1.1,
+    treasureChanceAdd: 0.005,
+    description: "Releases a slow cloud of spores as it sinks. Something always follows.",
+  },
+  bioluminescent_shrimp: {
+    price: 65,
+    currency: "coins",
+    requiredLevel: 20,
+    rareChanceMult: 1.42,
+    legendaryChanceMult: 1.08,
+    weightMult: 1.15,
+    treasureChanceAdd: 0.008,
+    description: "Pulses blue in the dark. The things that live deepest can't look away.",
+  },
+  glacial_minnow_lure: {
+    price: 160,
+    currency: "coins",
+    requiredLevel: 50,
+    rareChanceMult: 1.62,
+    legendaryChanceMult: 1.18,
+    weightMult: 1.2,
+    treasureChanceAdd: 0.012,
+    description: "A frozen minnow preserved mid-swim. Predators think it's stunned prey.",
+  },
+  magma_leech: {
+    price: 200,
+    currency: "coins",
+    requiredLevel: 70,
+    rareChanceMult: 1.88,
+    legendaryChanceMult: 1.3,
+    weightMult: 1.28,
+    treasureChanceAdd: 0.016,
+    description:
+      "Survives volcanic water. The heat signature draws thermal predators from miles away.",
+  },
+  thunder_bug: {
+    price: 420,
+    currency: "coins",
+    requiredLevel: 100,
+    rareChanceMult: 2.18,
+    legendaryChanceMult: 1.5,
+    weightMult: 1.35,
+    treasureChanceAdd: 0.02,
+    description: "Crackles with static. Storm-swimming fish are magnetically drawn to it.",
+  },
+  alchemists_sprite: {
+    price: 950,
+    currency: "coins",
+    requiredLevel: 140,
+    rareChanceMult: 2.55,
+    legendaryChanceMult: 1.75,
+    weightMult: 1.42,
+    treasureChanceAdd: 0.026,
+    description:
+      "A bottled homunculus of pure bait essence. Alchemists refuse to say what's in it.",
+  },
+  cyber_nutrient_capsule: {
+    price: 5500,
+    currency: "coins",
+    requiredLevel: 200,
+    rareChanceMult: 3.05,
+    legendaryChanceMult: 2.2,
+    weightMult: 1.55,
+    treasureChanceAdd: 0.034,
+    description: "Synthesized in a lab. Dissolves into exactly what every rare species craves.",
+  },
+  golden_desert_scarab: {
+    price: 12000,
+    currency: "coins",
+    requiredLevel: 240,
+    rareChanceMult: 3.65,
+    legendaryChanceMult: 2.8,
+    weightMult: 1.68,
+    treasureChanceAdd: 0.042,
+    description: "An ancient beetle cast in gold. Mythic species emerge just to investigate.",
+  },
+  dream_blob: {
+    price: 30000,
+    currency: "coins",
+    requiredLevel: 310,
+    rareChanceMult: 4.6,
+    legendaryChanceMult: 3.9,
+    weightMult: 1.88,
+    treasureChanceAdd: 0.058,
+    description:
+      "Pulled from the boundary between sleep and water. Required for the divine tier.",
   },
 };
 
