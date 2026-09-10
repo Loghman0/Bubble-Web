@@ -79,7 +79,17 @@ export function Navbar() {
         style={{ height: reduced ? 64 : heightPx }}
         className="mx-auto flex max-w-7xl items-center gap-4 px-4 sm:px-6"
       >
-        <Link to="/" className="group flex items-center gap-2 font-display text-lg font-bold">
+        <a
+          href="/"
+          onClick={(e) => {
+            // Intentionally a hard navigation (not the router's <Link>): clicking the
+            // logo should fully refresh the app and land at the top of the page,
+            // regardless of which route or scroll position the user is currently on.
+            e.preventDefault();
+            window.location.assign("/");
+          }}
+          className="group flex items-center gap-2 font-display text-lg font-bold"
+        >
           <motion.span
             whileHover={reduced ? {} : { rotate: [0, -8, 8, -4, 0] }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -88,7 +98,7 @@ export function Navbar() {
             <img src="/bubble.png" alt="" className="size-7 object-contain" />
           </motion.span>
           <span className="text-gradient-ocean">Bubble</span>
-        </Link>
+        </a>
 
         <div className="hidden items-center gap-1 lg:flex">
           {primary.map((l) => (

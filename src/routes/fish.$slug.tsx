@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, useCanGoBack, useRouter } from "@tanstack/react-router";
 import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
 
 import { GameAsset } from "@/components/game/asset";
@@ -81,6 +81,15 @@ function FloatingArt({ children }: { children: React.ReactNode }) {
 
 function FishDetail() {
   const { entry: f } = Route.useLoaderData();
+  const router = useRouter();
+  // If the user arrived here by clicking a card in the encyclopedia, the list's
+  // world/filter/page selections live in that page's URL (see fish.index.tsx,
+  // which writes every change via navigate({ replace: true })). Going back
+  // through browser history returns to that exact URL, so selections are kept
+  // instead of resetting to the default World ("The Shallows"). Only fall back
+  // to a plain link to "/fish" when there's no in-app history to return to
+  // (e.g. someone opened this species page directly from a shared link).
+  const canGoBack = useCanGoBack();
 
   const bait = baitForFish(f);
   const rod = rodForFish(f);
@@ -139,9 +148,19 @@ function FishDetail() {
   return (
     <article className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
       <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground">
-        <Link to="/fish" className="hover:text-foreground">
-          Fish Encyclopedia
-        </Link>
+        {canGoBack ? (
+          <button
+            type="button"
+            onClick={() => router.history.back()}
+            className="cursor-pointer hover:text-foreground"
+          >
+            Fish Encyclopedia
+          </button>
+        ) : (
+          <Link to="/fish" className="hover:text-foreground">
+            Fish Encyclopedia
+          </Link>
+        )}
         <span aria-hidden> / </span>
         <span className="text-foreground">{f.name}</span>
       </nav>
@@ -205,9 +224,15 @@ function FishDetail() {
 
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild variant="outline">
-              <Link to="/fish">Back to encyclopedia</Link>
-            </Button>
+            {canGoBack ? (
+              <Button variant="outline" onClick={() => router.history.back()}>
+                Back to encyclopedia
+              </Button>
+            ) : (
+              <Button asChild variant="outline">
+                <Link to="/fish">Back to encyclopedia</Link>
+              </Button>
+            )}
             <Button asChild variant="ghost">
               <Link to="/conditions">Conditions guide</Link>
             </Button>
