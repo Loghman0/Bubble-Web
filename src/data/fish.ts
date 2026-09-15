@@ -9137,7 +9137,2475 @@ const FISH_DATA: Record<string, FishSeed> = Object.fromEntries(
     "hidden": true,
     "discoveryCondition": "Spring, Full Moon, morning, World 3, Dream Blob equipped, Luck above 350. The rarest gate in World 3.",
     "description": "The first player to catch this triggers a server-wide announcement. It has been here since the world was new."
-  }
+  },
+  // ==================== WORLD 4 FISH ====================
+  {
+  "worldId": 3,
+  "id": "brokenshell_bream",
+  "name": "Brokenshell Bream",
+  "rarity": "common",
+  "price": 90,
+  "weight": [
+    0.1,
+    1.2
+  ],
+  "length": [
+    8,
+    22
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 9,
+  "museumValue": 20,
+  "description": "Its shell is cracked but it keeps swimming. Admirable, really."
+},
+  {
+  "worldId": 3,
+  "id": "cobblegill_perch",
+  "name": "Cobblegill Perch",
+  "rarity": "common",
+  "price": 95,
+  "weight": [
+    0.2,
+    1.5
+  ],
+  "length": [
+    10,
+    25
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 10,
+  "museumValue": 21,
+  "description": "Gills caked with river cobble. Thrives in shallow, fast water."
+},
+  {
+  "worldId": 3,
+  "id": "coralarmor_snapper",
+  "name": "Coralarmor Snapper",
+  "rarity": "common",
+  "price": 105,
+  "weight": [
+    0.3,
+    2
+  ],
+  "length": [
+    12,
+    28
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 11,
+  "museumValue": 22,
+  "description": "Natural coral plating lines its back. Too tough for most predators."
+},
+  {
+  "worldId": 3,
+  "id": "crumbletooth_gudgeon",
+  "name": "Crumbletooth Gudgeon",
+  "rarity": "common",
+  "price": 80,
+  "weight": [
+    0.1,
+    0.8
+  ],
+  "length": [
+    6,
+    18
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 8,
+  "museumValue": 18,
+  "description": "Teeth worn to stumps from gravel feeding. Harmless to everything."
+},
+  {
+  "worldId": 3,
+  "id": "duckstone_tetra",
+  "name": "Duckstone Tetra",
+  "rarity": "common",
+  "price": 85,
+  "weight": [
+    0.05,
+    0.5
+  ],
+  "length": [
+    4,
+    12
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 9,
+  "museumValue": 19,
+  "description": "Hides under flat stones like a duck under a wing."
+},
+  {
+  "worldId": 3,
+  "id": "firstwarden_fish",
+  "name": "Firstwarden Fish",
+  "rarity": "common",
+  "price": 120,
+  "weight": [
+    0.5,
+    3
+  ],
+  "length": [
+    15,
+    40
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 12,
+  "museumValue": 26,
+  "description": "The first fish settlers in the world caught. Still as common as ever."
+},
+  {
+  "worldId": 3,
+  "id": "genesiscoral_carp",
+  "name": "Genesis Coral Carp",
+  "rarity": "common",
+  "price": 110,
+  "weight": [
+    0.4,
+    2.5
+  ],
+  "length": [
+    14,
+    35
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 11,
+  "museumValue": 24,
+  "description": "Grew alongside the oldest reef. Coral patterns cover its belly."
+},
+  {
+  "worldId": 3,
+  "id": "gravelscale_dace",
+  "name": "Gravelscale Dace",
+  "rarity": "common",
+  "price": 75,
+  "weight": [
+    0.05,
+    0.6
+  ],
+  "length": [
+    5,
+    15
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 8,
+  "museumValue": 17,
+  "description": "Scales like river gravel. Blends into riverbeds almost perfectly."
+},
+  {
+  "worldId": 3,
+  "id": "greenflame_bream",
+  "name": "Greenflame Bream",
+  "rarity": "common",
+  "price": 100,
+  "weight": [
+    0.2,
+    1.8
+  ],
+  "length": [
+    10,
+    28
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 10,
+  "museumValue": 22,
+  "description": "Emerald fins catch light like fire in shallow noon water."
+},
+  {
+  "worldId": 3,
+  "id": "greywater_carp",
+  "name": "Greywater Carp",
+  "rarity": "common",
+  "price": 85,
+  "weight": [
+    0.5,
+    4
+  ],
+  "length": [
+    20,
+    50
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 9,
+  "museumValue": 19,
+  "description": "Grey as the murky rivers it calls home. Nobody's favourite but everyone's catch."
+},
+  {
+  "worldId": 3,
+  "id": "hollowfin_roach",
+  "name": "Hollowfin Roach",
+  "rarity": "common",
+  "price": 70,
+  "weight": [
+    0.1,
+    0.9
+  ],
+  "length": [
+    6,
+    20
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 7,
+  "museumValue": 16,
+  "description": "Fins folded hollow like dry leaves. Quick to scatter."
+},
+  {
+  "worldId": 3,
+  "id": "hollowking_pike",
+  "name": "Hollowking Pike",
+  "rarity": "common",
+  "price": 125,
+  "weight": [
+    0.5,
+    4.5
+  ],
+  "length": [
+    25,
+    65
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 13,
+  "museumValue": 27,
+  "description": "Named for the hollow in its jaw. More bark than bite."
+},
+  {
+  "worldId": 3,
+  "id": "hollowlight_tetra",
+  "name": "Hollowlight Tetra",
+  "rarity": "common",
+  "price": 80,
+  "weight": [
+    0.05,
+    0.4
+  ],
+  "length": [
+    3,
+    10
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 8,
+  "museumValue": 18,
+  "description": "Translucent fins that glow faintly in dim water."
+},
+  {
+  "worldId": 3,
+  "id": "ironroot_catfish",
+  "name": "Ironroot Catfish",
+  "rarity": "common",
+  "price": 115,
+  "weight": [
+    1,
+    8
+  ],
+  "length": [
+    30,
+    70
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 12,
+  "museumValue": 25,
+  "description": "Hides in root tangles. Iron-coloured, slow, and stubborn to hook."
+},
+  {
+  "worldId": 3,
+  "id": "lowlight_chub",
+  "name": "Lowlight Chub",
+  "rarity": "common",
+  "price": 70,
+  "weight": [
+    0.1,
+    1
+  ],
+  "length": [
+    7,
+    20
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 7,
+  "museumValue": 16,
+  "description": "Prefers overcast days and shadowed pools. Shy but plentiful."
+},
+  {
+  "worldId": 3,
+  "id": "moltenglass_carp",
+  "name": "Molten Glass Carp",
+  "rarity": "common",
+  "price": 100,
+  "weight": [
+    0.3,
+    2.5
+  ],
+  "length": [
+    15,
+    40
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 10,
+  "museumValue": 22,
+  "description": "Scales flash like glass in sunlight. Feels heavier than it looks."
+},
+  {
+  "worldId": 3,
+  "id": "murkfin_bleak",
+  "name": "Murkfin Bleak",
+  "rarity": "common",
+  "price": 65,
+  "weight": [
+    0.05,
+    0.4
+  ],
+  "length": [
+    4,
+    12
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 7,
+  "museumValue": 15,
+  "description": "Barely visible in murky water. Anglers catch it by accident half the time."
+},
+  {
+  "worldId": 3,
+  "id": "originrune_serpent",
+  "name": "Originrune Serpent",
+  "rarity": "common",
+  "price": 130,
+  "weight": [
+    0.3,
+    2
+  ],
+  "length": [
+    30,
+    80
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 13,
+  "museumValue": 28,
+  "description": "Old runes along its side. Older than the rivers it swims in."
+},
+  {
+  "worldId": 3,
+  "id": "pebble_minnow",
+  "name": "Pebble Minnow",
+  "rarity": "common",
+  "price": 60,
+  "weight": [
+    0.02,
+    0.2
+  ],
+  "length": [
+    2,
+    8
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 6,
+  "museumValue": 14,
+  "description": "So small it barely counts as fishing. But it does count."
+},
+  {
+  "worldId": 3,
+  "id": "pillarwatch_bass",
+  "name": "Pillarwatch Bass",
+  "rarity": "common",
+  "price": 115,
+  "weight": [
+    0.5,
+    4
+  ],
+  "length": [
+    20,
+    55
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 12,
+  "museumValue": 25,
+  "description": "Circles ancient stone pillars submerged in the shallows."
+},
+  {
+  "worldId": 3,
+  "id": "river_chub",
+  "name": "River Chub",
+  "rarity": "common",
+  "price": 70,
+  "weight": [
+    0.1,
+    1
+  ],
+  "length": [
+    8,
+    22
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 7,
+  "museumValue": 16,
+  "description": "The river's most reliable resident. Always biting, never impressive."
+},
+  {
+  "worldId": 3,
+  "id": "rubblebelly_raoch",
+  "name": "Rubblebelly Roach",
+  "rarity": "common",
+  "price": 70,
+  "weight": [
+    0.1,
+    1.2
+  ],
+  "length": [
+    7,
+    22
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 7,
+  "museumValue": 16,
+  "description": "Belly armored with rubble-coloured scales. Bottom-feeds in gravel."
+},
+  {
+  "worldId": 3,
+  "id": "ruinback_darter",
+  "name": "Ruinback Darter",
+  "rarity": "common",
+  "price": 90,
+  "weight": [
+    0.05,
+    0.5
+  ],
+  "length": [
+    4,
+    14
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 9,
+  "museumValue": 20,
+  "description": "Darts between ruins faster than the eye can follow."
+},
+  {
+  "worldId": 3,
+  "id": "sagerune_carp",
+  "name": "Sagerune Carp",
+  "rarity": "common",
+  "price": 105,
+  "weight": [
+    0.4,
+    3
+  ],
+  "length": [
+    18,
+    45
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 11,
+  "museumValue": 23,
+  "description": "Markings read like a sage's recipe. Nobody knows what it means."
+},
+  {
+  "worldId": 3,
+  "id": "saltworn_dace",
+  "name": "Saltworn Dace",
+  "rarity": "common",
+  "price": 80,
+  "weight": [
+    0.1,
+    0.8
+  ],
+  "length": [
+    6,
+    18
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 8,
+  "museumValue": 18,
+  "description": "Scales eroded by salt drift. A traveller from brackish water."
+},
+  {
+  "worldId": 3,
+  "id": "slit_barbel",
+  "name": "Slit Barbel",
+  "rarity": "common",
+  "price": 85,
+  "weight": [
+    0.2,
+    1.5
+  ],
+  "length": [
+    10,
+    28
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 9,
+  "museumValue": 19,
+  "description": "Barbels thin as slits. Tastes the riverbed before taking a bite."
+},
+  {
+  "worldId": 3,
+  "id": "stilwater_roach",
+  "name": "Stillwater Roach",
+  "rarity": "common",
+  "price": 70,
+  "weight": [
+    0.1,
+    1
+  ],
+  "length": [
+    7,
+    22
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 7,
+  "museumValue": 16,
+  "description": "Only found in completely still water. Doesn't handle currents well."
+},
+  {
+  "worldId": 3,
+  "id": "stonevein_grouper",
+  "name": "Stonevein Grouper",
+  "rarity": "common",
+  "price": 120,
+  "weight": [
+    1,
+    7
+  ],
+  "length": [
+    28,
+    65
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 12,
+  "museumValue": 26,
+  "description": "Stone-veined pattern across its sides. A bottom-dweller who holds ground."
+},
+  {
+  "worldId": 3,
+  "id": "sunkencrown_fish",
+  "name": "Sunkencrown Fish",
+  "rarity": "common",
+  "price": 110,
+  "weight": [
+    0.3,
+    2.5
+  ],
+  "length": [
+    15,
+    38
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 11,
+  "museumValue": 24,
+  "description": "The crown-like fin gave it a regal name. It is not regal."
+},
+  {
+  "worldId": 3,
+  "id": "templetail_carp",
+  "name": "Templetail Carp",
+  "rarity": "common",
+  "price": 115,
+  "weight": [
+    0.5,
+    4
+  ],
+  "length": [
+    20,
+    50
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 12,
+  "museumValue": 25,
+  "description": "Tail shaped like a carved temple arch. Swims near ancient stonework."
+},
+  {
+  "worldId": 3,
+  "id": "tideworn_roach",
+  "name": "Tideworn Roach",
+  "rarity": "common",
+  "price": 70,
+  "weight": [
+    0.1,
+    1
+  ],
+  "length": [
+    7,
+    22
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 7,
+  "museumValue": 16,
+  "description": "Worn by years of tidal pull. Resilient in ways you'd never expect."
+},
+  {
+  "worldId": 3,
+  "id": "tombtide_barbel",
+  "name": "Tombtide Barbel",
+  "rarity": "common",
+  "price": 90,
+  "weight": [
+    0.2,
+    2
+  ],
+  "length": [
+    12,
+    35
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 9,
+  "museumValue": 20,
+  "description": "Found near sunken tombs. Feeds on what washes out of them."
+},
+  {
+  "worldId": 3,
+  "id": "wrackline_minnow",
+  "name": "Wrackline Minnow",
+  "rarity": "common",
+  "price": 60,
+  "weight": [
+    0.02,
+    0.3
+  ],
+  "length": [
+    2,
+    9
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 1,
+  "requiredBait": null,
+  "xp": 6,
+  "museumValue": 14,
+  "description": "Congregates along debris lines on the surface. Abundant and bite-sized."
+},
+  {
+  "worldId": 3,
+  "id": "abyssrune_eel",
+  "name": "Abyssrune Eel",
+  "rarity": "uncommon",
+  "price": 280,
+  "weight": [
+    0.3,
+    3
+  ],
+  "length": [
+    30,
+    90
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 10,
+  "requiredBait": null,
+  "xp": 28,
+  "museumValue": 60,
+  "description": "Rune-marked eel from deeper channels. Leaves faint glowing trails."
+},
+  {
+  "worldId": 3,
+  "id": "coldrune_pike",
+  "name": "Coldrune Pike",
+  "rarity": "uncommon",
+  "price": 320,
+  "weight": [
+    1,
+    8
+  ],
+  "length": [
+    40,
+    100
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 10,
+  "requiredBait": null,
+  "xp": 32,
+  "museumValue": 68,
+  "description": "Cold runes etched across its back. Bites in freezing water others ignore."
+},
+  {
+  "worldId": 3,
+  "id": "coreglass_anglerfish",
+  "name": "Coreglass Anglerfish",
+  "rarity": "uncommon",
+  "price": 350,
+  "weight": [
+    0.5,
+    4
+  ],
+  "length": [
+    15,
+    45
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 15,
+  "requiredBait": null,
+  "xp": 35,
+  "museumValue": 75,
+  "description": "A glass-clear core that glows like a lantern in deep water."
+},
+  {
+  "worldId": 3,
+  "id": "driftrune_smelt",
+  "name": "Driftrune Smelt",
+  "rarity": "uncommon",
+  "price": 260,
+  "weight": [
+    0.1,
+    0.8
+  ],
+  "length": [
+    8,
+    22
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 10,
+  "requiredBait": null,
+  "xp": 26,
+  "museumValue": 56,
+  "description": "Drifts wherever the current takes it. Runes shift with the flow."
+},
+  {
+  "worldId": 3,
+  "id": "duskglass_minnow",
+  "name": "Duskglass Minnow",
+  "rarity": "uncommon",
+  "price": 270,
+  "weight": [
+    0.05,
+    0.6
+  ],
+  "length": [
+    4,
+    14
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 10,
+  "requiredBait": null,
+  "xp": 27,
+  "museumValue": 58,
+  "description": "Glass-scaled at dusk. Invisible until the light hits it wrong."
+},
+  {
+  "worldId": 3,
+  "id": "glasswater_eel",
+  "name": "Glasswater Eel",
+  "rarity": "uncommon",
+  "price": 340,
+  "weight": [
+    0.2,
+    2.5
+  ],
+  "length": [
+    25,
+    75
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 15,
+  "requiredBait": null,
+  "xp": 34,
+  "museumValue": 72,
+  "description": "Transparent body shaped like still water. Unnerving in shallow pools."
+},
+  {
+  "worldId": 3,
+  "id": "mossfin_guppy",
+  "name": "Mossfin Guppy",
+  "rarity": "uncommon",
+  "price": 240,
+  "weight": [
+    0.02,
+    0.3
+  ],
+  "length": [
+    2,
+    8
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 10,
+  "requiredBait": null,
+  "xp": 24,
+  "museumValue": 52,
+  "description": "Fins draped in living moss. Common in spring ponds."
+},
+  {
+  "worldId": 3,
+  "id": "mossy_perch",
+  "name": "Mossy Perch",
+  "rarity": "uncommon",
+  "price": 260,
+  "weight": [
+    0.2,
+    2
+  ],
+  "length": [
+    12,
+    32
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 10,
+  "requiredBait": null,
+  "xp": 26,
+  "museumValue": 56,
+  "description": "Covered in algae like old timber. Blends into the weedy bottom."
+},
+  {
+  "worldId": 3,
+  "id": "mosscrest_killi",
+  "name": "Mosscrest Killi",
+  "rarity": "uncommon",
+  "price": 255,
+  "weight": [
+    0.05,
+    0.5
+  ],
+  "length": [
+    4,
+    14
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 10,
+  "requiredBait": null,
+  "xp": 26,
+  "museumValue": 55,
+  "description": "Moss-covered crest rises when it displays. Tiny but bold."
+},
+  {
+  "worldId": 3,
+  "id": "pilarfin_shiner",
+  "name": "Pilarfin Shiner",
+  "rarity": "uncommon",
+  "price": 275,
+  "weight": [
+    0.1,
+    1
+  ],
+  "length": [
+    7,
+    20
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 10,
+  "requiredBait": null,
+  "xp": 28,
+  "museumValue": 59,
+  "description": "Dorsal fin like a stone pillar. Swims in pillared ruins."
+},
+  {
+  "worldId": 3,
+  "id": "puddlefin_killi",
+  "name": "Puddlefin Killi",
+  "rarity": "uncommon",
+  "price": 240,
+  "weight": [
+    0.03,
+    0.3
+  ],
+  "length": [
+    2,
+    8
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 10,
+  "requiredBait": null,
+  "xp": 24,
+  "museumValue": 52,
+  "description": "Thrives in leftover puddles. It's tougher than its name suggests."
+},
+  {
+  "worldId": 3,
+  "id": "rosewater_garra",
+  "name": "Rosewater Garra",
+  "rarity": "uncommon",
+  "price": 300,
+  "weight": [
+    0.1,
+    1.5
+  ],
+  "length": [
+    8,
+    25
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 15,
+  "requiredBait": null,
+  "xp": 30,
+  "museumValue": 64,
+  "description": "Pink hue from feeding on mineral-rich roses that grow underwater."
+},
+  {
+  "worldId": 3,
+  "id": "ruinguard_barracuda",
+  "name": "Ruinguard Barracuda",
+  "rarity": "uncommon",
+  "price": 390,
+  "weight": [
+    2,
+    12
+  ],
+  "length": [
+    50,
+    110
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 20,
+  "requiredBait": null,
+  "xp": 39,
+  "museumValue": 83,
+  "description": "Patrols the ruins it claims. Fast and unpleasant to meet uninvited."
+},
+  {
+  "worldId": 3,
+  "id": "runicgill_perch",
+  "name": "Runicgill Perch",
+  "rarity": "uncommon",
+  "price": 310,
+  "weight": [
+    0.3,
+    2.5
+  ],
+  "length": [
+    15,
+    38
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 15,
+  "requiredBait": null,
+  "xp": 31,
+  "museumValue": 66,
+  "description": "Gills marked with faint runes. Breathes deeper than its size should allow."
+},
+  {
+  "worldId": 3,
+  "id": "runic_salmon",
+  "name": "Runic Salmon",
+  "rarity": "uncommon",
+  "price": 370,
+  "weight": [
+    1.5,
+    10
+  ],
+  "length": [
+    45,
+    90
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 20,
+  "requiredBait": null,
+  "xp": 37,
+  "museumValue": 79,
+  "description": "Runes along the lateral line glow during spawning runs."
+},
+  {
+  "worldId": 3,
+  "id": "scarlet_reedfish",
+  "name": "Scarlet Reedfish",
+  "rarity": "uncommon",
+  "price": 330,
+  "weight": [
+    0.2,
+    2
+  ],
+  "length": [
+    20,
+    60
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 15,
+  "requiredBait": null,
+  "xp": 33,
+  "museumValue": 70,
+  "description": "Scarlet and reed-thin. Slips through reed beds faster than a cast."
+},
+  {
+  "worldId": 3,
+  "id": "stonefin_breamlet",
+  "name": "Stonefin Breamlet",
+  "rarity": "uncommon",
+  "price": 250,
+  "weight": [
+    0.1,
+    1.2
+  ],
+  "length": [
+    7,
+    22
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 10,
+  "requiredBait": null,
+  "xp": 25,
+  "museumValue": 54,
+  "description": "Tiny and stone-finned. Bottom-feeds in rocky streams."
+},
+  {
+  "worldId": 3,
+  "id": "sunken_dace",
+  "name": "Sunken Dace",
+  "rarity": "uncommon",
+  "price": 265,
+  "weight": [
+    0.05,
+    0.7
+  ],
+  "length": [
+    5,
+    17
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 10,
+  "requiredBait": null,
+  "xp": 27,
+  "museumValue": 57,
+  "description": "Prefers sunken debris as shelter. Skittish above the wreck line."
+},
+  {
+  "worldId": 3,
+  "id": "topazback_molly",
+  "name": "Topazback Molly",
+  "rarity": "uncommon",
+  "price": 280,
+  "weight": [
+    0.05,
+    0.5
+  ],
+  "length": [
+    3,
+    12
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 10,
+  "requiredBait": null,
+  "xp": 28,
+  "museumValue": 60,
+  "description": "Topaz-yellow back. Small, common, pretty enough for a showcase tank."
+},
+  {
+  "worldId": 3,
+  "id": "voidscaled_trout",
+  "name": "Voidscaled Trout",
+  "rarity": "uncommon",
+  "price": 350,
+  "weight": [
+    0.5,
+    4.5
+  ],
+  "length": [
+    25,
+    60
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 15,
+  "requiredBait": null,
+  "xp": 35,
+  "museumValue": 75,
+  "description": "Void-black scales absorb light. Difficult to see, easy to catch."
+},
+  {
+  "worldId": 3,
+  "id": "amberjaw_dace",
+  "name": "Amberjaw Dace",
+  "rarity": "rare",
+  "price": 750,
+  "weight": [
+    0.2,
+    2
+  ],
+  "length": [
+    12,
+    35
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 30,
+  "requiredBait": null,
+  "xp": 75,
+  "museumValue": 160,
+  "description": "Amber-tinged jaw that snaps at anything shining. Tricky to release."
+},
+  {
+  "worldId": 3,
+  "id": "brackenrune_loach",
+  "name": "Brackenrune Loach",
+  "rarity": "rare",
+  "price": 820,
+  "weight": [
+    0.1,
+    1.5
+  ],
+  "length": [
+    8,
+    28
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 30,
+  "requiredBait": null,
+  "xp": 82,
+  "museumValue": 175,
+  "description": "Runes among bracken patterns. Hides in root tangles until disturbed."
+},
+  {
+  "worldId": 3,
+  "id": "brookruby_darter",
+  "name": "Brookruby Darter",
+  "rarity": "rare",
+  "price": 900,
+  "weight": [
+    0.05,
+    0.8
+  ],
+  "length": [
+    5,
+    18
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 35,
+  "requiredBait": null,
+  "xp": 90,
+  "museumValue": 192,
+  "description": "Ruby-red flash as it darts. Blink and you've missed its sprint."
+},
+  {
+  "worldId": 3,
+  "id": "cobalt_threeline",
+  "name": "Cobalt Threeline",
+  "rarity": "rare",
+  "price": 880,
+  "weight": [
+    0.3,
+    3
+  ],
+  "length": [
+    15,
+    42
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 35,
+  "requiredBait": null,
+  "xp": 88,
+  "museumValue": 188,
+  "description": "Three cobalt stripes run snout to tail. Uncommon in most waterways."
+},
+  {
+  "worldId": 3,
+  "id": "coral_snapper",
+  "name": "Coral Snapper",
+  "rarity": "rare",
+  "price": 960,
+  "weight": [
+    0.5,
+    5
+  ],
+  "length": [
+    22,
+    55
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 40,
+  "requiredBait": null,
+  "xp": 96,
+  "museumValue": 205,
+  "description": "Coral-pink with a bite to match. Aggressive near reefs."
+},
+  {
+  "worldId": 3,
+  "id": "crimsonveil_moray",
+  "name": "Crimsonveil Moray",
+  "rarity": "rare",
+  "price": 1100,
+  "weight": [
+    0.5,
+    6
+  ],
+  "length": [
+    40,
+    120
+  ],
+  "season": "any",
+  "weather": [
+    "fog",
+    "any"
+  ],
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 45,
+  "requiredBait": null,
+  "xp": 110,
+  "museumValue": 234,
+  "description": "Crimson-veiled moray spotted in fog. The veil is not decorative."
+},
+  {
+  "worldId": 3,
+  "id": "dusktail_darter",
+  "name": "Dusktail Darter",
+  "rarity": "rare",
+  "price": 840,
+  "weight": [
+    0.05,
+    0.8
+  ],
+  "length": [
+    5,
+    17
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": [
+    "evening"
+  ],
+  "difficulty": 5,
+  "requiredRodLevel": 30,
+  "requiredBait": null,
+  "xp": 84,
+  "museumValue": 179,
+  "description": "Tail glows at dusk. Appears only in the last hour of daylight."
+},
+  {
+  "worldId": 3,
+  "id": "echostone_ray",
+  "name": "Echostone Ray",
+  "rarity": "rare",
+  "price": 1200,
+  "weight": [
+    5,
+    30
+  ],
+  "length": [
+    60,
+    160
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 50,
+  "requiredBait": null,
+  "xp": 120,
+  "museumValue": 256,
+  "description": "Wings of compressed echostone. Hums when it glides."
+},
+  {
+  "worldId": 3,
+  "id": "emberrune_koi",
+  "name": "Emberrune Koi",
+  "rarity": "rare",
+  "price": 1050,
+  "weight": [
+    0.5,
+    5
+  ],
+  "length": [
+    22,
+    60
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 45,
+  "requiredBait": null,
+  "xp": 105,
+  "museumValue": 224,
+  "description": "Ember-red runes glow when it tenses. Beautiful and difficult."
+},
+  {
+  "worldId": 3,
+  "id": "gilded_moon_eel",
+  "name": "Gilded Moon Eel",
+  "rarity": "rare",
+  "price": 1150,
+  "weight": [
+    0.3,
+    4
+  ],
+  "length": [
+    30,
+    95
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": [
+    "evening",
+    "night"
+  ],
+  "difficulty": 5,
+  "requiredRodLevel": 50,
+  "requiredBait": null,
+  "xp": 115,
+  "museumValue": 245,
+  "description": "Gilded scales catch moonlight like mirrors. Active from dusk onward."
+},
+  {
+  "worldId": 3,
+  "id": "gloomlantern_eel",
+  "name": "Gloomlantern Eel",
+  "rarity": "rare",
+  "price": 1000,
+  "weight": [
+    0.3,
+    3.5
+  ],
+  "length": [
+    25,
+    80
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": [
+    "night"
+  ],
+  "difficulty": 5,
+  "requiredRodLevel": 40,
+  "requiredBait": null,
+  "xp": 100,
+  "museumValue": 213,
+  "description": "Its lantern organ casts a gloomy yellow-green glow. Night-active only."
+},
+  {
+  "worldId": 3,
+  "id": "glowveil_anglerfish",
+  "name": "Glowveil Anglerfish",
+  "rarity": "rare",
+  "price": 1080,
+  "weight": [
+    0.5,
+    5
+  ],
+  "length": [
+    18,
+    50
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 45,
+  "requiredBait": null,
+  "xp": 108,
+  "museumValue": 230,
+  "description": "Veil of light threads around its body. The lure is just marketing."
+},
+  {
+  "worldId": 3,
+  "id": "mistgate_koi",
+  "name": "Mistgate Koi",
+  "rarity": "rare",
+  "price": 990,
+  "weight": [
+    0.5,
+    5
+  ],
+  "length": [
+    22,
+    60
+  ],
+  "season": "any",
+  "weather": [
+    "fog"
+  ],
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 40,
+  "requiredBait": null,
+  "xp": 99,
+  "museumValue": 211,
+  "description": "Appears only at the \"gate of mist\". That means foggy mornings on the eastern bank."
+},
+  {
+  "worldId": 3,
+  "id": "nebula_stalker",
+  "name": "Nebula Stalker",
+  "rarity": "rare",
+  "price": 1300,
+  "weight": [
+    3,
+    18
+  ],
+  "length": [
+    50,
+    120
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 55,
+  "requiredBait": null,
+  "xp": 130,
+  "museumValue": 277,
+  "description": "Hunts like a stalking predator. Nebula markings are its camouflage."
+},
+  {
+  "worldId": 3,
+  "id": "runeheart_carp",
+  "name": "Runeheart Carp",
+  "rarity": "rare",
+  "price": 1050,
+  "weight": [
+    1,
+    8
+  ],
+  "length": [
+    30,
+    70
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 45,
+  "requiredBait": null,
+  "xp": 105,
+  "museumValue": 224,
+  "description": "A single large rune across its heart region. What it means is debated."
+},
+  {
+  "worldId": 3,
+  "id": "shardfin_wrasse",
+  "name": "Shardfin Wrasse",
+  "rarity": "rare",
+  "price": 780,
+  "weight": [
+    0.2,
+    2
+  ],
+  "length": [
+    12,
+    35
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 30,
+  "requiredBait": null,
+  "xp": 78,
+  "museumValue": 167,
+  "description": "Fins broken into sharp crystal shards. Handle with gloves."
+},
+  {
+  "worldId": 3,
+  "id": "wardenkraken_pup",
+  "name": "Wardenkraken Pup",
+  "rarity": "rare",
+  "price": 1250,
+  "weight": [
+    2,
+    15
+  ],
+  "length": [
+    40,
+    110
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 55,
+  "requiredBait": null,
+  "xp": 125,
+  "museumValue": 266,
+  "description": "Young spawn of a Warden Kraken. Still more squid than horror, barely."
+},
+  {
+  "worldId": 3,
+  "id": "wardenscale_koi",
+  "name": "Wardenscale Koi",
+  "rarity": "rare",
+  "price": 980,
+  "weight": [
+    0.5,
+    5
+  ],
+  "length": [
+    22,
+    58
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 40,
+  "requiredBait": null,
+  "xp": 98,
+  "museumValue": 209,
+  "description": "Scales like armour plating. A warden's pet gone wild."
+},
+  {
+  "worldId": 3,
+  "id": "witnesslight_fish",
+  "name": "Witnesslight Fish",
+  "rarity": "rare",
+  "price": 1100,
+  "weight": [
+    0.3,
+    3
+  ],
+  "length": [
+    18,
+    50
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 45,
+  "requiredBait": null,
+  "xp": 110,
+  "museumValue": 234,
+  "description": "Said to have witnessed the First World's birth. Carries the light of that day."
+},
+  {
+  "worldId": 3,
+  "id": "astral_pike",
+  "name": "Astral Pike",
+  "rarity": "epic",
+  "price": 2600,
+  "weight": [
+    5,
+    35
+  ],
+  "length": [
+    70,
+    160
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 60,
+  "requiredBait": null,
+  "xp": 260,
+  "museumValue": 555,
+  "description": "Astral energy runs through its spine. Rivals are blinded when it charges."
+},
+  {
+  "worldId": 3,
+  "id": "azure_antlerfish",
+  "name": "Azure Antlerfish",
+  "rarity": "epic",
+  "price": 2800,
+  "weight": [
+    3,
+    20
+  ],
+  "length": [
+    40,
+    100
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 65,
+  "requiredBait": null,
+  "xp": 280,
+  "museumValue": 598,
+  "description": "Azure antlers branch from its crown. Territorial and spectacular."
+},
+  {
+  "worldId": 3,
+  "id": "crownreef_shark",
+  "name": "Crownreef Shark",
+  "rarity": "epic",
+  "price": 3200,
+  "weight": [
+    20,
+    90
+  ],
+  "length": [
+    120,
+    250
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 75,
+  "requiredBait": null,
+  "xp": 320,
+  "museumValue": 682,
+  "description": "Reigns over a dome of coral. Unbothered by most lures."
+},
+  {
+  "worldId": 3,
+  "id": "driftlantern_fish",
+  "name": "Driftlantern Fish",
+  "rarity": "epic",
+  "price": 2500,
+  "weight": [
+    0.5,
+    5
+  ],
+  "length": [
+    15,
+    45
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": [
+    "evening",
+    "night"
+  ],
+  "difficulty": 5,
+  "requiredRodLevel": 60,
+  "requiredBait": null,
+  "xp": 250,
+  "museumValue": 533,
+  "description": "Drifts like a discarded lantern. Anglers mistake it for a buoy before it bites."
+},
+  {
+  "worldId": 3,
+  "id": "edenborn_serpent",
+  "name": "Edenborn Serpent",
+  "rarity": "epic",
+  "price": 3000,
+  "weight": [
+    3,
+    18
+  ],
+  "length": [
+    80,
+    200
+  ],
+  "season": "spring",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 70,
+  "requiredBait": null,
+  "xp": 300,
+  "museumValue": 639,
+  "description": "Born in the eden springs of World 4. Springs into motion in spring."
+},
+  {
+  "worldId": 3,
+  "id": "frostcrypt_fish",
+  "name": "Frostcrypt Fish",
+  "rarity": "epic",
+  "price": 2900,
+  "weight": [
+    5,
+    25
+  ],
+  "length": [
+    50,
+    120
+  ],
+  "season": "any",
+  "weather": [
+    "snow"
+  ],
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 68,
+  "requiredBait": null,
+  "xp": 290,
+  "museumValue": 618,
+  "description": "Sealed in frost between casts. Comes alive only in snowfall."
+},
+  {
+  "worldId": 3,
+  "id": "frostwarden_grouper",
+  "name": "Frostwarden Grouper",
+  "rarity": "epic",
+  "price": 3100,
+  "weight": [
+    10,
+    50
+  ],
+  "length": [
+    70,
+    160
+  ],
+  "season": "winter",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 72,
+  "requiredBait": null,
+  "xp": 310,
+  "museumValue": 660,
+  "description": "Warden of a frozen pool. Territorial and armored in frost-plate."
+},
+  {
+  "worldId": 3,
+  "id": "glided_bass",
+  "name": "Gilded Bass",
+  "rarity": "epic",
+  "price": 2700,
+  "weight": [
+    1,
+    10
+  ],
+  "length": [
+    30,
+    80
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 65,
+  "requiredBait": null,
+  "xp": 270,
+  "museumValue": 575,
+  "description": "Gilded sheen from nose to tail. Trophy fish for aspiring champions."
+},
+  {
+  "worldId": 3,
+  "id": "hymnaltide_wrasse",
+  "name": "Hymnaltide Wrasse",
+  "rarity": "epic",
+  "price": 3300,
+  "weight": [
+    1,
+    8
+  ],
+  "length": [
+    25,
+    65
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 78,
+  "requiredBait": null,
+  "xp": 330,
+  "museumValue": 703,
+  "description": "Hums in tidal cycles. Anglers time their casts to its rhythm."
+},
+  {
+  "worldId": 3,
+  "id": "ruinheart_leviathan",
+  "name": "Ruinback Leviathan",
+  "rarity": "epic",
+  "price": 3500,
+  "weight": [
+    50,
+    200
+  ],
+  "length": [
+    200,
+    400
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 85,
+  "requiredBait": null,
+  "xp": 350,
+  "museumValue": 745,
+  "description": "A leviathan with ruin markings along its spine. Slower than it once was."
+},
+  {
+  "worldId": 3,
+  "id": "shatteredmoon_koi",
+  "name": "Shatteredmoon Koi",
+  "rarity": "epic",
+  "price": 2800,
+  "weight": [
+    0.5,
+    5
+  ],
+  "length": [
+    22,
+    58
+  ],
+  "season": "any",
+  "weather": [
+    "full_moon"
+  ],
+  "activeTime": [
+    "night"
+  ],
+  "difficulty": 5,
+  "requiredRodLevel": 65,
+  "requiredBait": null,
+  "xp": 280,
+  "museumValue": 597,
+  "description": "Appears when the full moon is reflected in shattered patterns on the water."
+},
+  {
+  "worldId": 3,
+  "id": "sunkenoracle_koi",
+  "name": "Sunkenoracle Koi",
+  "rarity": "epic",
+  "price": 3000,
+  "weight": [
+    1,
+    8
+  ],
+  "length": [
+    30,
+    72
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 70,
+  "requiredBait": null,
+  "xp": 300,
+  "museumValue": 639,
+  "description": "Swims in sunken oracle chambers. Regarded locally as prophetic. It is a fish."
+},
+  {
+  "worldId": 3,
+  "id": "supernova_koi",
+  "name": "Supernova Koi",
+  "rarity": "epic",
+  "price": 3200,
+  "weight": [
+    1,
+    10
+  ],
+  "length": [
+    35,
+    80
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 75,
+  "requiredBait": null,
+  "xp": 320,
+  "museumValue": 682,
+  "description": "Emits a burst of light when startled. Literally supernova-bright in a pool."
+},
+  {
+  "worldId": 3,
+  "id": "verdantrelic_pike",
+  "name": "Verdantrelic Pike",
+  "rarity": "epic",
+  "price": 2900,
+  "weight": [
+    3,
+    22
+  ],
+  "length": [
+    60,
+    140
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 68,
+  "requiredBait": null,
+  "xp": 290,
+  "museumValue": 618,
+  "description": "Ancient pike covered in verdant moss. A living relic of World 4's first rivers."
+},
+  {
+  "worldId": 3,
+  "id": "abysscrown_monarch",
+  "name": "Abysscrown Monarch",
+  "rarity": "legendary",
+  "price": 10500,
+  "weight": [
+    80,
+    300
+  ],
+  "length": [
+    250,
+    500
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 95,
+  "requiredBait": null,
+  "minLuck": 58,
+  "xp": 1050,
+  "museumValue": 2200,
+  "description": "The monarch of abyssal waters. Its crown has never touched the surface before now."
+},
+  {
+  "worldId": 3,
+  "id": "comet_sailfish",
+  "name": "Comet Sailfish",
+  "rarity": "legendary",
+  "price": 11000,
+  "weight": [
+    60,
+    220
+  ],
+  "length": [
+    200,
+    380
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 100,
+  "requiredBait": null,
+  "minLuck": 60,
+  "xp": 1100,
+  "museumValue": 2310,
+  "description": "Trails light like a comet across open water. Fastest catch in World 4."
+},
+  {
+  "worldId": 3,
+  "id": "hymnalgod_pike",
+  "name": "Hymnalgod Pike",
+  "rarity": "legendary",
+  "price": 12500,
+  "weight": [
+    40,
+    160
+  ],
+  "length": [
+    180,
+    350
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 115,
+  "requiredBait": null,
+  "minLuck": 65,
+  "xp": 1250,
+  "museumValue": 2625,
+  "description": "A pike sanctified by the hymnal current. Pulls the line like a prayer."
+},
+  {
+  "worldId": 3,
+  "id": "starshard_shark",
+  "name": "Starshard Shark",
+  "rarity": "legendary",
+  "price": 11500,
+  "weight": [
+    60,
+    250
+  ],
+  "length": [
+    200,
+    420
+  ],
+  "season": "any",
+  "weather": [
+    "meteor_shower",
+    "aurora"
+  ],
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 105,
+  "requiredBait": null,
+  "minLuck": 62,
+  "xp": 1150,
+  "museumValue": 2415,
+  "description": "Shards of stardust line its dorsal fin. Appears during sky events above the water."
+},
+  {
+  "worldId": 3,
+  "id": "godsrune_serpent",
+  "name": "Godsrune Serpent",
+  "rarity": "mythic",
+  "price": 28000,
+  "weight": [
+    10,
+    50
+  ],
+  "length": [
+    150,
+    350
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 175,
+  "requiredBait": null,
+  "minLuck": 95,
+  "xp": 2800,
+  "museumValue": 5900,
+  "description": "Runes inscribed by a god, or so the stone tablets claim. The serpent doesn't comment."
+},
+  {
+  "worldId": 3,
+  "id": "hymnking_serpent",
+  "name": "Hymnking Serpent",
+  "rarity": "mythic",
+  "price": 30000,
+  "weight": [
+    15,
+    60
+  ],
+  "length": [
+    180,
+    380
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 185,
+  "requiredBait": null,
+  "minLuck": 105,
+  "xp": 3000,
+  "museumValue": 6300,
+  "description": "The king of the hymnal depths. Its movement sends ripples that sound like song."
+},
+  {
+  "worldId": 3,
+  "id": "voidrune_serpent",
+  "name": "Voidrune Serpent",
+  "rarity": "mythic",
+  "price": 27000,
+  "weight": [
+    8,
+    40
+  ],
+  "length": [
+    120,
+    300
+  ],
+  "season": "any",
+  "weather": [
+    "blood_moon",
+    "full_moon"
+  ],
+  "activeTime": [
+    "evening"
+  ],
+  "difficulty": 5,
+  "requiredRodLevel": 168,
+  "requiredBait": null,
+  "minLuck": 90,
+  "xp": 2700,
+  "museumValue": 5670,
+  "description": "Runes of pure void. Surfaces only under blood-red or full moon skies."
+},
+  {
+  "worldId": 3,
+  "id": "abysswarden_grouper",
+  "name": "Abysswarden Grouper",
+  "rarity": "mythic",
+  "price": 32000,
+  "weight": [
+    100,
+    400
+  ],
+  "length": [
+    300,
+    600
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 195,
+  "requiredBait": null,
+  "minLuck": 110,
+  "xp": 3200,
+  "museumValue": 6720,
+  "description": "A warden of the deepest abyss. Nothing passes it without permission."
+},
+  {
+  "worldId": 3,
+  "id": "fossilized_megaladon",
+  "name": "Fossilized Megalodon",
+  "rarity": "ancient",
+  "price": 70000,
+  "weight": [
+    500,
+    2000
+  ],
+  "length": [
+    500,
+    1000
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 240,
+  "requiredBait": "hymnal_bug",
+  "minLuck": 140,
+  "xp": 7000,
+  "museumValue": 14800,
+  "hidden": true,
+  "discoveryCondition": "Caught in World 4 with Hymnal Bug equipped and Luck above 140.",
+  "description": "A megalodon preserved in fossil state but still swimming. The jaw should not function. It does."
+},
+  {
+  "worldId": 3,
+  "id": "primordial_titanfish",
+  "name": "Primordial Titanfish",
+  "rarity": "ancient",
+  "price": 65000,
+  "weight": [
+    300,
+    1000
+  ],
+  "length": [
+    400,
+    900
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 225,
+  "requiredBait": "edenspore_seed",
+  "minLuck": 125,
+  "xp": 6500,
+  "museumValue": 13700,
+  "hidden": true,
+  "discoveryCondition": "Caught in World 4 with Edenspore Seed and Luck above 125.",
+  "description": "The first titan. Larger than anything in the fossil record. The fossil record is wrong."
+},
+  {
+  "worldId": 3,
+  "id": "aurelian_seraph",
+  "name": "Aurelian Seraph",
+  "rarity": "celestial",
+  "price": 150000,
+  "weight": [
+    50,
+    200
+  ],
+  "length": [
+    200,
+    420
+  ],
+  "season": "any",
+  "weather": [
+    "aurora"
+  ],
+  "activeTime": [
+    "morning"
+  ],
+  "difficulty": 5,
+  "requiredRodLevel": 305,
+  "requiredBait": "hymnal_bug",
+  "minLuck": 215,
+  "xp": 15000,
+  "museumValue": 31500,
+  "hidden": true,
+  "discoveryCondition": "Aurora weather, morning, in World 4, with Hymnal Bug and Luck above 215.",
+  "description": "Aureate wings fold like a seraph in prayer. The aurora parts around it."
+},
+  {
+  "worldId": 3,
+  "id": "genesis_primefish",
+  "name": "Genesis Primefish",
+  "rarity": "celestial",
+  "price": 160000,
+  "weight": [
+    30,
+    150
+  ],
+  "length": [
+    150,
+    380
+  ],
+  "season": "any",
+  "weather": "any",
+  "activeTime": "any",
+  "difficulty": 5,
+  "requiredRodLevel": 315,
+  "requiredBait": "voidmoth_larva",
+  "minLuck": 225,
+  "xp": 16000,
+  "museumValue": 33600,
+  "hidden": true,
+  "discoveryCondition": "World 4, any weather, with Voidmoth Larva and Luck above 225.",
+  "description": "The very first fish. World 4 remembers it. The other worlds have forgotten."
+},
+  {
+  "worldId": 3,
+  "id": "abysscrown_kraken",
+  "name": "Abysscrown Kraken",
+  "rarity": "divine",
+  "price": 1200000,
+  "weight": [
+    500,
+    2000
+  ],
+  "length": [
+    600,
+    1400
+  ],
+  "season": "any",
+  "weather": [
+    "blood_moon"
+  ],
+  "activeTime": [
+    "evening"
+  ],
+  "difficulty": 5,
+  "requiredRodLevel": 360,
+  "requiredBait": "voidmoth_larva",
+  "minLuck": 290,
+  "xp": 120000,
+  "museumValue": 290000,
+  "hidden": true,
+  "discoveryCondition": "Blood Moon, evening, World 4, with Voidmoth Larva and Luck above 290.",
+  "description": "A kraken born from the abyssal crown. The blood moon coaxes it to the surface. Once. Ever."
+},
+  {
+  "worldId": 3,
+  "id": "hymnal_leviathan",
+  "name": "Hymnal Leviathan",
+  "rarity": "divine",
+  "price": 2800000,
+  "weight": [
+    800,
+    3000
+  ],
+  "length": [
+    800,
+    1500
+  ],
+  "season": "any",
+  "weather": [
+    "full_moon"
+  ],
+  "activeTime": [
+    "evening"
+  ],
+  "difficulty": 5,
+  "requiredRodLevel": 385,
+  "requiredBait": "hymnal_bug",
+  "minLuck": 360,
+  "xp": 280000,
+  "museumValue": 650000,
+  "hidden": true,
+  "discoveryCondition": "Full Moon, evening, World 4, with Hymnal Bug and Luck above 360. The hardest catch in World 4.",
+  "description": "The leviathan that hums the hymn of World 4's existence. Catching it is not recommended, and yet."
+}
 ] as any[]
   ).map((x: any) => [x.id, x]),
 );const rarityLabel = (r: string): Rarity => (r.charAt(0).toUpperCase() + r.slice(1)) as Rarity;

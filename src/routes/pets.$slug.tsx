@@ -4,7 +4,7 @@ import { GameAsset } from "@/components/game/asset";
 import { RarityBadge, Reveal, WorldBadge } from "@/components/game/primitives";
 import { Button } from "@/components/ui/button";
 import { eggs, petBySlug, pets } from "@/lib/api";
-import { formatFlat, formatPercent, titleCase } from "@/lib/game-format";
+import { formatFlat, formatPercent, SKILL_DESCRIPTIONS, SKILL_LABELS } from "@/lib/game-format";
 import { pageMeta } from "@/lib/seo";
 
 /** Skill categories whose skillValue is a flat stat point rather than a percentage. */
@@ -38,6 +38,9 @@ function PetDetail() {
   const { entry: p } = Route.useLoaderData();
 
   const sourceEggs = eggs.filter((e) => e.eligiblePetIds.includes(p.key));
+
+  const skillLabel = SKILL_LABELS[p.skill] ?? p.skill;
+  const skillDesc = SKILL_DESCRIPTIONS[p.skill] ?? "";
   const skillValueDisplay = FLAT_SKILL_CATEGORIES.has(p.skillCategory)
     ? formatFlat(p.skillValue)
     : formatPercent(p.skillValue);
@@ -45,8 +48,8 @@ function PetDetail() {
   const rows: [string, React.ReactNode][] = [
     ["Rarity", <RarityBadge key="rarity" rarity={p.rarity} />],
     ["Unlock Level", p.unlockLevel],
-    ["Skill", titleCase(p.skill)],
-    ["Skill Value", skillValueDisplay],
+    [`Skill (${skillValueDisplay})`, skillLabel],
+    ["Skill Effect", skillDesc],
     [
       "Hatches From",
       sourceEggs.length ? (

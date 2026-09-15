@@ -34,3 +34,36 @@ export function formatPercent(value: number): string {
 export function formatFlat(value: number): string {
   return `+${value}`;
 }
+
+/**
+ * Human-readable descriptions for every pet skill type.
+ * Shown alongside the skill name on pet detail pages and egg catalogues.
+ */
+export const SKILL_DESCRIPTIONS: Record<string, string> = {
+  extra_fish: "Chance to catch a second fish on every cast.",
+  extra_xp: "Bonus XP added to every catch.",
+  coin_bonus: "Extra coins earned from every fish sale.",
+  treasure_chance: "Increased chance of finding a treasure chest while fishing.",
+  auto_repair: "Automatically restores rod durability after each catch.",
+  luck: "Raises the overall luck stat — better odds at rarer fish.",
+  critical_catch: "Chance to land a critical catch, awarding bonus weight and value.",
+  auto_bait: "Automatically re-equips the same bait after each cast.",
+  energy_saver: "Reduces the energy cost of each cast.",
+  energy_regen: "Increases energy recovery speed between casts.",
+  rarity_boost: "Shifts the rarity distribution of every catch toward rarer tiers.",
+};
+
+/** Friendly display label for each skill id. */
+export const SKILL_LABELS: Record<string, string> = {
+  extra_fish: "Extra Fish",
+  extra_xp: "Extra XP",
+  coin_bonus: "Coin Bonus",
+  treasure_chance: "Treasure Chance",
+  auto_repair: "Auto Repair",
+  luck: "Luck",
+  critical_catch: "Critical Catch",
+  auto_bait: "Auto Bait",
+  energy_saver: "Energy Saver",
+  energy_regen: "Energy Regen",
+  rarity_boost: "Rarity Boost",
+};

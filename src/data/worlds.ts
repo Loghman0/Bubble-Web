@@ -50,14 +50,13 @@ export const WORLDS: World[] = [
   },
   {
     id: 3,
-    name: "???",
+    name: "The First Waters",
     tagline: "3rd Prestige",
     badge: "🔱",
     badgeIcon: "/assets/World3/badge.png",
-    worldIcon: "/assets/World0/icon.png",
-    accent: "from-indigo-900 to-slate-950",
-    comingSoon: true,
-    mysteryName: "The charts end here",
+    worldIcon: "/assets/World3/icon.png",
+    accent: "from-amber-800 to-stone-900",
+    description: "The primal wellspring — ancient ruins, rune-touched waters, and the oldest fish in existence. Nothing here is young.",
   },
   {
     id: 4,
