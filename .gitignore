@@ -31,3 +31,9 @@ dist-ssr
 *.sln
 *.sw?
 .workspace/ 
+
+*.zip
+.env
+.env.local
+.env.*
+!.env.example
